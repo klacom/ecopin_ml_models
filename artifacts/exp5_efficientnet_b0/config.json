@@ -1,0 +1,66 @@
+{
+  "experiment": "exp5_efficientnet_b0",
+  "python_version": "3.14.6",
+  "torch_version": "2.13.0+cu132",
+  "torchvision_version": "0.28.0+cu132",
+  "cuda_version": "13.2",
+  "gpu_name": "NVIDIA GeForce RTX 5050 Laptop GPU",
+  "device": "cuda",
+  "seed": 42,
+  "model": "efficientnet_b0",
+  "pretrained": "ImageNet-1k via timm",
+  "num_classes": 4,
+  "class_names": [
+    "flooding",
+    "non_environmental",
+    "pollution",
+    "waste"
+  ],
+  "drop_rate": "timm default (0.0)",
+  "optimizer": "Adam",
+  "weight_decay": 0,
+  "label_smoothing": 0,
+  "class_weights": {
+    "flooding": 0.875,
+    "non_environmental": 0.875,
+    "pollution": 1.75,
+    "waste": 0.875
+  },
+  "stage1_epochs": 5,
+  "stage1_lr": 0.001,
+  "stage2_lr": 0.0001,
+  "scheduler": "ReduceLROnPlateau(mode=min, factor=0.5, patience=2)",
+  "early_stopping_patience": 5,
+  "early_stopping_metric": "Macro F1 (maximize); tie-breaker: val_acc, val_loss",
+  "checkpoint_note": "per-epoch checkpoints saved; best selected by Macro F1",
+  "changes_vs_corrected_baseline": [
+    "[AUGMENTATION] RandomHorizontalFlip: p=0.2 -> p=0.5",
+    "[PROTOCOL] Checkpoint metric: val_loss -> Macro F1 (maximize)"
+  ],
+  "unchanged_vs_corrected_baseline": [
+    "No RandomRotation (absent in both CB and Exp 5)",
+    "Stage 1: 5 frozen epochs",
+    "Model, Dataset, Preprocessing, Seed, Class weights, Loss, Optimizer, Scheduler, Batch size, Patience"
+  ],
+  "batch_size": 16,
+  "max_epochs": 20,
+  "total_epochs_trained": 14,
+  "best_epoch": 9,
+  "best_macro_f1": 0.5742655237845973,
+  "best_val_acc": 0.5849056603773585,
+  "best_val_loss": 1.6881634424317558,
+  "train_acc_at_best_epoch": 0.9346938775510204,
+  "augmentation_train": [
+    "RandomHorizontalFlip(p=0.5)",
+    "pad_to_square",
+    "Resize(224,224)",
+    "ToTensor",
+    "Normalize(ImageNet)"
+  ],
+  "augmentation_val": [
+    "pad_to_square",
+    "Resize(224,224)",
+    "ToTensor",
+    "Normalize(ImageNet)"
+  ]
+}

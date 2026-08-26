@@ -1,0 +1,78 @@
+{
+  "experiment": "corrected_baseline_efficientnet_b0",
+  "python_version": "3.14.6",
+  "torch_version": "2.13.0+cu132",
+  "torchvision_version": "0.28.0+cu132",
+  "cuda_version": "13.2",
+  "gpu_name": "NVIDIA GeForce RTX 5050 Laptop GPU",
+  "device": "cuda",
+  "seed": 42,
+  "model": "efficientnet_b0",
+  "pretrained": "ImageNet-1k via timm",
+  "num_classes": 4,
+  "class_names": [
+    "flooding",
+    "non_environmental",
+    "pollution",
+    "waste"
+  ],
+  "drop_rate": "timm default (0.0)",
+  "optimizer": "Adam",
+  "weight_decay": 0,
+  "label_smoothing": 0,
+  "class_weights": {
+    "flooding": 0.875,
+    "non_environmental": 0.875,
+    "pollution": 1.75,
+    "waste": 0.875
+  },
+  "stage1_epochs": 5,
+  "stage1_lr": 0.001,
+  "stage2_lr": 0.0001,
+  "scheduler": "ReduceLROnPlateau(mode=min, factor=0.5, patience=2)",
+  "early_stopping_patience": 5,
+  "early_stopping_metric": "val_loss (minimize) \u00e2\u20ac\u201d identical to historical baseline",
+  "checkpoint_note": "per-epoch checkpoints saved for retrospective Macro F1 analysis",
+  "batch_size": 16,
+  "max_epochs": 20,
+  "total_epochs_trained": 14,
+  "best_epoch": 9,
+  "best_macro_f1": 0.5782241706471243,
+  "best_val_acc": 0.6037735849056604,
+  "best_val_loss": 1.6289836145796865,
+  "train_acc_at_best_epoch": 0.9346938775510204,
+  "augmentation_train": [
+    "RandomHorizontalFlip(p=0.2)",
+    "pad_to_square",
+    "Resize(224,224)",
+    "ToTensor",
+    "Normalize(ImageNet)"
+  ],
+  "augmentation_val": [
+    "pad_to_square",
+    "Resize(224,224)",
+    "ToTensor",
+    "Normalize(ImageNet)"
+  ],
+  "changes_vs_historical_baseline": [
+    "[PROTOCOL] Stage 1 freeze: 5 epochs (historical: 4 actual epochs)",
+    "[OBSERVABILITY] Per-epoch checkpoint saving added (epoch_01.pt ... epoch_NN.pt)",
+    "[OBSERVABILITY] Per-epoch metrics JSON added (val_loss, macro_f1, per-class F1, cm)",
+    "[OBSERVABILITY] Macro F1 and weighted F1 added to training_history.csv",
+    "[ENVIRONMENT] Device: CUDA RTX5050 (historical: CPU)",
+    "[ENVIRONMENT] pin_memory=False (historical: True \u00e2\u20ac\u201d Windows/CUDA deadlock fix)",
+    "[ENVIRONMENT] num_workers=0 (historical: 2)"
+  ],
+  "unchanged_vs_historical_baseline": [
+    "Model: EfficientNet-B0, ImageNet pretrained",
+    "Augmentation: RandomHorizontalFlip(p=0.2) only",
+    "Loss: CrossEntropyLoss(class_weights), no label_smoothing",
+    "Optimizer: Adam, LR 1e-3 / 1e-4",
+    "Scheduler: ReduceLROnPlateau(mode=min, factor=0.5, patience=2)",
+    "Batch size: 16",
+    "Max epochs: 20",
+    "ES patience: 5",
+    "Seed: 42",
+    "Preprocessing: pad_to_square -> Resize(224)"
+  ]
+}

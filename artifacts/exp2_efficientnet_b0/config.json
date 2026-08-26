@@ -1,0 +1,55 @@
+{
+  "experiment": "exp2_efficientnet_b0",
+  "python_version": "3.14.6",
+  "torch_version": "2.13.0+cu132",
+  "torchvision_version": "0.28.0+cu132",
+  "cuda_version": "13.2",
+  "gpu_name": "NVIDIA GeForce RTX 5050 Laptop GPU",
+  "device": "cuda",
+  "seed": 42,
+  "model": "efficientnet_b0",
+  "pretrained": "ImageNet-1k via timm",
+  "num_classes": 4,
+  "class_names": [
+    "flooding",
+    "non_environmental",
+    "pollution",
+    "waste"
+  ],
+  "drop_rate": 0.2,
+  "optimizer": "Adam",
+  "weight_decay": 0.0001,
+  "label_smoothing": 0.1,
+  "class_weights": {
+    "flooding": 0.875,
+    "non_environmental": 0.875,
+    "pollution": 1.75,
+    "waste": 0.875
+  },
+  "stage1_epochs": 5,
+  "stage1_lr": 0.001,
+  "stage2_lr": 0.0001,
+  "scheduler": "ReduceLROnPlateau(mode=min, factor=0.5, patience=2)",
+  "early_stopping_patience": 5,
+  "batch_size": 16,
+  "max_epochs": 20,
+  "total_epochs_trained": 13,
+  "best_epoch": 8,
+  "best_val_loss": 2.0987833176019057,
+  "augmentation_train": [
+    "RandomHorizontalFlip(p=0.5)",
+    "RandomRotation(degrees=15)",
+    "ColorJitter(brightness=0.2, contrast=0.2, saturation=0.1, hue=0)",
+    "pad_to_square (zero-pad)",
+    "Resize(224, 224)",
+    "ToTensor",
+    "Normalize(mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225])"
+  ],
+  "augmentation_val": [
+    "pad_to_square (zero-pad)",
+    "Resize(224, 224)",
+    "ToTensor",
+    "Normalize(mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225])"
+  ],
+  "stage_boundary_note": "Backbone frozen for epochs 1-5. Transition fires at end of epoch 5. Epoch 6 onward: backbone unfrozen."
+}

@@ -1,0 +1,12 @@
+# Experiment 2 Validation Error Analysis
+
+**Total validation images:** 53
+**Correct predictions:** 30
+**Misclassifications:** 23
+**Accuracy:** 0.5660
+
+## Misclassification Table
+
+| # | Image ID | True | Predicted | Confidence |
+|---|----------|------|-----------|------------|
+| 1 | FLD_002 | flooding | non_environmental | 0.986 |\n| 2 | FLD_033 | flooding | non_environmental | 0.666 |\n| 3 | FLD_085 | flooding | non_environmental | 0.997 |\n| 4 | FLD_099 | flooding | waste | 0.613 |\n| 5 | NEG_030 | non_environmental | flooding | 0.480 |\n| 6 | NEG_060 | non_environmental | waste | 0.978 |\n| 7 | NEG_076 | non_environmental | flooding | 0.713 |\n| 8 | NEG_080 | non_environmental | waste | 0.689 |\n| 9 | NEG_085 | non_environmental | flooding | 0.915 |\n| 10 | NEG_099 | non_environmental | waste | 1.000 |\n| 11 | POL_011 | pollution | flooding | 0.491 |\n| 12 | POL_019 | pollution | flooding | 0.478 |\n| 13 | POL_023 | pollution | waste | 0.558 |\n| 14 | POL_024 | pollution | flooding | 0.682 |\n| 15 | POL_044 | pollution | non_environmental | 0.502 |\n| 16 | WST_030 | waste | flooding | 0.962 |\n| 17 | WST_033 | waste | non_environmental | 0.897 |\n| 18 | WST_049 | waste | pollution | 0.881 |\n| 19 | WST_058 | waste | pollution | 0.545 |\n| 20 | WST_059 | waste | pollution | 0.798 |\n| 21 | WST_060 | waste | non_environmental | 0.566 |\n| 22 | WST_064 | waste | non_environmental | 0.646 |\n| 23 | WST_085 | waste | pollution | 0.607 |\n\n## Errors by True Class\n\n### flooding (4 errors / 15 samples)\n\n- Predicted as **non_environmental**: 3\n- Predicted as **waste**: 1\n\n### non_environmental (6 errors / 15 samples)\n\n- Predicted as **waste**: 3\n- Predicted as **flooding**: 3\n\n### pollution (5 errors / 8 samples)\n\n- Predicted as **flooding**: 3\n- Predicted as **non_environmental**: 1\n- Predicted as **waste**: 1\n\n### waste (8 errors / 15 samples)\n\n- Predicted as **pollution**: 4\n- Predicted as **non_environmental**: 3\n- Predicted as **flooding**: 1\n\n## Bidirectional Confusion Totals\n\n| Pair | Aâ†’B | Bâ†’A | Total |\n|------|-----|-----|-------|\n| non_environmental â†” waste | 3 | 3 | **6** |\n| flooding â†” non_environmental | 3 | 3 | **6** |\n| pollution â†” waste | 1 | 4 | **5** |\n| flooding â†” pollution | 0 | 3 | **3** |\n| flooding â†” waste | 1 | 1 | **2** |\n| non_environmental â†” pollution | 0 | 1 | **1** |\n\n*This analysis covers the validation set only. Test set is untouched.*\n

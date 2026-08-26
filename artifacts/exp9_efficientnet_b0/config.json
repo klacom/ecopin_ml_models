@@ -1,0 +1,36 @@
+{
+  "experiment": "exp9_efficientnet_b0",
+  "seed": 0,
+  "config": "A",
+  "augmentation_train": [
+    "RandomHorizontalFlip(p=0.2)",
+    "pad_to_square",
+    "Resize(224,224)",
+    "ToTensor",
+    "Normalize(ImageNet)"
+  ],
+  "augmentation_val": [
+    "pad_to_square",
+    "Resize(224,224)",
+    "ToTensor",
+    "Normalize(ImageNet)"
+  ],
+  "model": "efficientnet_b0 (timm, ImageNet pretrained)",
+  "batch_size": 16,
+  "max_epochs": 20,
+  "stage1_epochs": 5,
+  "lr_stage1": 0.001,
+  "lr_stage2": 0.0001,
+  "optimizer": "Adam",
+  "scheduler": "ReduceLROnPlateau(mode=min, factor=0.5, patience=2)",
+  "early_stopping_metric": "Macro F1 (maximize); tie-break: val_acc, val_loss",
+  "early_stopping_patience": 5,
+  "total_epochs_trained": 17,
+  "best_epoch": 12,
+  "best_macro_f1": 0.5405787018690245,
+  "best_val_acc": 0.6037735849056604,
+  "best_val_loss": 1.8299392017553437,
+  "best_weighted_f1": 0.5879621667813998,
+  "train_acc_at_best": 0.9714285714285714,
+  "test_set_accessed": false
+}

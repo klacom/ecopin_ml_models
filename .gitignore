@@ -1,0 +1,104 @@
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ============================================================
+# IDE / Editor
+# ============================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ============================================================
+# Python testing / tooling
+# ============================================================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ============================================================
+# Jupyter
+# ============================================================
+.ipynb_checkpoints/
+
+# ============================================================
+# ML CHECKPOINTS — DO NOT COMMIT TRAINING CHECKPOINTS
+# ============================================================
+
+# Ignore all experiment checkpoint directories
+checkpoints/*/
+
+# Exception: keep the selected production model
+!checkpoints/exp8/
+!checkpoints/exp8/best.pt
+
+# Ignore any temporary/intermediate checkpoint files
+checkpoints/**/epoch_*.pt
+checkpoints/**/last.pt
+checkpoints/**/*.pth
+
+# ============================================================
+# Large generated artifacts
+# ============================================================
+
+# Generated experiment artifacts
+artifacts/**/plots/
+artifacts/**/visualizations/
+artifacts/**/*.png
+artifacts/**/*.jpg
+artifacts/**/*.jpeg
+
+# Keep metrics/config/reports, which are useful for reproducibility
+!artifacts/**/*.json
+!artifacts/**/*.md
+!artifacts/**/*.csv
+
+# ============================================================
+# Dataset files
+# ============================================================
+
+# Do not commit image datasets
+data/
+dataset/
+datasets/
+*.zip
+*.tar
+*.tar.gz
+
+# Raw image files
+*.webp
+*.bmp
+*.tiff
+*.tif
+
+# ============================================================
+# Environment / secrets
+# ============================================================
+.env
+.env.*
+!.env.example
+
+# ============================================================
+# Logs
+# ============================================================
+*.log
+
+# ============================================================
+# OS
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini

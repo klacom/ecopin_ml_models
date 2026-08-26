@@ -1,0 +1,39 @@
+{
+  "flooding": {
+    "precision": 0.6111111111111112,
+    "recall": 0.7333333333333333,
+    "f1-score": 0.6666666666666666,
+    "support": 15.0
+  },
+  "non_environmental": {
+    "precision": 0.5625,
+    "recall": 0.6,
+    "f1-score": 0.5806451612903226,
+    "support": 15.0
+  },
+  "pollution": {
+    "precision": 0.42857142857142855,
+    "recall": 0.375,
+    "f1-score": 0.4,
+    "support": 8.0
+  },
+  "waste": {
+    "precision": 0.5833333333333334,
+    "recall": 0.4666666666666667,
+    "f1-score": 0.5185185185185185,
+    "support": 15.0
+  },
+  "accuracy": 0.5660377358490566,
+  "macro avg": {
+    "precision": 0.5463789682539683,
+    "recall": 0.54375,
+    "f1-score": 0.541457586618877,
+    "support": 53.0
+  },
+  "weighted avg": {
+    "precision": 0.5619384546271339,
+    "recall": 0.5660377358490566,
+    "f1-score": 0.5601406640968418,
+    "support": 53.0
+  }
+}

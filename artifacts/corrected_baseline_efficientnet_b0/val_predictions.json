@@ -1,0 +1,744 @@
+[
+  {
+    "image_id": "FLD_080",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_080.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 0.9399,
+    "correct": true,
+    "probs": {
+      "flooding": 0.9399,
+      "non_environmental": 0.0018,
+      "pollution": 0.0579,
+      "waste": 0.0004
+    }
+  },
+  {
+    "image_id": "FLD_042",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_042.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 0.9999,
+    "correct": true,
+    "probs": {
+      "flooding": 0.9999,
+      "non_environmental": 0.0001,
+      "pollution": 0.0,
+      "waste": 0.0
+    }
+  },
+  {
+    "image_id": "FLD_059",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_059.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 0.9979,
+    "correct": true,
+    "probs": {
+      "flooding": 0.9979,
+      "non_environmental": 0.0019,
+      "pollution": 0.0,
+      "waste": 0.0001
+    }
+  },
+  {
+    "image_id": "FLD_049",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_049.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 0.9992,
+    "correct": true,
+    "probs": {
+      "flooding": 0.9992,
+      "non_environmental": 0.0008,
+      "pollution": 0.0,
+      "waste": 0.0
+    }
+  },
+  {
+    "image_id": "FLD_099",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_099.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "confidence": 0.8295,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0876,
+      "non_environmental": 0.8295,
+      "pollution": 0.0153,
+      "waste": 0.0676
+    }
+  },
+  {
+    "image_id": "FLD_058",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_058.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 0.9882,
+    "correct": true,
+    "probs": {
+      "flooding": 0.9882,
+      "non_environmental": 0.0,
+      "pollution": 0.0117,
+      "waste": 0.0
+    }
+  },
+  {
+    "image_id": "FLD_076",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_076.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 0.598,
+    "correct": true,
+    "probs": {
+      "flooding": 0.598,
+      "non_environmental": 0.2001,
+      "pollution": 0.1983,
+      "waste": 0.0036
+    }
+  },
+  {
+    "image_id": "FLD_033",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_033.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "confidence": 0.8763,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0218,
+      "non_environmental": 0.8763,
+      "pollution": 0.0114,
+      "waste": 0.0905
+    }
+  },
+  {
+    "image_id": "FLD_095",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_095.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 0.9993,
+    "correct": true,
+    "probs": {
+      "flooding": 0.9993,
+      "non_environmental": 0.0007,
+      "pollution": 0.0,
+      "waste": 0.0
+    }
+  },
+  {
+    "image_id": "FLD_060",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_060.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 1.0,
+    "correct": true,
+    "probs": {
+      "flooding": 1.0,
+      "non_environmental": 0.0,
+      "pollution": 0.0,
+      "waste": 0.0
+    }
+  },
+  {
+    "image_id": "FLD_064",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_064.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 0.9996,
+    "correct": true,
+    "probs": {
+      "flooding": 0.9996,
+      "non_environmental": 0.0001,
+      "pollution": 0.0003,
+      "waste": 0.0
+    }
+  },
+  {
+    "image_id": "FLD_085",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_085.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "confidence": 0.9874,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0001,
+      "non_environmental": 0.9874,
+      "pollution": 0.0125,
+      "waste": 0.0
+    }
+  },
+  {
+    "image_id": "FLD_038",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_038.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 1.0,
+    "correct": true,
+    "probs": {
+      "flooding": 1.0,
+      "non_environmental": 0.0,
+      "pollution": 0.0,
+      "waste": 0.0
+    }
+  },
+  {
+    "image_id": "FLD_030",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_030.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "confidence": 0.9843,
+    "correct": true,
+    "probs": {
+      "flooding": 0.9843,
+      "non_environmental": 0.0125,
+      "pollution": 0.0001,
+      "waste": 0.0031
+    }
+  },
+  {
+    "image_id": "FLD_002",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\flooding/FLD_002.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "confidence": 0.7429,
+    "correct": false,
+    "probs": {
+      "flooding": 0.1312,
+      "non_environmental": 0.7429,
+      "pollution": 0.1243,
+      "waste": 0.0016
+    }
+  },
+  {
+    "image_id": "NEG_080",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_080.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "confidence": 0.4709,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0576,
+      "non_environmental": 0.4709,
+      "pollution": 0.0144,
+      "waste": 0.4571
+    }
+  },
+  {
+    "image_id": "NEG_042",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_042.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "confidence": 0.46,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0002,
+      "non_environmental": 0.46,
+      "pollution": 0.1051,
+      "waste": 0.4347
+    }
+  },
+  {
+    "image_id": "NEG_059",
+    "image_path": "c:/dev/datasets\\data\\processed\\NEG_059.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "flooding",
+    "confidence": 0.9795,
+    "correct": false,
+    "probs": {
+      "flooding": 0.9795,
+      "non_environmental": 0.0156,
+      "pollution": 0.0017,
+      "waste": 0.0032
+    }
+  },
+  {
+    "image_id": "NEG_049",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_049.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "confidence": 0.9983,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0017,
+      "non_environmental": 0.9983,
+      "pollution": 0.0,
+      "waste": 0.0
+    }
+  },
+  {
+    "image_id": "NEG_099",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_099.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "waste",
+    "confidence": 0.9991,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0,
+      "non_environmental": 0.0001,
+      "pollution": 0.0008,
+      "waste": 0.9991
+    }
+  },
+  {
+    "image_id": "NEG_058",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_058.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "confidence": 0.8629,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0162,
+      "non_environmental": 0.8629,
+      "pollution": 0.0176,
+      "waste": 0.1032
+    }
+  },
+  {
+    "image_id": "NEG_076",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_076.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "pollution",
+    "confidence": 0.8988,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0861,
+      "non_environmental": 0.0015,
+      "pollution": 0.8988,
+      "waste": 0.0136
+    }
+  },
+  {
+    "image_id": "NEG_033",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_033.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "confidence": 0.9306,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0068,
+      "non_environmental": 0.9306,
+      "pollution": 0.0107,
+      "waste": 0.0519
+    }
+  },
+  {
+    "image_id": "NEG_095",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_095.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "confidence": 0.5108,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0017,
+      "non_environmental": 0.5108,
+      "pollution": 0.2035,
+      "waste": 0.284
+    }
+  },
+  {
+    "image_id": "NEG_060",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_060.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "waste",
+    "confidence": 0.9973,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0008,
+      "non_environmental": 0.0004,
+      "pollution": 0.0014,
+      "waste": 0.9973
+    }
+  },
+  {
+    "image_id": "NEG_064",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_064.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "confidence": 0.9055,
+    "correct": true,
+    "probs": {
+      "flooding": 0.007,
+      "non_environmental": 0.9055,
+      "pollution": 0.003,
+      "waste": 0.0846
+    }
+  },
+  {
+    "image_id": "NEG_085",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_085.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "pollution",
+    "confidence": 0.4495,
+    "correct": false,
+    "probs": {
+      "flooding": 0.2415,
+      "non_environmental": 0.1281,
+      "pollution": 0.4495,
+      "waste": 0.1808
+    }
+  },
+  {
+    "image_id": "NEG_038",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_038.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "confidence": 0.5578,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0154,
+      "non_environmental": 0.5578,
+      "pollution": 0.3938,
+      "waste": 0.033
+    }
+  },
+  {
+    "image_id": "NEG_030",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_030.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "flooding",
+    "confidence": 0.6736,
+    "correct": false,
+    "probs": {
+      "flooding": 0.6736,
+      "non_environmental": 0.0676,
+      "pollution": 0.258,
+      "waste": 0.0008
+    }
+  },
+  {
+    "image_id": "NEG_002",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\non_environmental/NEG_002.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "confidence": 0.7011,
+    "correct": true,
+    "probs": {
+      "flooding": 0.2367,
+      "non_environmental": 0.7011,
+      "pollution": 0.0286,
+      "waste": 0.0336
+    }
+  },
+  {
+    "image_id": "POL_003",
+    "image_path": "c:/dev/datasets\\data\\processed\\POL_003.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "confidence": 0.9538,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0003,
+      "non_environmental": 0.0,
+      "pollution": 0.9538,
+      "waste": 0.0458
+    }
+  },
+  {
+    "image_id": "POL_044",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\pollution/POL_044.jpg",
+    "true_label": "pollution",
+    "pred_label": "flooding",
+    "confidence": 0.6012,
+    "correct": false,
+    "probs": {
+      "flooding": 0.6012,
+      "non_environmental": 0.2936,
+      "pollution": 0.1049,
+      "waste": 0.0002
+    }
+  },
+  {
+    "image_id": "POL_036",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\pollution/POL_036.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "confidence": 0.927,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0,
+      "non_environmental": 0.0007,
+      "pollution": 0.927,
+      "waste": 0.0722
+    }
+  },
+  {
+    "image_id": "POL_024",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\pollution/POL_024.jpg",
+    "true_label": "pollution",
+    "pred_label": "non_environmental",
+    "confidence": 0.5981,
+    "correct": false,
+    "probs": {
+      "flooding": 0.1871,
+      "non_environmental": 0.5981,
+      "pollution": 0.0905,
+      "waste": 0.1244
+    }
+  },
+  {
+    "image_id": "POL_041",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\pollution/POL_041.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "confidence": 0.7395,
+    "correct": true,
+    "probs": {
+      "flooding": 0.1416,
+      "non_environmental": 0.107,
+      "pollution": 0.7395,
+      "waste": 0.0119
+    }
+  },
+  {
+    "image_id": "POL_011",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\pollution/POL_011.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "confidence": 0.8622,
+    "correct": false,
+    "probs": {
+      "flooding": 0.041,
+      "non_environmental": 0.0002,
+      "pollution": 0.0966,
+      "waste": 0.8622
+    }
+  },
+  {
+    "image_id": "POL_023",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\pollution/POL_023.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "confidence": 0.967,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0001,
+      "non_environmental": 0.0113,
+      "pollution": 0.0216,
+      "waste": 0.967
+    }
+  },
+  {
+    "image_id": "POL_019",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\pollution/POL_019.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "confidence": 0.5598,
+    "correct": false,
+    "probs": {
+      "flooding": 0.1403,
+      "non_environmental": 0.0079,
+      "pollution": 0.292,
+      "waste": 0.5598
+    }
+  },
+  {
+    "image_id": "WST_080",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_080.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "confidence": 0.9991,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0003,
+      "non_environmental": 0.0,
+      "pollution": 0.0005,
+      "waste": 0.9991
+    }
+  },
+  {
+    "image_id": "WST_042",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_042.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "confidence": 0.993,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0013,
+      "non_environmental": 0.001,
+      "pollution": 0.0047,
+      "waste": 0.993
+    }
+  },
+  {
+    "image_id": "WST_059",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_059.jpg",
+    "true_label": "waste",
+    "pred_label": "pollution",
+    "confidence": 0.9073,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0,
+      "non_environmental": 0.0013,
+      "pollution": 0.9073,
+      "waste": 0.0914
+    }
+  },
+  {
+    "image_id": "WST_049",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_049.jpg",
+    "true_label": "waste",
+    "pred_label": "pollution",
+    "confidence": 0.6023,
+    "correct": false,
+    "probs": {
+      "flooding": 0.212,
+      "non_environmental": 0.0646,
+      "pollution": 0.6023,
+      "waste": 0.1211
+    }
+  },
+  {
+    "image_id": "WST_099",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_099.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "confidence": 0.9239,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0187,
+      "non_environmental": 0.0571,
+      "pollution": 0.0002,
+      "waste": 0.9239
+    }
+  },
+  {
+    "image_id": "WST_058",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_058.jpg",
+    "true_label": "waste",
+    "pred_label": "non_environmental",
+    "confidence": 0.6677,
+    "correct": false,
+    "probs": {
+      "flooding": 0.2748,
+      "non_environmental": 0.6677,
+      "pollution": 0.0547,
+      "waste": 0.0028
+    }
+  },
+  {
+    "image_id": "WST_076",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_076.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "confidence": 0.9998,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0,
+      "non_environmental": 0.0,
+      "pollution": 0.0002,
+      "waste": 0.9998
+    }
+  },
+  {
+    "image_id": "WST_033",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_033.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "confidence": 0.9789,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0012,
+      "non_environmental": 0.0129,
+      "pollution": 0.007,
+      "waste": 0.9789
+    }
+  },
+  {
+    "image_id": "WST_095",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_095.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "confidence": 0.9892,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0041,
+      "non_environmental": 0.002,
+      "pollution": 0.0047,
+      "waste": 0.9892
+    }
+  },
+  {
+    "image_id": "WST_060",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_060.jpg",
+    "true_label": "waste",
+    "pred_label": "pollution",
+    "confidence": 0.5445,
+    "correct": false,
+    "probs": {
+      "flooding": 0.3802,
+      "non_environmental": 0.0702,
+      "pollution": 0.5445,
+      "waste": 0.005
+    }
+  },
+  {
+    "image_id": "WST_064",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_064.jpg",
+    "true_label": "waste",
+    "pred_label": "non_environmental",
+    "confidence": 0.9,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0017,
+      "non_environmental": 0.9,
+      "pollution": 0.0065,
+      "waste": 0.0918
+    }
+  },
+  {
+    "image_id": "WST_085",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_085.jpg",
+    "true_label": "waste",
+    "pred_label": "pollution",
+    "confidence": 0.8465,
+    "correct": false,
+    "probs": {
+      "flooding": 0.0024,
+      "non_environmental": 0.1067,
+      "pollution": 0.8465,
+      "waste": 0.0444
+    }
+  },
+  {
+    "image_id": "WST_038",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_038.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "confidence": 0.999,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0005,
+      "non_environmental": 0.0,
+      "pollution": 0.0005,
+      "waste": 0.999
+    }
+  },
+  {
+    "image_id": "WST_030",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_030.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "confidence": 0.7245,
+    "correct": true,
+    "probs": {
+      "flooding": 0.2301,
+      "non_environmental": 0.0452,
+      "pollution": 0.0002,
+      "waste": 0.7245
+    }
+  },
+  {
+    "image_id": "WST_002",
+    "image_path": "c:/dev/datasets\\ecopin_dataset\\raw\\waste/WST_002.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "confidence": 0.9949,
+    "correct": true,
+    "probs": {
+      "flooding": 0.0012,
+      "non_environmental": 0.0,
+      "pollution": 0.0039,
+      "waste": 0.9949
+    }
+  }
+]
