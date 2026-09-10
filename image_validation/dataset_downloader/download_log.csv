@@ -1,0 +1,313 @@
+timestamp,excel_row,image_id,source,filename,status,destination,error
+2026-09-10T17:01:18,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T17:01:18,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T17:01:49,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T17:01:49,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T17:36:46,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T17:36:46,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T17:37:13,102,WST_101,Flickr,WST_101.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/joegoaukdirtypanjim8/21975130108/
+  Please download the original image manually."
+2026-09-10T18:24:52,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:24:52,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:26:34,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:26:34,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:28:35,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:28:35,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:29:08,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:29:08,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:29:23,7,WST_006,Wikimedia Commons,WST_006.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_006.jpg,
+2026-09-10T18:29:47,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:29:47,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:30:29,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:30:29,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:30:55,102,WST_101,Flickr,WST_101.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_101.jpg,
+2026-09-10T18:35:02,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:35:02,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:35:07,103,WST_102,Flickr,WST_102.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/joegoauk73/23099017192/
+  Please download the original image manually."
+2026-09-10T18:58:59,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:58:59,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T18:59:04,103,WST_102,Flickr,WST_102.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/joegoauk73/23099017192/
+  Please download the original image manually."
+2026-09-10T19:09:09,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:09:09,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:09:14,103,WST_102,Flickr,WST_102.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/joegoauk73/23099017192/
+  Please download the original image manually."
+2026-09-10T19:25:51,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:25:51,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:27:25,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:27:25,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:27:30,103,WST_102,Flickr,WST_102.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/joegoauk73/23099017192/
+  Please download the original image manually."
+2026-09-10T19:34:18,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:34:18,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:34:49,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:34:49,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T19:34:54,103,WST_102,Flickr,WST_102.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/joegoauk73/23099017192/
+  Please download the original image manually."
+2026-09-10T20:01:59,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:01:59,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:02:04,105,WST_104,Flickr,WST_104.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/bbailey/40853322053/
+  Please download the original image manually."
+2026-09-10T20:10:21,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:10:21,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:10:26,105,WST_104,Flickr,WST_104.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/bbailey/40853322053/
+  Please download the original image manually."
+2026-09-10T20:30:13,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:30:13,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:30:36,105,WST_104,Flickr,WST_104.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_104.jpg,
+2026-09-10T20:31:11,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:31:11,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:31:16,103,WST_102,Flickr,WST_102.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/joegoauk73/23099017192/
+  Please download the original image manually."
+2026-09-10T20:32:20,104,WST_103,Flickr,WST_103.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/joegoauk73/25907251252/
+  Please download the original image manually."
+2026-09-10T20:32:31,106,WST_105,Flickr,WST_105.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/nahemoth/15031664194/
+  Please download the original image manually."
+2026-09-10T20:32:43,107,WST_106,Flickr,WST_106.jpg,manual_intervention_required,c:\dev\datasets\ecopin_dataset\raw\waste,"Could not find the download button on the Flickr page.
+  URL: https://www.flickr.com/photos/dirgni/2369465057/
+  Please download the original image manually."
+2026-09-10T20:39:43,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:39:43,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:39:54,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:39:54,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:40:10,106,WST_105,Flickr,WST_105.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_105.jpg,
+2026-09-10T20:47:08,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:47:08,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T20:47:26,103,WST_102,Flickr,WST_102.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_102.jpg,
+2026-09-10T20:47:44,104,WST_103,Flickr,WST_103.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_103.jpg,
+2026-09-10T20:48:04,107,WST_106,Flickr,WST_106.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_106.jpg,
+2026-09-10T20:48:22,108,WST_107,Flickr,WST_107.png,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_107.png,
+2026-09-10T20:48:40,109,WST_108,Flickr,WST_108.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_108.jpg,
+2026-09-10T20:48:58,110,WST_109,Flickr,WST_109.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_109.jpg,
+2026-09-10T20:49:10,111,WST_110,Flickr,WST_110.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_110.jpg,
+2026-09-10T20:49:22,112,WST_111,Flickr,WST_111.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_111.jpg,
+2026-09-10T20:49:34,113,WST_112,Flickr,WST_112.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_112.jpg,
+2026-09-10T20:49:46,114,WST_113,Flickr,WST_113.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_113.jpg,
+2026-09-10T20:49:58,115,WST_114,Flickr,WST_114.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_114.jpg,
+2026-09-10T20:50:10,116,WST_115,Flickr,WST_115.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_115.jpg,
+2026-09-10T20:50:27,117,WST_116,Flickr,WST_116.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_116.jpg,
+2026-09-10T20:50:43,118,WST_117,Flickr,WST_117.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_117.jpg,
+2026-09-10T20:50:55,119,WST_118,Flickr,WST_118.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_118.jpg,
+2026-09-10T20:51:07,120,WST_119,Flickr,WST_119.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_119.jpg,
+2026-09-10T20:51:19,121,WST_120,Flickr,WST_120.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_120.jpg,
+2026-09-10T20:51:32,122,WST_121,Flickr,WST_121.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_121.jpg,
+2026-09-10T20:51:46,123,WST_122,Flickr,WST_122.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_122.jpg,
+2026-09-10T20:52:04,124,WST_123,Flickr,WST_123.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_123.jpg,
+2026-09-10T20:52:23,125,WST_124,Flickr,WST_124.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_124.jpg,
+2026-09-10T20:52:36,126,WST_125,Flickr,WST_125.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_125.jpg,
+2026-09-10T20:52:54,127,WST_126,Flickr,WST_126.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_126.jpg,
+2026-09-10T20:53:13,128,WST_127,Flickr,WST_127.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_127.jpg,
+2026-09-10T20:53:31,129,WST_128,Flickr,WST_128.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_128.jpg,
+2026-09-10T20:53:49,130,WST_129,Flickr,WST_129.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_129.jpg,
+2026-09-10T20:54:06,131,WST_130,Flickr,WST_130.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_130.jpg,
+2026-09-10T20:54:24,132,WST_131,Flickr,WST_131.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_131.jpg,
+2026-09-10T20:54:35,133,WST_132,Flickr,WST_132.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_132.jpg,
+2026-09-10T20:54:53,134,WST_133,Flickr,WST_133.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_133.jpg,
+2026-09-10T20:55:04,135,WST_134,Flickr,WST_134.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_134.jpg,
+2026-09-10T20:55:23,136,WST_135,Flickr,WST_135.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_135.jpg,
+2026-09-10T20:55:38,137,WST_136,Flickr,WST_136.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_136.jpg,
+2026-09-10T20:55:50,138,WST_137,Flickr,WST_137.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_137.jpg,
+2026-09-10T20:56:09,139,WST_138,Flickr,WST_138.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_138.jpg,
+2026-09-10T20:56:22,140,WST_139,Flickr,WST_139.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_139.jpg,
+2026-09-10T20:56:35,141,WST_140,Flickr,WST_140.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_140.jpg,
+2026-09-10T20:56:55,142,WST_141,Flickr,WST_141.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_141.jpg,
+2026-09-10T20:57:12,143,WST_142,Flickr,WST_142.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_142.jpg,
+2026-09-10T20:57:31,144,WST_143,Flickr,WST_143.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_143.jpg,
+2026-09-10T20:57:49,145,WST_144,Flickr,WST_144.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_144.jpg,
+2026-09-10T20:58:01,146,WST_145,Flickr,WST_145.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_145.jpg,
+2026-09-10T20:58:19,147,WST_146,Flickr,WST_146.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_146.jpg,
+2026-09-10T20:58:32,148,WST_147,Flickr,WST_147.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_147.jpg,
+2026-09-10T20:58:45,149,WST_148,Flickr,WST_148.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_148.jpg,
+2026-09-10T20:59:02,150,WST_149,Flickr,WST_149.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_149.jpg,
+2026-09-10T20:59:24,151,WST_150,Flickr,WST_150.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_150.jpg,
+2026-09-10T20:59:37,152,WST_151,Flickr,WST_151.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_151.jpg,
+2026-09-10T20:59:54,153,WST_152,Flickr,WST_152.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_152.jpg,
+2026-09-10T21:00:07,154,WST_153,Flickr,WST_153.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_153.jpg,
+2026-09-10T21:00:19,155,WST_154,Flickr,WST_154.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_154.jpg,
+2026-09-10T21:00:36,156,WST_155,Flickr,WST_155.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_155.jpg,
+2026-09-10T21:00:54,157,WST_156,Flickr,WST_156.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_156.jpg,
+2026-09-10T21:01:13,158,WST_157,Flickr,WST_157.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_157.jpg,
+2026-09-10T21:01:25,159,WST_158,Flickr,WST_158.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_158.jpg,
+2026-09-10T21:01:43,160,WST_159,Flickr,WST_159.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_159.jpg,
+2026-09-10T21:01:58,161,WST_160,Flickr,WST_160.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_160.jpg,
+2026-09-10T21:02:15,162,WST_161,Flickr,WST_161.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_161.jpg,
+2026-09-10T21:02:27,163,WST_162,Flickr,WST_162.png,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_162.png,
+2026-09-10T21:02:39,164,WST_163,Flickr,WST_163.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_163.jpg,
+2026-09-10T21:02:58,165,WST_164,Flickr,WST_164.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_164.jpg,
+2026-09-10T21:03:13,166,WST_165,Flickr,WST_165.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_165.jpg,
+2026-09-10T21:03:31,167,WST_166,Flickr,WST_166.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_166.jpg,
+2026-09-10T21:03:44,168,WST_167,Flickr,WST_167.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_167.jpg,
+2026-09-10T21:03:58,169,WST_168,Flickr,WST_168.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_168.jpg,
+2026-09-10T21:06:23,170,WST_169,Flickr,WST_169.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_169.jpg,
+2026-09-10T21:06:37,171,WST_170,Flickr,WST_170.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_170.jpg,
+2026-09-10T21:06:57,172,WST_171,Flickr,WST_171.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_171.jpg,
+2026-09-10T21:07:18,173,WST_172,Flickr,WST_172.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_172.jpg,
+2026-09-10T21:07:38,174,WST_173,Wikimedia Commons,WST_173.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_173.jpg,
+2026-09-10T21:07:57,175,WST_174,Wikimedia Commons,WST_174.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_174.jpg,
+2026-09-10T21:08:17,176,WST_175,Wikimedia Commons,WST_175.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_175.jpg,
+2026-09-10T21:08:35,177,WST_176,Wikimedia Commons,WST_176.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_176.jpg,
+2026-09-10T21:08:53,178,WST_177,Wikimedia Commons,WST_177.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_177.jpg,
+2026-09-10T21:09:05,179,WST_178,Flickr,WST_178.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_178.jpg,
+2026-09-10T21:09:25,180,WST_179,Wikimedia Commons,WST_179.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_179.jpg,
+2026-09-10T21:09:38,181,WST_180,Flickr,WST_180.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_180.jpg,
+2026-09-10T21:09:57,182,WST_181,Wikimedia Commons,WST_181.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_181.jpg,
+2026-09-10T21:10:15,183,WST_182,Wikimedia Commons,WST_182.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_182.jpg,
+2026-09-10T21:10:34,184,WST_183,Wikimedia Commons,WST_183.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_183.jpg,
+2026-09-10T21:10:53,185,WST_184,Wikimedia Commons,WST_184.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_184.jpg,
+2026-09-10T21:11:12,186,WST_185,Wikimedia Commons,WST_185.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_185.jpg,
+2026-09-10T21:11:30,187,WST_186,Wikimedia Commons,WST_186.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_186.jpg,
+2026-09-10T21:11:51,188,WST_187,Wikimedia Commons,WST_187.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_187.jpg,
+2026-09-10T21:12:10,189,WST_188,Wikimedia Commons,WST_188.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_188.jpg,
+2026-09-10T21:12:28,190,WST_189,Wikimedia Commons,WST_189.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_189.jpg,
+2026-09-10T21:12:48,191,WST_190,Wikimedia Commons,WST_190.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_190.jpg,
+2026-09-10T21:13:46,192,WST_191,Wikimedia Commons,WST_191.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/1/10/Ordures_01_derri%C3%A8re_l%27h%C3%B4pital_militaire_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=
+2026-09-10T21:14:04,193,WST_192,Wikimedia Commons,WST_192.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_192.jpg,
+2026-09-10T21:15:02,194,WST_193,Wikimedia Commons,WST_193.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/1/14/D%C3%A9chets_sur_la_route_%C3%A0_Mindoub%C3%A9_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=origin
+2026-09-10T21:15:32,195,WST_194,Wikimedia Commons,WST_194.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_194.jpg,
+2026-09-10T21:16:30,196,WST_195,Wikimedia Commons,WST_195.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/4/44/Ordures_%C3%A0_Nzeng-Ayong_06.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:16:48,197,WST_196,Wikimedia Commons,WST_196.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_196.jpg,
+2026-09-10T21:17:47,198,WST_197,Wikimedia Commons,WST_197.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/5/57/Nkolbisson06.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:18:44,199,WST_198,Wikimedia Commons,WST_198.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/9/9a/Ordures_1_au_sol%2C_Pk10.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:19:02,200,WST_199,Wikimedia Commons,WST_199.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_199.jpg,
+2026-09-10T21:20:00,201,WST_200,Wikimedia Commons,WST_200.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/e/e6/Ordures_m%C3%A9nag%C3%A8res_sur_la_route_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:20:57,202,WST_201,Wikimedia Commons,WST_201.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/4/41/Ordures_en_plein_carrefour_en_allant_vers_la_pompe.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=orig
+2026-09-10T21:21:16,203,WST_202,Wikimedia Commons,WST_202.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_202.jpg,
+2026-09-10T21:21:35,204,WST_203,Wikimedia Commons,WST_203.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_203.jpg,
+2026-09-10T21:21:53,205,WST_204,Wikimedia Commons,WST_204.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_204.jpg,
+2026-09-10T21:22:12,206,WST_205,Wikimedia Commons,WST_205.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_205.jpg,
+2026-09-10T21:23:10,207,WST_206,Wikimedia Commons,WST_206.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/7/7f/Poubelles_%C3%A0_Akanda.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:24:08,208,WST_207,Wikimedia Commons,WST_207.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/3/30/D%C3%A9chets_%C3%A0_Mindoub%C3%A9_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:24:26,209,WST_208,Wikimedia Commons,WST_208.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_208.jpg,
+2026-09-10T21:25:24,210,WST_209,Wikimedia Commons,WST_209.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/2/26/Ordures_1_%C3%A0_Nzeng-Ayong_04.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:25:43,211,WST_210,Wikimedia Commons,WST_210.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_210.jpg,
+2026-09-10T21:26:41,212,WST_211,Wikimedia Commons,WST_211.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/6/6b/D%C3%A9chets_et_eaux_us%C3%A9es_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:27:39,213,WST_212,Wikimedia Commons,WST_212.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/8/8e/D%C3%A9chets_%C3%A0_Mindoub%C3%A9_4.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:27:57,214,WST_213,Wikimedia Commons,WST_213.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_213.jpg,
+2026-09-10T21:28:15,215,WST_214,Wikimedia Commons,WST_214.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_214.jpg,
+2026-09-10T21:29:13,216,WST_215,Wikimedia Commons,WST_215.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/c/c9/Insalubrit%C3%A9_%C3%A0_Mindoub%C3%A9_16.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:30:11,217,WST_216,Wikimedia Commons,WST_216.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/2/28/Ordures_sur_la_route_%C3%A0_Cocotier.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:31:09,218,WST_217,Wikimedia Commons,WST_217.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/6/64/Dili_2019_Merry_Christmas_Graffiti.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:32:07,219,WST_218,Wikimedia Commons,WST_218.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/b/b7/Ordures_%C3%A0_Nzeng-Ayong_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:32:25,220,WST_219,Wikimedia Commons,WST_219.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_219.jpg,
+2026-09-10T21:32:43,221,WST_220,Wikimedia Commons,WST_220.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_220.jpg,
+2026-09-10T21:33:41,222,WST_221,Wikimedia Commons,WST_221.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/6/64/Immondices_%C3%A0_l%27ancienne_base_Razel_Bafoussam.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=ori
+2026-09-10T21:34:39,223,WST_222,Wikimedia Commons,WST_222.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/9/9c/Ordures_1_%C3%A0_Nzeng-Ayong_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:34:58,224,WST_223,Wikimedia Commons,WST_223.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_223.jpg,
+2026-09-10T21:35:56,225,WST_224,Wikimedia Commons,WST_224.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/f/f8/D%C3%A9p%C3%B4t_d%27ordures_m%C3%A9nag%C3%A8res_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=orig
+2026-09-10T21:36:54,226,WST_225,Wikimedia Commons,WST_225.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/2/26/Polution_de_la_route_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:37:52,227,WST_226,Wikimedia Commons,WST_226.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/c/c8/Ordures_%C3%A0_Nzeng-Ayong_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:38:50,228,WST_227,Wikimedia Commons,WST_227.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/04/D%C3%A9chets_%C3%A0_Mindoub%C3%A9_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:39:48,229,WST_228,Wikimedia Commons,WST_228.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/7/7b/Bac_%C3%A0_ordures_de_la_commune_de_Chemini.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:40:07,230,WST_229,Wikimedia Commons,WST_229.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_229.jpg,
+2026-09-10T21:41:04,231,WST_230,Wikimedia Commons,WST_230.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/a/a7/Ordures_%C3%A0_Nzeng-Ayong_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:42:02,232,WST_231,Wikimedia Commons,WST_231.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/c/c5/Insalubrit%C3%A9_%C3%A0_Mindoub%C3%A9_21.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:42:59,233,WST_232,Wikimedia Commons,WST_232.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/7/7d/Ordures_m%C3%A9nag%C3%A8res_laiss%C3%A9es_sur_la_route.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=
+2026-09-10T21:43:57,234,WST_233,Wikimedia Commons,WST_233.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/8/84/Polution_de_la_route.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:44:15,235,WST_234,Wikimedia Commons,WST_234.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_234.jpg,
+2026-09-10T21:45:12,236,WST_235,Wikimedia Commons,WST_235.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/c/c8/Ordures_d%C3%A9pos%C3%A9es_devant_un_portail.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:46:11,237,WST_236,Wikimedia Commons,WST_236.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/01/Ordures.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:46:29,238,WST_237,Wikimedia Commons,WST_237.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_237.jpg,
+2026-09-10T21:46:48,239,WST_238,Wikimedia Commons,WST_238.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_238.jpg,
+2026-09-10T21:47:45,240,WST_239,Wikimedia Commons,WST_239.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/f/f9/Insalubrit%C3%A9_au_quartier_Dragages.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:48:04,241,WST_240,Wikimedia Commons,WST_240.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_240.jpg,
+2026-09-10T21:48:23,242,WST_241,Wikimedia Commons,WST_241.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_241.jpg,
+2026-09-10T21:49:20,243,WST_242,Wikimedia Commons,WST_242.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/06/Rubbish_dumped_by_the_Midland_railway_line_-_geograph.org.uk_-_5386679.jpg?utm_source=commons.wikimedia.org&utm_campaign=in
+2026-09-10T21:50:17,244,WST_243,Wikimedia Commons,WST_243.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/1/10/Rubbish_dumping_near_the_footbridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:51:14,245,WST_244,Wikimedia Commons,WST_244.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/9/93/These_Coconuts_are_Rubbish%21_%2815372800050%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=origina
+2026-09-10T21:52:12,246,WST_245,Wikimedia Commons,WST_245.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/e/e1/Ordures_en_plein_rond-point_de_Nzeng-Ayong_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:53:09,247,WST_246,Wikimedia Commons,WST_246.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/6/6d/Ordures_m%C3%A9nag%C3%A8res_au_sol.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:54:06,248,WST_247,Wikimedia Commons,WST_247.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/5/53/Headingley_Avenue_at_night_during_the_2009_Leeds_refuse_strike.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_
+2026-09-10T21:54:24,249,WST_248,Wikimedia Commons,WST_248.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_248.jpg,
+2026-09-10T21:55:22,250,WST_249,Wikimedia Commons,WST_249.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/e/e1/Rubbish_dump_at_a_sports_centre%2C_Terbregge%2C_Rotterdam_%282020%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=i
+2026-09-10T21:56:19,251,WST_250,Wikimedia Commons,WST_250.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/02/Trash_can_on_University_Avenue_%2810540656736%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=origin
+2026-09-10T21:56:37,352,FLD_101,Wikimedia Commons,FLD_101.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\flooding\FLD_101.jpg,
+2026-09-10T21:57:35,353,FLD_102,Wikimedia Commons,FLD_102.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/8/85/Flood_waters_rising_%281178%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T21:57:54,354,FLD_103,Wikimedia Commons,FLD_103.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\flooding\FLD_103.jpg,
+2026-09-10T21:58:51,355,FLD_104,Wikimedia Commons,FLD_104.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/5/5b/Inunda%C3%A7%C3%A3o_em_Vit%C3%B3ria_de_Santo_Ant%C3%A3o_%2814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&ut
+2026-09-10T21:59:49,356,FLD_105,Wikimedia Commons,FLD_105.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/b/b5/FEMA_-_38330_-_Indiana_TF-1_US%26R_in_a_flooded_neighborhood_in_Texas.jpg?utm_source=commons.wikimedia.org&utm_campaign=ind
+2026-09-10T22:00:49,357,FLD_106,Wikimedia Commons,FLD_106.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/09/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2881286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T22:01:47,358,FLD_107,Wikimedia Commons,FLD_107.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/7/76/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2833371%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T22:02:45,359,FLD_108,Wikimedia Commons,FLD_108.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/01/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2864619%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T22:03:43,360,FLD_109,Wikimedia Commons,FLD_109.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/1/1a/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2845572%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T22:04:41,361,FLD_110,Wikimedia Commons,FLD_110.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/5/59/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2851010%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T22:05:01,362,FLD_111,Wikimedia Commons,FLD_111.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\flooding\FLD_111.jpg,
+2026-09-10T22:05:59,363,FLD_112,Wikimedia Commons,FLD_112.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/f/f7/20240906_Carrer_de_Bacelona_Arago_Salou_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:06:56,364,FLD_113,Wikimedia Commons,FLD_113.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/e/e9/Texas_National_Guard_%2836848501295%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:07:54,365,FLD_114,Wikimedia Commons,FLD_114.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/d/d2/Environmental_Images-_2004_-_Water_Pollution_%28412-EPD-Water_Pollutionsewer_overflow1.jpg%29_-_DPLA_-_3cf39ad651121163706f
+2026-09-10T22:08:51,366,FLD_115,Wikimedia Commons,FLD_115.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/4/4a/Surroundings_%285268481279%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:09:49,367,FLD_116,Wikimedia Commons,FLD_116.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/4/43/HK_Sheung_Wan_Wing_Lok_Street_121_Floods_a.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:10:07,368,FLD_117,Wikimedia Commons,FLD_117.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\flooding\FLD_117.jpg,
+2026-09-10T22:11:04,369,FLD_118,Wikimedia Commons,FLD_118.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/9/99/4244Typhoons_Krosa_Lekima_%26_monsoon_tidal_flooding_in_Calumpit%2C_Bulacan_21.jpg?utm_source=commons.wikimedia.org&utm_cam
+2026-09-10T22:11:25,370,FLD_119,Flickr,FLD_119.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\flooding\FLD_119.jpg,
+2026-09-10T22:11:30,371,FLD_120,Flickr,FLD_120.jpg,blocked,,"Blocking/rate-limit detected! Keyword: '429'
+  Page title: floods | This was the only time I've been in Vietnam. I hadn… | Flickr
+  URL: https://www.flickr.com/photos/helen61/4586526491/"
+2026-09-10T22:38:44,9,WST_008,Wikimedia Commons,WST_008.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T22:38:44,11,WST_010,Wikimedia Commons,WST_010.jpg,manual_intervention_required,,"Partial highlight: yellow_cols=[8, 20]"
+2026-09-10T22:39:00,192,WST_191,Wikimedia Commons,WST_191.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_191.jpg,
+2026-09-10T22:39:18,194,WST_193,Wikimedia Commons,WST_193.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_193.jpg,
+2026-09-10T22:39:36,196,WST_195,Wikimedia Commons,WST_195.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_195.jpg,
+2026-09-10T22:39:54,198,WST_197,Wikimedia Commons,WST_197.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_197.jpg,
+2026-09-10T22:40:12,199,WST_198,Wikimedia Commons,WST_198.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_198.jpg,
+2026-09-10T22:40:30,201,WST_200,Wikimedia Commons,WST_200.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_200.jpg,
+2026-09-10T22:40:48,202,WST_201,Wikimedia Commons,WST_201.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_201.jpg,
+2026-09-10T22:41:06,207,WST_206,Wikimedia Commons,WST_206.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_206.jpg,
+2026-09-10T22:41:24,208,WST_207,Wikimedia Commons,WST_207.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_207.jpg,
+2026-09-10T22:41:42,210,WST_209,Wikimedia Commons,WST_209.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_209.jpg,
+2026-09-10T22:42:00,212,WST_211,Wikimedia Commons,WST_211.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_211.jpg,
+2026-09-10T22:42:18,213,WST_212,Wikimedia Commons,WST_212.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\waste\WST_212.jpg,
+2026-09-10T22:43:15,216,WST_215,Wikimedia Commons,WST_215.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/c/c9/Insalubrit%C3%A9_%C3%A0_Mindoub%C3%A9_16.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:44:11,217,WST_216,Wikimedia Commons,WST_216.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/2/28/Ordures_sur_la_route_%C3%A0_Cocotier.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:45:08,218,WST_217,Wikimedia Commons,WST_217.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/6/64/Dili_2019_Merry_Christmas_Graffiti.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:46:05,219,WST_218,Wikimedia Commons,WST_218.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/b/b7/Ordures_%C3%A0_Nzeng-Ayong_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:47:01,222,WST_221,Wikimedia Commons,WST_221.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/6/64/Immondices_%C3%A0_l%27ancienne_base_Razel_Bafoussam.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=ori
+2026-09-10T22:47:58,223,WST_222,Wikimedia Commons,WST_222.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/9/9c/Ordures_1_%C3%A0_Nzeng-Ayong_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:48:55,225,WST_224,Wikimedia Commons,WST_224.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/f/f8/D%C3%A9p%C3%B4t_d%27ordures_m%C3%A9nag%C3%A8res_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=orig
+2026-09-10T22:49:51,226,WST_225,Wikimedia Commons,WST_225.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/2/26/Polution_de_la_route_3.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:50:48,227,WST_226,Wikimedia Commons,WST_226.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/c/c8/Ordures_%C3%A0_Nzeng-Ayong_07.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:51:45,228,WST_227,Wikimedia Commons,WST_227.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/04/D%C3%A9chets_%C3%A0_Mindoub%C3%A9_7.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:52:42,229,WST_228,Wikimedia Commons,WST_228.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/7/7b/Bac_%C3%A0_ordures_de_la_commune_de_Chemini.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:53:38,231,WST_230,Wikimedia Commons,WST_230.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/a/a7/Ordures_%C3%A0_Nzeng-Ayong_03.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:54:35,232,WST_231,Wikimedia Commons,WST_231.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/c/c5/Insalubrit%C3%A9_%C3%A0_Mindoub%C3%A9_21.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:55:32,233,WST_232,Wikimedia Commons,WST_232.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/7/7d/Ordures_m%C3%A9nag%C3%A8res_laiss%C3%A9es_sur_la_route.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=
+2026-09-10T22:56:28,234,WST_233,Wikimedia Commons,WST_233.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/8/84/Polution_de_la_route.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:57:25,236,WST_235,Wikimedia Commons,WST_235.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/c/c8/Ordures_d%C3%A9pos%C3%A9es_devant_un_portail.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:58:22,237,WST_236,Wikimedia Commons,WST_236.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/01/Ordures.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T22:59:18,240,WST_239,Wikimedia Commons,WST_239.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/f/f9/Insalubrit%C3%A9_au_quartier_Dragages.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T23:00:15,243,WST_242,Wikimedia Commons,WST_242.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/06/Rubbish_dumped_by_the_Midland_railway_line_-_geograph.org.uk_-_5386679.jpg?utm_source=commons.wikimedia.org&utm_campaign=in
+2026-09-10T23:01:12,244,WST_243,Wikimedia Commons,WST_243.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/1/10/Rubbish_dumping_near_the_footbridge.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T23:02:08,245,WST_244,Wikimedia Commons,WST_244.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/9/93/These_Coconuts_are_Rubbish%21_%2815372800050%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=origina
+2026-09-10T23:03:05,246,WST_245,Wikimedia Commons,WST_245.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/e/e1/Ordures_en_plein_rond-point_de_Nzeng-Ayong_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T23:04:02,247,WST_246,Wikimedia Commons,WST_246.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/6/6d/Ordures_m%C3%A9nag%C3%A8res_au_sol.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T23:04:58,248,WST_247,Wikimedia Commons,WST_247.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/5/53/Headingley_Avenue_at_night_during_the_2009_Leeds_refuse_strike.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_
+2026-09-10T23:05:55,250,WST_249,Wikimedia Commons,WST_249.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/e/e1/Rubbish_dump_at_a_sports_centre%2C_Terbregge%2C_Rotterdam_%282020%29_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=i
+2026-09-10T23:06:52,251,WST_250,Wikimedia Commons,WST_250.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/02/Trash_can_on_University_Avenue_%2810540656736%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=origin
+2026-09-10T23:07:48,353,FLD_102,Wikimedia Commons,FLD_102.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/8/85/Flood_waters_rising_%281178%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T23:08:45,355,FLD_104,Wikimedia Commons,FLD_104.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/5/5b/Inunda%C3%A7%C3%A3o_em_Vit%C3%B3ria_de_Santo_Ant%C3%A3o_%2814%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&ut
+2026-09-10T23:09:42,356,FLD_105,Wikimedia Commons,FLD_105.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/b/b5/FEMA_-_38330_-_Indiana_TF-1_US%26R_in_a_flooded_neighborhood_in_Texas.jpg?utm_source=commons.wikimedia.org&utm_campaign=ind
+2026-09-10T23:10:39,357,FLD_106,Wikimedia Commons,FLD_106.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/09/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2881286%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T23:11:35,358,FLD_107,Wikimedia Commons,FLD_107.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/7/76/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2833371%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T23:12:32,359,FLD_108,Wikimedia Commons,FLD_108.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/0/01/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2864619%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T23:13:29,360,FLD_109,Wikimedia Commons,FLD_109.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/1/1a/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2845572%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T23:14:25,361,FLD_110,Wikimedia Commons,FLD_110.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/5/59/Water_logging_in_Goel_Ganga_Khau_Galli_after_April_2026_rain_%2851010%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=
+2026-09-10T23:15:22,363,FLD_112,Wikimedia Commons,FLD_112.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/f/f7/20240906_Carrer_de_Bacelona_Arago_Salou_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T23:16:19,364,FLD_113,Wikimedia Commons,FLD_113.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/e/e9/Texas_National_Guard_%2836848501295%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T23:17:16,365,FLD_114,Wikimedia Commons,FLD_114.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/d/d2/Environmental_Images-_2004_-_Water_Pollution_%28412-EPD-Water_Pollutionsewer_overflow1.jpg%29_-_DPLA_-_3cf39ad651121163706f
+2026-09-10T23:17:34,366,FLD_115,Wikimedia Commons,FLD_115.jpg,downloaded,c:\dev\datasets\ecopin_dataset\raw\flooding\FLD_115.jpg,
+2026-09-10T23:18:30,367,FLD_116,Wikimedia Commons,FLD_116.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/4/43/HK_Sheung_Wan_Wing_Lok_Street_121_Floods_a.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original
+2026-09-10T23:19:27,369,FLD_118,Wikimedia Commons,FLD_118.jpg,failed,,HTTP fetch failed (429): https://upload.wikimedia.org/wikipedia/commons/9/99/4244Typhoons_Krosa_Lekima_%26_monsoon_tidal_flooding_in_Calumpit%2C_Bulacan_21.jpg?utm_source=commons.wikimedia.org&utm_cam
+2026-09-10T23:19:32,371,FLD_120,Flickr,FLD_120.jpg,blocked,,"Blocking/rate-limit detected! Keyword: '429'
+  Page title: floods | This was the only time I've been in Vietnam. I hadn… | Flickr
+  URL: https://www.flickr.com/photos/helen61/4586526491/"
