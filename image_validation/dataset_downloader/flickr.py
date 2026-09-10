@@ -22,9 +22,12 @@ from typing import Optional
 
 from playwright.sync_api import Page, TimeoutError as PWTimeoutError
 
+import requests
+
 import config
 from browser import BlockingDetectedError, BrowserManager
 from logger import Logger
+from rate_limiter import RateLimitError, parse_retry_after
 
 
 class FlickrDownloadError(Exception):
@@ -35,9 +38,8 @@ class FlickrManualRequired(Exception):
     pass
 
 
-# CSS selectors for the download button on Flickr photo pages
+# CSS selectors for the download button on Flickr photo pages (fallback)
 _DOWNLOAD_BUTTON_SELECTORS = [
-    # The download arrow icon button (data-testid attribute)
     "[data-testid='download-icon']",
     "button[title*='Download' i]",
     "a[title*='Download' i]",
@@ -69,6 +71,100 @@ _SIZE_OPTION_SELECTORS = [
 ]
 
 
+def _download_via_oembed(source_url: str, download_dir: str) -> Optional[str]:
+    """
+    Query Flickr official oEmbed API to resolve a static CDN image URL.
+
+    The oEmbed 'thumbnail_url' is always a small thumbnail (e.g. _q or _m suffix).
+    We upgrade it to the large size (_b.jpg = 1024px) by replacing the size suffix.
+    This is a public, unauthenticated, CDN URL -- no API key required.
+
+    Returns local path on success, or None to trigger browser fallback.
+    Raises RateLimitError if throttled (429/503).
+    """
+    if "flickr.com/photos/" not in source_url:
+        return None
+
+    oembed_url = f"https://www.flickr.com/services/oembed/?url={source_url}&format=json"
+    headers = {"User-Agent": config.FLICKR_USER_AGENT}
+
+    try:
+        res = requests.get(oembed_url, headers=headers, timeout=15.0)
+
+        if res.status_code in (429, 503):
+            retry_after = parse_retry_after(res.headers.get("Retry-After"))
+            raise RateLimitError(
+                f"Flickr oEmbed API returned HTTP {res.status_code} (Rate Limited)",
+                retry_after=retry_after,
+                source=config.SOURCE_FLICKR,
+            )
+
+        if not res.ok:
+            Logger.warn(f"  Flickr oEmbed API returned HTTP {res.status_code} -- using browser fallback")
+            return None
+
+        data = res.json()
+
+        # oEmbed 'thumbnail_url' is a small CDN image like:
+        #   https://live.staticflickr.com/SERVERID/PHOTOID_HASH_q.jpg   (75x75)
+        # Upgrade to _b suffix (longest edge = 1024px, always public)
+        thumb_url = data.get("thumbnail_url", "")
+        if not thumb_url or "staticflickr.com" not in thumb_url:
+            Logger.warn("  Flickr oEmbed did not return a staticflickr.com thumbnail -- using browser fallback")
+            return None
+
+        import re
+        # Replace size suffix: _q, _m, _s, _t, _n, _w, _z, _c, _l, _h, _k, _o -> _b
+        large_url = re.sub(r"_[qmstznwchlko]\.jpg$", "_b.jpg", thumb_url)
+        if large_url == thumb_url:
+            # No recognisable suffix to upgrade; strip any suffix and try _b
+            large_url = re.sub(r"_[^._]+\.jpg$", "_b.jpg", thumb_url)
+
+        Logger.info(f"  Resolved large CDN URL via Flickr oEmbed API: {large_url}")
+
+        # Stream direct image download from static CDN
+        img_res = requests.get(large_url, headers=headers, stream=True, timeout=30.0)
+
+        if img_res.status_code in (429, 503):
+            retry_after = parse_retry_after(img_res.headers.get("Retry-After"))
+            raise RateLimitError(
+                f"Flickr CDN returned HTTP {img_res.status_code} (Rate Limited)",
+                retry_after=retry_after,
+                source=config.SOURCE_FLICKR,
+            )
+
+        if img_res.status_code == 403:
+            # Photo is access-restricted (private/friend-only); cannot download without login
+            Logger.warn("  Flickr CDN returned 403 -- photo may be private or restricted. Using browser fallback.")
+            return None
+
+        if not img_res.ok:
+            Logger.warn(f"  Flickr CDN returned HTTP {img_res.status_code} for large URL -- using browser fallback")
+            return None
+
+        os.makedirs(download_dir, exist_ok=True)
+        filename = os.path.basename(large_url.split("?")[0]) or "flickr_download.jpg"
+        dest_path = os.path.join(download_dir, filename)
+
+        with open(dest_path, "wb") as f:
+            for chunk in img_res.iter_content(chunk_size=65536):
+                if chunk:
+                    f.write(chunk)
+
+        if os.path.isfile(dest_path) and os.path.getsize(dest_path) > 0:
+            Logger.info(f"  Downloaded via Flickr oEmbed+CDN: {dest_path}")
+            return dest_path
+
+    except RateLimitError:
+        raise
+    except requests.exceptions.ConnectionError as ex:
+        Logger.warn(f"  Flickr oEmbed connection error ({ex}) -- using browser fallback")
+    except Exception as ex:
+        Logger.warn(f"  Flickr oEmbed API resolution encountered error ({ex}) -- using browser fallback")
+
+    return None
+
+
 def download_from_flickr(
     bm:           BrowserManager,
     source_url:   str,
@@ -82,29 +178,39 @@ def download_from_flickr(
         FlickrDownloadError    -- unrecoverable download failure
         FlickrManualRequired   -- page structure not recognised / login required
         BlockingDetectedError  -- rate limit / CAPTCHA detected
+        RateLimitError         -- server throttling / 429 response
     """
-    page: Page = bm.page
-
     Logger.info("Source: Flickr")
     Logger.info(f"URL: {source_url}")
 
-    # -- 1. Navigate ----------------------------------------------------------
-    bm.navigate(source_url, wait_until="domcontentloaded")
-    time.sleep(3)  # Flickr is JS-heavy; wait for dynamic content
+    # -- 1. Prefer Flickr oEmbed API (fast, lightweight, compliant) -----------
+    api_path = _download_via_oembed(source_url, download_dir)
+    if api_path:
+        return api_path
 
-    # -- 2. Check for login wall ------------------------------------------------
+    # -- 2. Browser Automation Fallback ---------------------------------------
+    page: Page = bm.page
+    bm.navigate(source_url, wait_until="domcontentloaded")
+    time.sleep(3)
+
     page_text = ""
     try:
         page_text = (page.inner_text("body") or "")[:3000].lower()
     except Exception:
         pass
 
+    if "429" in page_text or "too many requests" in page_text:
+        raise RateLimitError(
+            "Flickr page returned 429 / Too Many Requests",
+            retry_after=60.0,
+            source=config.SOURCE_FLICKR,
+        )
+
     if "sign in" in page_text and "download" not in page_text:
         raise FlickrManualRequired(
             "Flickr is showing a login wall. Please sign in manually and then confirm."
         )
 
-    # -- 3. Click the download button ------------------------------------------
     download_btn = None
     for selector in _DOWNLOAD_BUTTON_SELECTORS:
         try:
@@ -117,7 +223,6 @@ def download_from_flickr(
             continue
 
     if download_btn is None:
-        # Try by ARIA role
         try:
             btns = page.get_by_role("button").filter(has_text="Download").all()
             if btns:
@@ -133,14 +238,12 @@ def download_from_flickr(
             f"  Please download the original image manually."
         )
 
-    # Click to open the size dropdown
     try:
         download_btn.click(timeout=10_000)
         time.sleep(1.5)
     except PWTimeoutError:
         raise FlickrDownloadError("Timed out clicking the download button.")
 
-    # -- 4. Select size option -------------------------------------------------
     size_link = None
     for selector in _SIZE_OPTION_SELECTORS:
         try:
@@ -154,11 +257,10 @@ def download_from_flickr(
             continue
 
     if size_link is None:
-        # Last resort: look for direct image download URLs in href attributes
         try:
             links = page.query_selector_all("a[href*='live.staticflickr.com']")
             if links:
-                size_link = links[-1]  # usually the largest
+                size_link = links[-1]
                 Logger.info("  Found static Flickr CDN link as fallback")
         except Exception:
             pass
@@ -172,7 +274,6 @@ def download_from_flickr(
 
     os.makedirs(download_dir, exist_ok=True)
 
-    # -- 5. Click the size link and capture download ---------------------------
     Logger.info("  Initiating download ...")
     try:
         with page.expect_download(timeout=config.DOWNLOAD_TIMEOUT * 1000) as dl_info:
@@ -202,7 +303,6 @@ def download_from_flickr(
     download.save_as(dest_path)
     Logger.info(f"  Saved download to temp folder: {dest_path}")
 
-    # Settle time
     time.sleep(config.POST_DOWNLOAD_SETTLE_TIME)
 
     if not os.path.isfile(dest_path) or os.path.getsize(dest_path) == 0:

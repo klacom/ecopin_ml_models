@@ -35,8 +35,32 @@ LOG_FILE = "download_log.csv"
 # -----------------------------------------------------------------------------
 
 # Seconds to wait between processing each image.
-# Increase this to be more conservative with rate limiting.
 DELAY_BETWEEN_IMAGES: float = 4.0
+
+# Minimum and maximum delay in seconds between processing each image (pacing)
+MIN_DELAY_BETWEEN_IMAGES: float = 3.0
+MAX_DELAY_BETWEEN_IMAGES: float = 7.0
+
+# Jitter percentage (0.2 = ±20% variation added to delays)
+JITTER_FACTOR: float = 0.2
+
+# Initial backoff delay in seconds when throttled (e.g. HTTP 429)
+RATE_LIMIT_INITIAL_BACKOFF: float = 15.0
+
+# Multiplier for exponential backoff
+RATE_LIMIT_BACKOFF_FACTOR: float = 3.0
+
+# Maximum single backoff wait in seconds before pausing / failing gracefully
+RATE_LIMIT_MAX_BACKOFF: float = 300.0
+
+# Maximum consecutive rate limit occurrences allowed per source before pausing
+MAX_CONSECUTIVE_RATE_LIMITS: int = 3
+
+# Descriptive, honest User-Agent for Wikimedia API compliance
+WIKIMEDIA_USER_AGENT: str = "EcoPinDatasetDownloader/1.0 (https://github.com/ecopin/dataset_downloader; contact@ecopin.ai) python-requests"
+
+# User-Agent for Flickr API requests
+FLICKR_USER_AGENT: str = "EcoPinDatasetDownloader/1.0 (contact@ecopin.ai)"
 
 # Seconds to wait for a page to fully load before interacting with it.
 PAGE_LOAD_TIMEOUT: float = 30.0

@@ -25,6 +25,7 @@ import progress as prog
 from browser import BlockingDetectedError, BrowserManager
 from downloader import process_one
 from logger import Logger
+from rate_limiter import RateLimitExceededError, calculate_pacing_delay
 from spreadsheet import ImageRow, RowStatus, load_rows, summarise
 
 
@@ -219,18 +220,29 @@ def main() -> None:
                     status = process_one(row, bm, logger, tracker, idx, total)
                     Logger.info(f"  Status: {status}")
 
-                    # Inter-image delay (skip for already-existing)
+                    # Inter-image pacing delay (randomized, skip for already-existing)
                     if status not in (prog.STATUS_ALREADY_EXISTS, prog.STATUS_SKIP):
+                        pace_delay = calculate_pacing_delay()
                         Logger.info(
-                            f"  Waiting {config.DELAY_BETWEEN_IMAGES}s before next image …"
+                            f"  Pacing: waiting {pace_delay:.1f}s before next image …"
                         )
-                        time.sleep(config.DELAY_BETWEEN_IMAGES)
+                        time.sleep(pace_delay)
 
                 except BlockingDetectedError:
                     Logger.error(
                         "\n  [STOP] BLOCKING DETECTED -- stopping the run.\n"
                         "  Wait a while and then resume with: python main.py\n"
                         "  (Already-completed images will be skipped automatically.)"
+                    )
+                    blocked = True
+                    break
+
+                except RateLimitExceededError as exc:
+                    Logger.warn(
+                        f"\n  [RATE LIMIT PAUSE] {exc}\n"
+                        "  The downloader is pausing to respect server throttling.\n"
+                        "  Resume later with: python main.py\n"
+                        "  (Rate-limited images will be retried automatically.)"
                     )
                     blocked = True
                     break

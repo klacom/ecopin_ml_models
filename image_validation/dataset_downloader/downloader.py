@@ -10,6 +10,7 @@ from __future__ import annotations
 import os
 import time
 from pathlib import Path
+from typing import Optional
 
 import config
 import file_manager
@@ -18,8 +19,17 @@ import validator
 from browser import BlockingDetectedError, BrowserManager
 from flickr import FlickrDownloadError, FlickrManualRequired, download_from_flickr
 from logger import Logger
+from rate_limiter import (
+    RateLimitError,
+    RateLimitExceededError,
+    RateLimitTracker,
+    calculate_backoff,
+    calculate_pacing_delay,
+)
 from spreadsheet import ImageRow
 from wikimedia import WikimediaDownloadError, WikimediaManualRequired, download_from_wikimedia
+
+_rate_tracker = RateLimitTracker()
 
 
 def _find_recent_manual_download(download_dirs: list[str]) -> Optional[str]:
@@ -238,8 +248,9 @@ def process_one(
 
     while attempt <= config.MAX_RETRIES:
         if attempt > 0:
-            Logger.warn(f"  Retry {attempt}/{config.MAX_RETRIES} …")
-            time.sleep(config.DELAY_BETWEEN_IMAGES * 2)
+            retry_delay = calculate_backoff(attempt)
+            Logger.warn(f"  Retry {attempt}/{config.MAX_RETRIES} -- waiting {retry_delay:.1f}s …")
+            time.sleep(retry_delay)
 
         tracker.upsert(
             image_id    = row.image_id,
@@ -356,6 +367,40 @@ def process_one(
                 destination = final_path,
             )
             return prog.STATUS_DOWNLOADED
+
+        except RateLimitError as exc:
+            last_error = str(exc)
+            consecutive = _rate_tracker.record_rate_limit(row.source_name)
+            backoff_sec = calculate_backoff(attempt + 1, exc.retry_after)
+
+            Logger.warn(
+                f"  [RATE LIMITED] {exc.source or row.source_name}: {exc}\n"
+                f"  Consecutive rate limits for {row.source_name}: {consecutive}/{config.MAX_CONSECUTIVE_RATE_LIMITS}\n"
+                f"  Backing off for {backoff_sec:.1f}s before retry ..."
+            )
+
+            tracker.upsert(
+                image_id    = row.image_id,
+                excel_row   = row.excel_row,
+                source_name = row.source_name,
+                source_url  = row.source_url,
+                filename    = row.filename,
+                destination = row.destination_path,
+                status      = prog.STATUS_RATE_LIMITED,
+                error       = f"{last_error} (backed off {backoff_sec:.1f}s)",
+                retry_count = attempt + 1,
+            )
+            logger.log(
+                excel_row   = row.excel_row,
+                image_id    = row.image_id,
+                source      = row.source_name,
+                filename    = row.filename,
+                status      = prog.STATUS_RATE_LIMITED,
+                error       = f"Rate limited: backed off {backoff_sec:.1f}s",
+            )
+
+            time.sleep(backoff_sec)
+            attempt += 1
 
         except BlockingDetectedError as exc:
             Logger.error(f"  BLOCKED / RATE-LIMITED: {exc}")

@@ -24,6 +24,7 @@ from playwright.sync_api import (
 
 import config
 from logger import Logger
+from rate_limiter import RateLimitError
 
 
 class BlockingDetectedError(Exception):
@@ -142,8 +143,22 @@ class BrowserManager:
     def check_for_blocking(self) -> None:
         """
         Inspect the current page title and body for blocking / rate-limiting signals.
-        Raises BlockingDetectedError if detected.
+
+        Raises:
+            RateLimitError       -- if the page shows temporary throttling signals (retryable)
+            BlockingDetectedError -- if the page shows hard blocks (CAPTCHA, IP ban, etc.)
         """
+        # Keywords that indicate temporary throttling -- raise RateLimitError (retryable)
+        _RATE_LIMIT_KEYWORDS = {
+            "429", "too many requests", "rate limit", "temporarily unavailable",
+            "service unavailable", "503",
+        }
+        # Keywords that indicate a hard block -- raise BlockingDetectedError (abort run)
+        _HARD_BLOCK_KEYWORDS = {
+            "access denied", "403 forbidden", "unusual traffic",
+            "captcha", "robot", "blocked",
+        }
+
         page = self._page
         try:
             title = (page.title() or "").lower()
@@ -152,10 +167,20 @@ class BrowserManager:
             return  # Page may not have a body -- not necessarily blocked
 
         combined = title + " " + body_snippet
-        for keyword in config.BLOCK_KEYWORDS:
-            if keyword.lower() in combined:
+
+        for keyword in _RATE_LIMIT_KEYWORDS:
+            if keyword in combined:
+                raise RateLimitError(
+                    f"Page indicates rate limiting. Keyword: '{keyword}'\n"
+                    f"  Page title: {page.title()}\n"
+                    f"  URL: {page.url}",
+                    retry_after=60.0,
+                )
+
+        for keyword in _HARD_BLOCK_KEYWORDS:
+            if keyword in combined:
                 raise BlockingDetectedError(
-                    f"Blocking/rate-limit detected! Keyword: '{keyword}'\n"
+                    f"Blocking/access-denied detected! Keyword: '{keyword}'\n"
                     f"  Page title: {page.title()}\n"
                     f"  URL: {page.url}"
                 )
