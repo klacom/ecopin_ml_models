@@ -102,3 +102,33 @@ datasets/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# ============================================================
+# Final 1,000-image dataset experiment directories
+# (added after transition from ~350-image dataset)
+# ============================================================
+
+# Archive of original ~350-image experiments.
+# These duplicate files already tracked under image_validation/
+# and are not needed for inference or future training.
+archive_original_350_dataset/
+
+# Historical baseline reference directory.
+# The Exp 8 checkpoint is already committed at:
+#   image_validation/checkpoints/exp8/best.pt
+# This directory is redundant for version control purposes.
+baseline_original_350/
+
+# Model checkpoint binaries inside the final 1,000-image experiments.
+# Each file is ~15–16 MB. Distribute via MODEL_CHECKPOINT_PATH env var
+# or a shared artifact store rather than committing to Git.
+# Training scripts, configs, CSVs, JSONs, and READMEs are NOT ignored
+# and will remain trackable.
+final_1000_dataset/**/*.pt
+final_1000_dataset/**/*.pth
+
+# ============================================================
+# Inference service environment file
+# (The template .env.example IS committed; actual .env is NOT)
+# ============================================================
+image_validation/.env

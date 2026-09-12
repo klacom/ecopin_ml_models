@@ -1,0 +1,38 @@
+# ============================================================
+# EcoPin Image Validation — Inference Service
+# Runtime dependencies (inference / production only)
+# ============================================================
+#
+# NOTE: This is NOT the training requirements file.
+# Training-only libraries (pandas, scikit-learn, openpyxl, etc.)
+# are intentionally excluded.
+#
+# INSTALLATION — CPU (recommended for inference without a GPU):
+#
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#   pip install timm Pillow
+#
+# INSTALLATION — CUDA 12.x (if you have an NVIDIA GPU):
+#
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#   pip install timm Pillow
+#
+# Or install everything at once (lets pip resolve torch variant automatically):
+#
+#   pip install -r requirements.txt
+#
+# ============================================================
+
+# Deep learning framework
+torch>=2.0.0
+torchvision>=0.15.0
+
+# EfficientNet-B0 model registry
+timm>=0.9.0
+
+# Image loading and preprocessing
+Pillow>=10.3.0
+
+# numpy is a transitive dependency of torch/torchvision and will be
+# installed automatically. Listed explicitly for clarity.
+numpy>=1.23.0

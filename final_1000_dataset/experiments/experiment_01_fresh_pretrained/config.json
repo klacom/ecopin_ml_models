@@ -1,0 +1,72 @@
+{
+  "experiment": "experiment_01_fresh_pretrained",
+  "date_trained": "2026-09-12 21:43:29",
+  "environment": {
+    "python_version": "3.14.6",
+    "pytorch_version": "2.13.0+cu132",
+    "cuda_available": true,
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 5050 Laptop GPU"
+  },
+  "dataset": {
+    "path": "c:\\dev\\datasets\\ecopin_dataset\\split",
+    "total_images": 1000,
+    "train_samples": 800,
+    "val_samples": 100,
+    "test_samples": 100,
+    "num_classes": 4,
+    "classes": [
+      "flooding",
+      "non_environmental",
+      "pollution",
+      "waste"
+    ],
+    "distribution": "200 train / 25 val / 25 test per class (balanced)"
+  },
+  "model": {
+    "architecture": "efficientnet_b0",
+    "pretrained": "ImageNet-1k via timm",
+    "weights_source": "Fresh initialization from ImageNet-1k (not from historical Exp 8)"
+  },
+  "hyperparameters": {
+    "seed": 42,
+    "image_size": 224,
+    "batch_size": 16,
+    "loss_function": "CrossEntropyLoss (unweighted, perfectly balanced dataset)",
+    "optimizer": "Adam",
+    "stage1_epochs": 5,
+    "stage1_lr": 0.001,
+    "stage2_max_epochs": 15,
+    "stage2_lr": 0.0001,
+    "scheduler": "ReduceLROnPlateau(mode=min, factor=0.5, patience=2)",
+    "early_stopping_patience": 5,
+    "early_stopping_metric": "Macro F1 (maximize)",
+    "augmentations": [
+      "PadToSquare(fill=0)",
+      "Resize(224, 224)",
+      "RandomHorizontalFlip(p=0.2)",
+      "Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])"
+    ]
+  },
+  "results": {
+    "best_epoch": 8,
+    "total_epochs_trained": 13,
+    "validation": {
+      "accuracy": 0.68,
+      "macro_f1": 0.6776910683984554,
+      "weighted_f1": 0.6776910683984554,
+      "loss": 1.3572767639160157
+    },
+    "test": {
+      "accuracy": 0.52,
+      "macro_f1": 0.517437711926876,
+      "weighted_f1": 0.517437711926876,
+      "loss": 1.6901602745056152
+    }
+  },
+  "historical_comparison": {
+    "historical_exp8_val_acc": 0.6981,
+    "historical_exp8_val_macro_f1": 0.6743,
+    "note": "Historical Exp 8 was trained on original ~350-image dataset (53 val images). Provided for context only."
+  }
+}

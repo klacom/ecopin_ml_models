@@ -1,0 +1,60 @@
+{
+  "class_names": [
+    "flooding",
+    "non_environmental",
+    "pollution",
+    "waste"
+  ],
+  "validation_confusion_matrix": [
+    [
+      22,
+      3,
+      0,
+      0
+    ],
+    [
+      3,
+      17,
+      3,
+      2
+    ],
+    [
+      1,
+      3,
+      18,
+      3
+    ],
+    [
+      2,
+      3,
+      3,
+      17
+    ]
+  ],
+  "test_confusion_matrix": [
+    [
+      16,
+      7,
+      2,
+      0
+    ],
+    [
+      3,
+      14,
+      4,
+      4
+    ],
+    [
+      0,
+      4,
+      10,
+      11
+    ],
+    [
+      2,
+      1,
+      0,
+      22
+    ]
+  ]
+}

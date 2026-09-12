@@ -1,0 +1,1202 @@
+[
+  {
+    "filename": "FLD_011.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.999521017074585,
+      "non_environmental": 0.0003323837008792907,
+      "pollution": 0.00014469622692558914,
+      "waste": 1.987448968066019e-06
+    }
+  },
+  {
+    "filename": "FLD_013.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9999905824661255,
+      "non_environmental": 9.13418989512138e-06,
+      "pollution": 5.011148829225931e-09,
+      "waste": 3.145769369439222e-07
+    }
+  },
+  {
+    "filename": "FLD_028.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9974274039268494,
+      "non_environmental": 0.002228434896096587,
+      "pollution": 0.00033164321212098,
+      "waste": 1.256091218237998e-05
+    }
+  },
+  {
+    "filename": "FLD_043.jpg",
+    "true_label": "flooding",
+    "pred_label": "pollution",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.012652910314500332,
+      "non_environmental": 0.12565696239471436,
+      "pollution": 0.6271404027938843,
+      "waste": 0.23454971611499786
+    }
+  },
+  {
+    "filename": "FLD_046.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.019530396908521652,
+      "non_environmental": 0.9431740641593933,
+      "pollution": 0.03338272497057915,
+      "waste": 0.003912801388651133
+    }
+  },
+  {
+    "filename": "FLD_062.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.2258514165878296,
+      "non_environmental": 0.7375127077102661,
+      "pollution": 0.005234577693045139,
+      "waste": 0.03140123933553696
+    }
+  },
+  {
+    "filename": "FLD_079.jpg",
+    "true_label": "flooding",
+    "pred_label": "pollution",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.20747897028923035,
+      "non_environmental": 0.18942883610725403,
+      "pollution": 0.5835118889808655,
+      "waste": 0.019580338150262833
+    }
+  },
+  {
+    "filename": "FLD_080.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.09111539274454117,
+      "non_environmental": 0.8775019645690918,
+      "pollution": 0.02426333911716938,
+      "waste": 0.007119257003068924
+    }
+  },
+  {
+    "filename": "FLD_082.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.03015451692044735,
+      "non_environmental": 0.47938841581344604,
+      "pollution": 0.46558520197868347,
+      "waste": 0.02487189695239067
+    }
+  },
+  {
+    "filename": "FLD_109.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.8230432868003845,
+      "non_environmental": 0.013659356161952019,
+      "pollution": 0.0029422861989587545,
+      "waste": 0.16035506129264832
+    }
+  },
+  {
+    "filename": "FLD_123.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9997901320457458,
+      "non_environmental": 7.379670569207519e-05,
+      "pollution": 0.0001348439691355452,
+      "waste": 1.231275291502243e-06
+    }
+  },
+  {
+    "filename": "FLD_125.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9999955892562866,
+      "non_environmental": 4.349668415670749e-06,
+      "pollution": 1.6390422352685619e-10,
+      "waste": 3.323645714203849e-08
+    }
+  },
+  {
+    "filename": "FLD_126.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9999957084655762,
+      "non_environmental": 3.496114004519768e-06,
+      "pollution": 7.716121217526961e-07,
+      "waste": 4.100876438428713e-08
+    }
+  },
+  {
+    "filename": "FLD_127.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9877370595932007,
+      "non_environmental": 0.011775593273341656,
+      "pollution": 2.6920071832137182e-05,
+      "waste": 0.00046034526894800365
+    }
+  },
+  {
+    "filename": "FLD_128.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.7198708653450012,
+      "non_environmental": 0.27762725949287415,
+      "pollution": 0.00010686438326956704,
+      "waste": 0.0023949979804456234
+    }
+  },
+  {
+    "filename": "FLD_134.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.8919562101364136,
+      "non_environmental": 0.0420960858464241,
+      "pollution": 0.021173998713493347,
+      "waste": 0.044773735105991364
+    }
+  },
+  {
+    "filename": "FLD_143.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9999995231628418,
+      "non_environmental": 6.433885424428354e-09,
+      "pollution": 2.907477036906414e-10,
+      "waste": 5.024415372645308e-07
+    }
+  },
+  {
+    "filename": "FLD_164.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.09632667899131775,
+      "non_environmental": 0.8994665145874023,
+      "pollution": 2.2101237391325412e-06,
+      "waste": 0.004204558674246073
+    }
+  },
+  {
+    "filename": "FLD_167.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9999998807907104,
+      "non_environmental": 1.1005017341858547e-07,
+      "pollution": 9.321572846943127e-09,
+      "waste": 9.356668217996855e-12
+    }
+  },
+  {
+    "filename": "FLD_168.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.4124998450279236,
+      "non_environmental": 0.5865825414657593,
+      "pollution": 3.2131169973581564e-06,
+      "waste": 0.0009144083014689386
+    }
+  },
+  {
+    "filename": "FLD_170.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9990436434745789,
+      "non_environmental": 0.0005723648937419057,
+      "pollution": 7.130594894988462e-05,
+      "waste": 0.0003126008086837828
+    }
+  },
+  {
+    "filename": "FLD_183.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9991889595985413,
+      "non_environmental": 0.000273629353614524,
+      "pollution": 1.219791010953486e-05,
+      "waste": 0.0005252535920590162
+    }
+  },
+  {
+    "filename": "FLD_185.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9999197721481323,
+      "non_environmental": 1.604456701898016e-05,
+      "pollution": 6.280067464103922e-05,
+      "waste": 1.3143782098268275e-06
+    }
+  },
+  {
+    "filename": "FLD_200.jpg",
+    "true_label": "flooding",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.005592980422079563,
+      "non_environmental": 0.9917076230049133,
+      "pollution": 0.0004459997289814055,
+      "waste": 0.002253411104902625
+    }
+  },
+  {
+    "filename": "FLD_202.jpg",
+    "true_label": "flooding",
+    "pred_label": "flooding",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.9994389414787292,
+      "non_environmental": 0.0005572694935835898,
+      "pollution": 9.290729394706432e-07,
+      "waste": 2.8763902264472563e-06
+    }
+  },
+  {
+    "filename": "NEG_009.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 5.3422677837033916e-08,
+      "non_environmental": 0.9999569654464722,
+      "pollution": 4.291898585506715e-05,
+      "waste": 1.511064340320445e-07
+    }
+  },
+  {
+    "filename": "NEG_021.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "pollution",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.13640378415584564,
+      "non_environmental": 0.4140329658985138,
+      "pollution": 0.44778141379356384,
+      "waste": 0.0017818103078752756
+    }
+  },
+  {
+    "filename": "NEG_029.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 8.388778041990008e-06,
+      "non_environmental": 0.997815728187561,
+      "pollution": 2.1969681540667807e-07,
+      "waste": 0.0021756677888333797
+    }
+  },
+  {
+    "filename": "NEG_034.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.000432272587204352,
+      "non_environmental": 0.9995267391204834,
+      "pollution": 1.3103172932460438e-05,
+      "waste": 2.7931371732847765e-05
+    }
+  },
+  {
+    "filename": "NEG_050.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 1.1586369055294199e-06,
+      "non_environmental": 0.9999523162841797,
+      "pollution": 4.1459634303464554e-06,
+      "waste": 4.2279065382899716e-05
+    }
+  },
+  {
+    "filename": "NEG_060.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 8.343297849933151e-06,
+      "non_environmental": 0.023579280823469162,
+      "pollution": 0.0008148300694301724,
+      "waste": 0.9755975008010864
+    }
+  },
+  {
+    "filename": "NEG_064.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.00011821423686342314,
+      "non_environmental": 0.9980465173721313,
+      "pollution": 6.071400093787815e-06,
+      "waste": 0.0018291595624759793
+    }
+  },
+  {
+    "filename": "NEG_082.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.0027846137527376413,
+      "non_environmental": 0.8933610916137695,
+      "pollution": 0.09513647854328156,
+      "waste": 0.00871782936155796
+    }
+  },
+  {
+    "filename": "NEG_092.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "flooding",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.9645063877105713,
+      "non_environmental": 0.029564091935753822,
+      "pollution": 0.005599884316325188,
+      "waste": 0.00032959177042357624
+    }
+  },
+  {
+    "filename": "NEG_109.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "flooding",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.9897407293319702,
+      "non_environmental": 0.004436482209712267,
+      "pollution": 0.001462759217247367,
+      "waste": 0.004359951708465815
+    }
+  },
+  {
+    "filename": "NEG_121.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.0004467483377084136,
+      "non_environmental": 0.9668077230453491,
+      "pollution": 1.4189273315423634e-05,
+      "waste": 0.03273133188486099
+    }
+  },
+  {
+    "filename": "NEG_144.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 5.106920798425563e-05,
+      "non_environmental": 0.9997913241386414,
+      "pollution": 0.00014791182184126228,
+      "waste": 9.6479598141741e-06
+    }
+  },
+  {
+    "filename": "NEG_159.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.03066791407763958,
+      "non_environmental": 0.7294229865074158,
+      "pollution": 0.22153788805007935,
+      "waste": 0.018371175974607468
+    }
+  },
+  {
+    "filename": "NEG_160.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 1.3368392501433846e-05,
+      "non_environmental": 0.9999854564666748,
+      "pollution": 3.410720239571674e-08,
+      "waste": 1.2175501069577876e-06
+    }
+  },
+  {
+    "filename": "NEG_175.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "pollution",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.0045340354554355145,
+      "non_environmental": 0.003619194496423006,
+      "pollution": 0.9917141795158386,
+      "waste": 0.0001325090997852385
+    }
+  },
+  {
+    "filename": "NEG_195.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 5.418826731329318e-06,
+      "non_environmental": 0.9998942613601685,
+      "pollution": 2.130061830030172e-06,
+      "waste": 9.822419815463945e-05
+    }
+  },
+  {
+    "filename": "NEG_196.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.0332934632897377,
+      "non_environmental": 0.6908566951751709,
+      "pollution": 0.006802529562264681,
+      "waste": 0.26904726028442383
+    }
+  },
+  {
+    "filename": "NEG_207.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "flooding",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.9938952326774597,
+      "non_environmental": 0.002444193698465824,
+      "pollution": 0.0035716677084565163,
+      "waste": 8.894311031326652e-05
+    }
+  },
+  {
+    "filename": "NEG_213.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "pollution",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.06354306638240814,
+      "non_environmental": 0.3904050290584564,
+      "pollution": 0.5438129901885986,
+      "waste": 0.002238952089101076
+    }
+  },
+  {
+    "filename": "NEG_220.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.008428378961980343,
+      "non_environmental": 0.06151008978486061,
+      "pollution": 0.00023156346287578344,
+      "waste": 0.9298299551010132
+    }
+  },
+  {
+    "filename": "NEG_222.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.0004203662683721632,
+      "non_environmental": 0.2945156991481781,
+      "pollution": 5.3914747695671394e-05,
+      "waste": 0.7050100564956665
+    }
+  },
+  {
+    "filename": "NEG_224.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.05206664651632309,
+      "non_environmental": 0.43992698192596436,
+      "pollution": 0.00037292862543836236,
+      "waste": 0.5076334476470947
+    }
+  },
+  {
+    "filename": "NEG_232.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.00019629970483947545,
+      "non_environmental": 0.9958721995353699,
+      "pollution": 0.003931012935936451,
+      "waste": 4.3556121909205103e-07
+    }
+  },
+  {
+    "filename": "NEG_245.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "pollution",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.0013362508034333587,
+      "non_environmental": 0.19637097418308258,
+      "pollution": 0.8022637963294983,
+      "waste": 2.9021890441072173e-05
+    }
+  },
+  {
+    "filename": "NEG_249.jpg",
+    "true_label": "non_environmental",
+    "pred_label": "non_environmental",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.00018234500021208078,
+      "non_environmental": 0.9800108671188354,
+      "pollution": 3.5025168472202495e-05,
+      "waste": 0.019771648570895195
+    }
+  },
+  {
+    "filename": "POL_006.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 2.3869346169741457e-12,
+      "non_environmental": 6.817386655200153e-10,
+      "pollution": 1.0,
+      "waste": 5.0909063631365825e-09
+    }
+  },
+  {
+    "filename": "POL_025.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 2.4394506681346684e-07,
+      "non_environmental": 5.682103960680251e-07,
+      "pollution": 0.9999955892562866,
+      "waste": 3.639278247646871e-06
+    }
+  },
+  {
+    "filename": "POL_026.jpg",
+    "true_label": "pollution",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.09331673383712769,
+      "non_environmental": 0.8654876947402954,
+      "pollution": 0.0070062559098005295,
+      "waste": 0.034189373254776
+    }
+  },
+  {
+    "filename": "POL_040.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.038253121078014374,
+      "non_environmental": 0.14737850427627563,
+      "pollution": 0.8131920695304871,
+      "waste": 0.0011763136135414243
+    }
+  },
+  {
+    "filename": "POL_042.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.028332741931080818,
+      "non_environmental": 0.08106812834739685,
+      "pollution": 0.036872487515211105,
+      "waste": 0.8537266850471497
+    }
+  },
+  {
+    "filename": "POL_047.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.11283416301012039,
+      "non_environmental": 0.004264658782631159,
+      "pollution": 0.8827199935913086,
+      "waste": 0.00018128428200725466
+    }
+  },
+  {
+    "filename": "POL_091.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.02762637473642826,
+      "non_environmental": 0.23158453404903412,
+      "pollution": 0.740635871887207,
+      "waste": 0.0001532521127955988
+    }
+  },
+  {
+    "filename": "POL_095.jpg",
+    "true_label": "pollution",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.253124862909317,
+      "non_environmental": 0.3740653395652771,
+      "pollution": 0.37230998277664185,
+      "waste": 0.0004998238873668015
+    }
+  },
+  {
+    "filename": "POL_113.jpg",
+    "true_label": "pollution",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.004935970064252615,
+      "non_environmental": 0.7655209302902222,
+      "pollution": 0.00910656526684761,
+      "waste": 0.22043649852275848
+    }
+  },
+  {
+    "filename": "POL_121.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.2670031189918518,
+      "non_environmental": 0.04061370715498924,
+      "pollution": 0.6923309564590454,
+      "waste": 5.217277794145048e-05
+    }
+  },
+  {
+    "filename": "POL_126.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 2.0513520212261938e-05,
+      "non_environmental": 1.8138086943508824e-06,
+      "pollution": 0.00047956485650502145,
+      "waste": 0.9994981288909912
+    }
+  },
+  {
+    "filename": "POL_135.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 1.1110851119155996e-06,
+      "non_environmental": 1.930262806126848e-05,
+      "pollution": 0.9966802597045898,
+      "waste": 0.003299364820122719
+    }
+  },
+  {
+    "filename": "POL_143.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.014809302054345608,
+      "non_environmental": 0.057376135140657425,
+      "pollution": 0.0018781798426061869,
+      "waste": 0.9259364008903503
+    }
+  },
+  {
+    "filename": "POL_145.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.008256624452769756,
+      "non_environmental": 0.10534065961837769,
+      "pollution": 0.0720965787768364,
+      "waste": 0.8143061399459839
+    }
+  },
+  {
+    "filename": "POL_165.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.00019713440269697458,
+      "non_environmental": 0.013032941147685051,
+      "pollution": 0.01894797943532467,
+      "waste": 0.9678218960762024
+    }
+  },
+  {
+    "filename": "POL_169.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.00152945751324296,
+      "non_environmental": 0.003073087427765131,
+      "pollution": 0.29635074734687805,
+      "waste": 0.6990467309951782
+    }
+  },
+  {
+    "filename": "POL_178.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 2.1522716053823387e-08,
+      "non_environmental": 3.387470496818423e-05,
+      "pollution": 0.9995946288108826,
+      "waste": 0.00037149147829040885
+    }
+  },
+  {
+    "filename": "POL_192.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.0005449313321150839,
+      "non_environmental": 0.04829031229019165,
+      "pollution": 0.951015055179596,
+      "waste": 0.00014970271149650216
+    }
+  },
+  {
+    "filename": "POL_199.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.0032718530856072903,
+      "non_environmental": 0.1963133066892624,
+      "pollution": 0.033964622765779495,
+      "waste": 0.7664502859115601
+    }
+  },
+  {
+    "filename": "POL_202.jpg",
+    "true_label": "pollution",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.01571149006485939,
+      "non_environmental": 0.5993601679801941,
+      "pollution": 0.2848649024963379,
+      "waste": 0.10006345063447952
+    }
+  },
+  {
+    "filename": "POL_209.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.00020581242279149592,
+      "non_environmental": 0.011580273509025574,
+      "pollution": 0.008323107846081257,
+      "waste": 0.9798908233642578
+    }
+  },
+  {
+    "filename": "POL_214.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.050191473215818405,
+      "non_environmental": 0.1768491119146347,
+      "pollution": 0.005827479995787144,
+      "waste": 0.7671319246292114
+    }
+  },
+  {
+    "filename": "POL_222.jpg",
+    "true_label": "pollution",
+    "pred_label": "pollution",
+    "correct": true,
+    "probabilities": {
+      "flooding": 4.54122482551611e-06,
+      "non_environmental": 1.1379082934581675e-05,
+      "pollution": 0.9730527400970459,
+      "waste": 0.026931364089250565
+    }
+  },
+  {
+    "filename": "POL_223.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.0018865420715883374,
+      "non_environmental": 0.00031147009576670825,
+      "pollution": 0.00012806477025151253,
+      "waste": 0.9976739287376404
+    }
+  },
+  {
+    "filename": "POL_246.jpg",
+    "true_label": "pollution",
+    "pred_label": "waste",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.01331041008234024,
+      "non_environmental": 0.19271382689476013,
+      "pollution": 0.06096914783120155,
+      "waste": 0.7330066561698914
+    }
+  },
+  {
+    "filename": "WST_008.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 3.390276833670214e-05,
+      "non_environmental": 0.0006018876447342336,
+      "pollution": 0.0005133390077389777,
+      "waste": 0.9988508224487305
+    }
+  },
+  {
+    "filename": "WST_022.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.03583014756441116,
+      "non_environmental": 0.003603006713092327,
+      "pollution": 0.22211065888404846,
+      "waste": 0.7384561896324158
+    }
+  },
+  {
+    "filename": "WST_030.jpg",
+    "true_label": "waste",
+    "pred_label": "flooding",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.6306434273719788,
+      "non_environmental": 0.0964876338839531,
+      "pollution": 2.5416222342755646e-05,
+      "waste": 0.2728435695171356
+    }
+  },
+  {
+    "filename": "WST_042.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 1.0245701560052112e-05,
+      "non_environmental": 1.1759251719922759e-05,
+      "pollution": 2.4807099180179648e-05,
+      "waste": 0.9999531507492065
+    }
+  },
+  {
+    "filename": "WST_046.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 9.285064152209088e-06,
+      "non_environmental": 0.00015573947166558355,
+      "pollution": 2.3405844331136905e-05,
+      "waste": 0.999811589717865
+    }
+  },
+  {
+    "filename": "WST_054.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.0004902760265395045,
+      "non_environmental": 0.017963072285056114,
+      "pollution": 0.020191963762044907,
+      "waste": 0.9613545536994934
+    }
+  },
+  {
+    "filename": "WST_073.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 1.909658564613892e-08,
+      "non_environmental": 1.6057911667033409e-09,
+      "pollution": 2.651317458912672e-07,
+      "waste": 0.9999997615814209
+    }
+  },
+  {
+    "filename": "WST_080.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 6.677854980807751e-05,
+      "non_environmental": 0.022535279393196106,
+      "pollution": 0.009552545845508575,
+      "waste": 0.9678453803062439
+    }
+  },
+  {
+    "filename": "WST_083.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.0028189560398459435,
+      "non_environmental": 0.0415026918053627,
+      "pollution": 0.012104303576052189,
+      "waste": 0.9435741305351257
+    }
+  },
+  {
+    "filename": "WST_089.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 2.1395956117942205e-09,
+      "non_environmental": 5.925098776060622e-07,
+      "pollution": 3.609018639494366e-10,
+      "waste": 0.9999994039535522
+    }
+  },
+  {
+    "filename": "WST_090.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 2.0074059648322873e-05,
+      "non_environmental": 0.00037279375828802586,
+      "pollution": 1.720464206300676e-05,
+      "waste": 0.9995898604393005
+    }
+  },
+  {
+    "filename": "WST_095.jpg",
+    "true_label": "waste",
+    "pred_label": "non_environmental",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.0006926194182597101,
+      "non_environmental": 0.6263220906257629,
+      "pollution": 0.013757198117673397,
+      "waste": 0.35922810435295105
+    }
+  },
+  {
+    "filename": "WST_110.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 7.87322933319956e-05,
+      "non_environmental": 0.025653118267655373,
+      "pollution": 0.04584730416536331,
+      "waste": 0.9284208416938782
+    }
+  },
+  {
+    "filename": "WST_112.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.010903063230216503,
+      "non_environmental": 0.00016462270286865532,
+      "pollution": 0.0005161420558579266,
+      "waste": 0.9884161949157715
+    }
+  },
+  {
+    "filename": "WST_116.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 1.1131498389715944e-08,
+      "non_environmental": 1.0420973012514878e-05,
+      "pollution": 5.352476000552997e-05,
+      "waste": 0.9999361038208008
+    }
+  },
+  {
+    "filename": "WST_126.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 1.4556648238794878e-05,
+      "non_environmental": 0.003544311970472336,
+      "pollution": 6.35945661997539e-06,
+      "waste": 0.9964348077774048
+    }
+  },
+  {
+    "filename": "WST_152.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 3.2354265933065562e-09,
+      "non_environmental": 1.6890872700514592e-08,
+      "pollution": 2.3105217223928776e-06,
+      "waste": 0.9999977350234985
+    }
+  },
+  {
+    "filename": "WST_172.jpg",
+    "true_label": "waste",
+    "pred_label": "flooding",
+    "correct": false,
+    "probabilities": {
+      "flooding": 0.9279618263244629,
+      "non_environmental": 0.05143151059746742,
+      "pollution": 6.7295859480509534e-06,
+      "waste": 0.02059991843998432
+    }
+  },
+  {
+    "filename": "WST_176.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.0010511399013921618,
+      "non_environmental": 8.420755330007523e-05,
+      "pollution": 0.10501860827207565,
+      "waste": 0.8938460946083069
+    }
+  },
+  {
+    "filename": "WST_181.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 1.1065014405176044e-05,
+      "non_environmental": 7.120762893464416e-05,
+      "pollution": 0.0003104996576439589,
+      "waste": 0.9996071457862854
+    }
+  },
+  {
+    "filename": "WST_182.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 1.2342232366790995e-05,
+      "non_environmental": 9.169300938083325e-06,
+      "pollution": 2.0565514205372892e-05,
+      "waste": 0.9999579191207886
+    }
+  },
+  {
+    "filename": "WST_190.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.02725169248878956,
+      "non_environmental": 0.00046249033766798675,
+      "pollution": 0.3170590102672577,
+      "waste": 0.6552268266677856
+    }
+  },
+  {
+    "filename": "WST_208.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.0005002200487069786,
+      "non_environmental": 0.04723050445318222,
+      "pollution": 0.009652066975831985,
+      "waste": 0.9426172375679016
+    }
+  },
+  {
+    "filename": "WST_211.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.002447072183713317,
+      "non_environmental": 0.003277975134551525,
+      "pollution": 0.17346429824829102,
+      "waste": 0.8208106160163879
+    }
+  },
+  {
+    "filename": "WST_224.jpg",
+    "true_label": "waste",
+    "pred_label": "waste",
+    "correct": true,
+    "probabilities": {
+      "flooding": 0.02009669877588749,
+      "non_environmental": 0.052951373159885406,
+      "pollution": 0.15315161645412445,
+      "waste": 0.7738003134727478
+    }
+  }
+]
