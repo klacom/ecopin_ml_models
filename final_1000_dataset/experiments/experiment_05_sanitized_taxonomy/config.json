@@ -1,0 +1,164 @@
+{
+  "experiment": "experiment_05_sanitized_taxonomy",
+  "date_trained": "2026-09-13 17:52:41",
+  "environment": {
+    "python_version": "3.14.6",
+    "pytorch_version": "2.13.0+cu132",
+    "cuda_available": true,
+    "device": "cuda",
+    "gpu_name": "NVIDIA GeForce RTX 5050 Laptop GPU"
+  },
+  "dataset": {
+    "path": "c:\\dev\\datasets\\ecopin_dataset\\experiment_05_sanitized_taxonomy",
+    "total_images": 1000,
+    "train_samples": 800,
+    "val_samples": 100,
+    "test_samples": 100,
+    "num_classes": 4,
+    "classes": [
+      "flooding",
+      "non_environmental",
+      "pollution",
+      "waste"
+    ],
+    "distribution": {
+      "train": {
+        "flooding": 200,
+        "non_environmental": 200,
+        "pollution": 131,
+        "waste": 269
+      },
+      "val": {
+        "flooding": 25,
+        "non_environmental": 25,
+        "pollution": 15,
+        "waste": 35
+      },
+      "test": {
+        "flooding": 25,
+        "non_environmental": 25,
+        "pollution": 25,
+        "waste": 25
+      }
+    }
+  },
+  "model": {
+    "architecture": "efficientnet_b0",
+    "initialization_source": "Historical Exp 8 Checkpoint (c:/dev/ecopin_ml_models/baseline_original_350/best_model.pt)",
+    "initialization_type": "Pre-trained on original ~350 EcoPin dataset"
+  },
+  "hyperparameters": {
+    "seed": 42,
+    "image_size": 224,
+    "batch_size": 16,
+    "loss_function": "CrossEntropyLoss (unweighted, no artificial class balancing)",
+    "optimizer": "Adam",
+    "initial_learning_rate": 1e-05,
+    "max_epochs": 20,
+    "scheduler": "ReduceLROnPlateau(mode=min, factor=0.5, patience=2)",
+    "early_stopping_patience": 5,
+    "early_stopping_metric": "Macro F1 (maximize)",
+    "augmentations": [
+      "PadToSquare(fill=0)",
+      "Resize(224, 224)",
+      "RandomHorizontalFlip(p=0.2)",
+      "Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])"
+    ]
+  },
+  "pre_finetuning_metrics": {
+    "val_acc": 0.61,
+    "val_macro_f1": 0.5908145860224967,
+    "val_loss": 1.5707623195648193,
+    "test_acc": 0.59,
+    "test_macro_f1": 0.5704524886877829,
+    "test_loss": 1.8646750164031982
+  },
+  "results": {
+    "best_epoch": 7,
+    "total_epochs_trained": 12,
+    "validation": {
+      "accuracy": 0.71,
+      "macro_f1": 0.6945266419520832,
+      "weighted_f1": 0.7091893985503238,
+      "loss": 1.0115551519393922,
+      "macro_precision": 0.6906019585253456,
+      "macro_recall": 0.7014285714285715
+    },
+    "test": {
+      "accuracy": 0.64,
+      "macro_f1": 0.6202768685215494,
+      "weighted_f1": 0.6202768685215494,
+      "loss": 1.5432733297348022,
+      "macro_precision": 0.6385214785214786,
+      "macro_recall": 0.64
+    }
+  },
+  "comparison_summary": {
+    "exp01_test_acc": 0.52,
+    "exp01_test_macro_f1": 0.517437711926876,
+    "exp02_test_acc": 0.62,
+    "exp02_test_macro_f1": 0.61053851978995,
+    "exp03_test_acc": 0.62,
+    "exp03_test_macro_f1": 0.6137141535615172,
+    "exp05_test_acc": 0.64,
+    "exp05_test_macro_f1": 0.6202768685215494,
+    "diff_exp05_minus_exp03_acc": 0.020000000000000018,
+    "diff_exp05_minus_exp03_macro_f1": 0.006562714960032245
+  },
+  "taxonomy_sanitization": {
+    "total_audited_candidates": 101,
+    "train_relabels_applied": 69,
+    "val_relabels_applied": 10,
+    "protected_test_candidates": 12
+  },
+  "methodology_reproduction": {
+    "source_of_truth_script": "c:\\dev\\ecopin_ml_models\\final_1000_dataset\\experiments\\experiment_02_baseline_finetune\\train_experiment02.py",
+    "source_of_truth_config": "c:\\dev\\ecopin_ml_models\\final_1000_dataset\\experiments\\experiment_02_baseline_finetune\\config.json",
+    "matched_training_methodology": {
+      "seed": 42,
+      "architecture": "efficientnet_b0",
+      "initialization_checkpoint": "c:\\dev\\ecopin_ml_models\\baseline_original_350\\best_model.pt",
+      "image_size": 224,
+      "batch_size": 16,
+      "train_augmentations": [
+        "PadToSquare(fill=0)",
+        "Resize(224, 224)",
+        "RandomHorizontalFlip(p=0.2)",
+        "ToTensor()",
+        "ImageNet normalization"
+      ],
+      "eval_preprocessing": [
+        "PadToSquare(fill=0)",
+        "Resize(224, 224)",
+        "ToTensor()",
+        "ImageNet normalization"
+      ],
+      "loss": "CrossEntropyLoss (unweighted)",
+      "optimizer": "Adam",
+      "initial_learning_rate": 1e-05,
+      "scheduler": "ReduceLROnPlateau(mode=min, factor=0.5, patience=2)",
+      "early_stopping_patience": 5,
+      "early_stopping_metric": "validation Macro F1",
+      "max_epochs": 20,
+      "checkpoint_selection": "best validation Macro F1"
+    },
+    "intentional_differences": [
+      "Dataset root changed from the original split to the Exp05 sanitized dataset copy.",
+      "Manifest generation, integrity verification, protected-test analysis, and report generation were added around the unchanged Exp02 training loop."
+    ]
+  },
+  "integrity_summary": {
+    "overall_passed": true,
+    "count_check_passed": true,
+    "readable_images_passed": true,
+    "cross_split_non_leakage_passed": true,
+    "test_set_byte_identical": true,
+    "same_split_membership_passed": true,
+    "content_unchanged_passed": true,
+    "only_intended_label_changes_passed": true,
+    "protected_test_labels_unchanged": true,
+    "no_missing_or_orphan_files": true,
+    "no_duplicate_ids": true
+  },
+  "last_regenerated_at": "2026-09-13 18:19:47"
+}

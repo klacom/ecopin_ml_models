@@ -1,0 +1,820 @@
+{
+  "generated_at": "2026-09-13 18:19:47",
+  "dataset_path": "c:\\dev\\datasets\\ecopin_dataset\\experiment_05_sanitized_taxonomy",
+  "source_dataset_path": "c:\\dev\\datasets\\ecopin_dataset\\split",
+  "source_test_path": "c:\\dev\\datasets\\ecopin_dataset\\split\\test",
+  "expected_counts": {
+    "train_total": 800,
+    "val_total": 100,
+    "test_total": 100
+  },
+  "observed_distribution": {
+    "train": {
+      "flooding": 200,
+      "non_environmental": 200,
+      "pollution": 131,
+      "waste": 269
+    },
+    "val": {
+      "flooding": 25,
+      "non_environmental": 25,
+      "pollution": 15,
+      "waste": 35
+    },
+    "test": {
+      "flooding": 25,
+      "non_environmental": 25,
+      "pollution": 25,
+      "waste": 25
+    }
+  },
+  "observed_totals": {
+    "train_total": 800,
+    "val_total": 100,
+    "test_total": 100
+  },
+  "count_check_passed": true,
+  "readable_image_check": {
+    "total_images_scanned": 1000,
+    "corrupted_or_unreadable_files": 0,
+    "failures": []
+  },
+  "cross_split_non_leakage": {
+    "duplicate_filenames_across_splits": [],
+    "duplicate_hashes_across_splits": [],
+    "passed": true
+  },
+  "test_hash_verification": {
+    "source_test_file_count": 100,
+    "sanitized_test_file_count": 100,
+    "mismatch_count": 0,
+    "mismatches": [],
+    "byte_for_byte_identical": true
+  },
+  "manifest_consistency": {
+    "source_image_count": 1000,
+    "sanitized_image_count": 1000,
+    "duplicate_ids": {
+      "source": [],
+      "sanitized": []
+    },
+    "missing_from_sanitized": [],
+    "orphan_in_sanitized": [],
+    "same_split_membership": {
+      "passed": true,
+      "changes": []
+    },
+    "image_content_unchanged": {
+      "passed": true,
+      "hash_mismatches": []
+    },
+    "label_change_validation": {
+      "candidate_distribution_by_split": {
+        "train": {
+          "reviewed": 79,
+          "apply_relabel_to_waste": 69,
+          "leave_as_pollution": 10,
+          "test_protected_unchanged": 0
+        },
+        "val": {
+          "reviewed": 10,
+          "apply_relabel_to_waste": 10,
+          "leave_as_pollution": 0,
+          "test_protected_unchanged": 0
+        },
+        "test": {
+          "reviewed": 12,
+          "apply_relabel_to_waste": 0,
+          "leave_as_pollution": 0,
+          "test_protected_unchanged": 12
+        }
+      },
+      "observed_label_change_count": 79,
+      "observed_label_changes": [
+        {
+          "image_id": "POL_101",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_101.jpg",
+          "sanitized_path": "train\\waste\\POL_101.jpg"
+        },
+        {
+          "image_id": "POL_102",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_102.jpg",
+          "sanitized_path": "train\\waste\\POL_102.jpg"
+        },
+        {
+          "image_id": "POL_103",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_103.jpg",
+          "sanitized_path": "train\\waste\\POL_103.jpg"
+        },
+        {
+          "image_id": "POL_104",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_104.jpg",
+          "sanitized_path": "train\\waste\\POL_104.jpg"
+        },
+        {
+          "image_id": "POL_105",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_105.jpg",
+          "sanitized_path": "train\\waste\\POL_105.jpg"
+        },
+        {
+          "image_id": "POL_106",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_106.jpg",
+          "sanitized_path": "train\\waste\\POL_106.jpg"
+        },
+        {
+          "image_id": "POL_107",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_107.jpg",
+          "sanitized_path": "train\\waste\\POL_107.jpg"
+        },
+        {
+          "image_id": "POL_108",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_108.jpg",
+          "sanitized_path": "train\\waste\\POL_108.jpg"
+        },
+        {
+          "image_id": "POL_109",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_109.jpg",
+          "sanitized_path": "train\\waste\\POL_109.jpg"
+        },
+        {
+          "image_id": "POL_110",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_110.jpg",
+          "sanitized_path": "val\\waste\\POL_110.jpg"
+        },
+        {
+          "image_id": "POL_111",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_111.jpg",
+          "sanitized_path": "train\\waste\\POL_111.jpg"
+        },
+        {
+          "image_id": "POL_112",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_112.jpg",
+          "sanitized_path": "train\\waste\\POL_112.jpg"
+        },
+        {
+          "image_id": "POL_114",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_114.jpg",
+          "sanitized_path": "train\\waste\\POL_114.jpg"
+        },
+        {
+          "image_id": "POL_115",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_115.jpg",
+          "sanitized_path": "train\\waste\\POL_115.jpg"
+        },
+        {
+          "image_id": "POL_116",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_116.jpg",
+          "sanitized_path": "val\\waste\\POL_116.jpg"
+        },
+        {
+          "image_id": "POL_117",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_117.jpg",
+          "sanitized_path": "train\\waste\\POL_117.jpg"
+        },
+        {
+          "image_id": "POL_118",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_118.jpg",
+          "sanitized_path": "train\\waste\\POL_118.jpg"
+        },
+        {
+          "image_id": "POL_119",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_119.jpg",
+          "sanitized_path": "train\\waste\\POL_119.jpg"
+        },
+        {
+          "image_id": "POL_120",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_120.jpg",
+          "sanitized_path": "train\\waste\\POL_120.jpg"
+        },
+        {
+          "image_id": "POL_122",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_122.jpg",
+          "sanitized_path": "train\\waste\\POL_122.jpg"
+        },
+        {
+          "image_id": "POL_123",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_123.jpg",
+          "sanitized_path": "val\\waste\\POL_123.jpg"
+        },
+        {
+          "image_id": "POL_124",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_124.jpg",
+          "sanitized_path": "train\\waste\\POL_124.jpg"
+        },
+        {
+          "image_id": "POL_125",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_125.jpg",
+          "sanitized_path": "train\\waste\\POL_125.jpg"
+        },
+        {
+          "image_id": "POL_127",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_127.jpg",
+          "sanitized_path": "train\\waste\\POL_127.jpg"
+        },
+        {
+          "image_id": "POL_128",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_128.jpg",
+          "sanitized_path": "val\\waste\\POL_128.jpg"
+        },
+        {
+          "image_id": "POL_129",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_129.jpg",
+          "sanitized_path": "train\\waste\\POL_129.jpg"
+        },
+        {
+          "image_id": "POL_130",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_130.jpg",
+          "sanitized_path": "train\\waste\\POL_130.jpg"
+        },
+        {
+          "image_id": "POL_131",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_131.jpg",
+          "sanitized_path": "train\\waste\\POL_131.jpg"
+        },
+        {
+          "image_id": "POL_132",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_132.jpg",
+          "sanitized_path": "train\\waste\\POL_132.jpg"
+        },
+        {
+          "image_id": "POL_133",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_133.jpg",
+          "sanitized_path": "train\\waste\\POL_133.jpg"
+        },
+        {
+          "image_id": "POL_134",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_134.jpg",
+          "sanitized_path": "train\\waste\\POL_134.jpg"
+        },
+        {
+          "image_id": "POL_136",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_136.jpg",
+          "sanitized_path": "train\\waste\\POL_136.jpg"
+        },
+        {
+          "image_id": "POL_137",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_137.jpg",
+          "sanitized_path": "train\\waste\\POL_137.jpg"
+        },
+        {
+          "image_id": "POL_138",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_138.jpg",
+          "sanitized_path": "train\\waste\\POL_138.jpg"
+        },
+        {
+          "image_id": "POL_139",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_139.jpg",
+          "sanitized_path": "train\\waste\\POL_139.jpg"
+        },
+        {
+          "image_id": "POL_140",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_140.jpg",
+          "sanitized_path": "train\\waste\\POL_140.jpg"
+        },
+        {
+          "image_id": "POL_141",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_141.jpg",
+          "sanitized_path": "train\\waste\\POL_141.jpg"
+        },
+        {
+          "image_id": "POL_142",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_142.jpg",
+          "sanitized_path": "train\\waste\\POL_142.jpg"
+        },
+        {
+          "image_id": "POL_144",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_144.jpg",
+          "sanitized_path": "train\\waste\\POL_144.jpg"
+        },
+        {
+          "image_id": "POL_146",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_146.jpg",
+          "sanitized_path": "train\\waste\\POL_146.jpg"
+        },
+        {
+          "image_id": "POL_147",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_147.jpg",
+          "sanitized_path": "train\\waste\\POL_147.jpg"
+        },
+        {
+          "image_id": "POL_149",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_149.jpg",
+          "sanitized_path": "train\\waste\\POL_149.jpg"
+        },
+        {
+          "image_id": "POL_150",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_150.jpg",
+          "sanitized_path": "train\\waste\\POL_150.jpg"
+        },
+        {
+          "image_id": "POL_200",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_200.jpg",
+          "sanitized_path": "train\\waste\\POL_200.jpg"
+        },
+        {
+          "image_id": "POL_203",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_203.jpg",
+          "sanitized_path": "train\\waste\\POL_203.jpg"
+        },
+        {
+          "image_id": "POL_204",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_204.jpg",
+          "sanitized_path": "val\\waste\\POL_204.jpg"
+        },
+        {
+          "image_id": "POL_205",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_205.jpg",
+          "sanitized_path": "train\\waste\\POL_205.jpg"
+        },
+        {
+          "image_id": "POL_206",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_206.jpg",
+          "sanitized_path": "train\\waste\\POL_206.jpg"
+        },
+        {
+          "image_id": "POL_207",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_207.jpg",
+          "sanitized_path": "train\\waste\\POL_207.jpg"
+        },
+        {
+          "image_id": "POL_208",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_208.jpg",
+          "sanitized_path": "train\\waste\\POL_208.jpg"
+        },
+        {
+          "image_id": "POL_210",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_210.jpg",
+          "sanitized_path": "train\\waste\\POL_210.jpg"
+        },
+        {
+          "image_id": "POL_211",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_211.jpg",
+          "sanitized_path": "train\\waste\\POL_211.jpg"
+        },
+        {
+          "image_id": "POL_212",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_212.jpg",
+          "sanitized_path": "train\\waste\\POL_212.jpg"
+        },
+        {
+          "image_id": "POL_213",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_213.jpg",
+          "sanitized_path": "train\\waste\\POL_213.jpg"
+        },
+        {
+          "image_id": "POL_216",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_216.jpg",
+          "sanitized_path": "train\\waste\\POL_216.jpg"
+        },
+        {
+          "image_id": "POL_217",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_217.jpg",
+          "sanitized_path": "train\\waste\\POL_217.jpg"
+        },
+        {
+          "image_id": "POL_218",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_218.jpg",
+          "sanitized_path": "train\\waste\\POL_218.jpg"
+        },
+        {
+          "image_id": "POL_219",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_219.jpg",
+          "sanitized_path": "val\\waste\\POL_219.jpg"
+        },
+        {
+          "image_id": "POL_220",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_220.jpg",
+          "sanitized_path": "train\\waste\\POL_220.jpg"
+        },
+        {
+          "image_id": "POL_221",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_221.jpg",
+          "sanitized_path": "train\\waste\\POL_221.jpg"
+        },
+        {
+          "image_id": "POL_226",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_226.jpg",
+          "sanitized_path": "train\\waste\\POL_226.jpg"
+        },
+        {
+          "image_id": "POL_227",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_227.jpg",
+          "sanitized_path": "train\\waste\\POL_227.jpg"
+        },
+        {
+          "image_id": "POL_228",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_228.jpg",
+          "sanitized_path": "val\\waste\\POL_228.jpg"
+        },
+        {
+          "image_id": "POL_229",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_229.jpg",
+          "sanitized_path": "val\\waste\\POL_229.jpg"
+        },
+        {
+          "image_id": "POL_230",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_230.jpg",
+          "sanitized_path": "train\\waste\\POL_230.jpg"
+        },
+        {
+          "image_id": "POL_231",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_231.jpg",
+          "sanitized_path": "val\\waste\\POL_231.jpg"
+        },
+        {
+          "image_id": "POL_232",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_232.jpg",
+          "sanitized_path": "train\\waste\\POL_232.jpg"
+        },
+        {
+          "image_id": "POL_234",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_234.jpg",
+          "sanitized_path": "train\\waste\\POL_234.jpg"
+        },
+        {
+          "image_id": "POL_235",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_235.jpg",
+          "sanitized_path": "train\\waste\\POL_235.jpg"
+        },
+        {
+          "image_id": "POL_236",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_236.jpg",
+          "sanitized_path": "train\\waste\\POL_236.jpg"
+        },
+        {
+          "image_id": "POL_237",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_237.jpg",
+          "sanitized_path": "train\\waste\\POL_237.jpg"
+        },
+        {
+          "image_id": "POL_239",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_239.jpg",
+          "sanitized_path": "train\\waste\\POL_239.jpg"
+        },
+        {
+          "image_id": "POL_240",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_240.jpg",
+          "sanitized_path": "train\\waste\\POL_240.jpg"
+        },
+        {
+          "image_id": "POL_241",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_241.jpg",
+          "sanitized_path": "train\\waste\\POL_241.jpg"
+        },
+        {
+          "image_id": "POL_243",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_243.jpg",
+          "sanitized_path": "train\\waste\\POL_243.jpg"
+        },
+        {
+          "image_id": "POL_244",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_244.jpg",
+          "sanitized_path": "train\\waste\\POL_244.jpg"
+        },
+        {
+          "image_id": "POL_245",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_245.jpg",
+          "sanitized_path": "train\\waste\\POL_245.jpg"
+        },
+        {
+          "image_id": "POL_248",
+          "split": "val",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "val\\pollution\\POL_248.jpg",
+          "sanitized_path": "val\\waste\\POL_248.jpg"
+        },
+        {
+          "image_id": "POL_250",
+          "split": "train",
+          "source_label": "pollution",
+          "sanitized_label": "waste",
+          "source_path": "train\\pollution\\POL_250.jpg",
+          "sanitized_path": "train\\waste\\POL_250.jpg"
+        }
+      ],
+      "only_intended_train_val_labels_changed": true,
+      "unexpected_label_changes": [],
+      "expected_relabels_applied_count": 79,
+      "expected_relabels_applied": [
+        "POL_101",
+        "POL_102",
+        "POL_103",
+        "POL_104",
+        "POL_105",
+        "POL_106",
+        "POL_107",
+        "POL_108",
+        "POL_109",
+        "POL_110",
+        "POL_111",
+        "POL_112",
+        "POL_114",
+        "POL_115",
+        "POL_116",
+        "POL_117",
+        "POL_118",
+        "POL_119",
+        "POL_120",
+        "POL_122",
+        "POL_123",
+        "POL_124",
+        "POL_125",
+        "POL_127",
+        "POL_128",
+        "POL_129",
+        "POL_130",
+        "POL_131",
+        "POL_132",
+        "POL_133",
+        "POL_134",
+        "POL_136",
+        "POL_137",
+        "POL_138",
+        "POL_139",
+        "POL_140",
+        "POL_141",
+        "POL_142",
+        "POL_144",
+        "POL_146",
+        "POL_147",
+        "POL_149",
+        "POL_150",
+        "POL_200",
+        "POL_203",
+        "POL_204",
+        "POL_205",
+        "POL_206",
+        "POL_207",
+        "POL_208",
+        "POL_210",
+        "POL_211",
+        "POL_212",
+        "POL_213",
+        "POL_216",
+        "POL_217",
+        "POL_218",
+        "POL_219",
+        "POL_220",
+        "POL_221",
+        "POL_226",
+        "POL_227",
+        "POL_228",
+        "POL_229",
+        "POL_230",
+        "POL_231",
+        "POL_232",
+        "POL_234",
+        "POL_235",
+        "POL_236",
+        "POL_237",
+        "POL_239",
+        "POL_240",
+        "POL_241",
+        "POL_243",
+        "POL_244",
+        "POL_245",
+        "POL_248",
+        "POL_250"
+      ],
+      "expected_relabels_missing": [],
+      "protected_test_labels_unchanged": true,
+      "protected_test_label_changes": []
+    },
+    "no_missing_or_orphan_files": true,
+    "no_duplicate_ids": true,
+    "overall_passed": true
+  },
+  "overall_passed": true
+}
