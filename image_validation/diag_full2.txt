@@ -1,0 +1,52 @@
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+[classifier] EcoPin Image Validation Classifier � Starting Up
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+[classifier] Architecture   : efficientnet_b0
+[classifier] Num classes    : 4
+[classifier] Class order    : ['flooding', 'non_environmental', 'pollution', 'waste']
+[classifier] Image size     : 224 � 224
+[classifier] Preprocessing  : PadToSquare(fill=0) \u2192 Resize(224�224) \u2192 ToTensor \u2192 ImageNet Normalize
+[classifier]                  mean=[0.485, 0.456, 0.406]
+[classifier]                  std =[0.229, 0.224, 0.225]
+[classifier] Conf. threshold: 0.70 (backend threshold, shown in diagnostics only)
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+[classifier] Device         : cpu
+[classifier] Checkpoint     : C:\dev\ecopin_ml_models\image_validation\checkpoints\exp8\best.pt
+[classifier] Checkpoint size: 15.6 MB  \u2713 file exists
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+[classifier] Loading model weights...
+[classifier] Checkpoint loaded into model  \u2713
+[classifier] Model set to eval() mode      \u2713
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+[classifier] Listening on http://127.0.0.1:8000
+[classifier]   GET  /health
+[classifier]   POST /classify           (raw image bytes)
+[classifier]   POST /classify-multipart (multipart, field='file')
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+[diag] POST /classify  from 127.0.0.1
+[diag]   Content-Type  : image/jpeg
+[diag]   Body size     : 6,582 bytes
+[diag] Image decode    : OK
+[diag]   Raw bytes     : 6,582 bytes
+[diag]   Format        : JPEG
+[diag]   Original size : 400 � 300  mode=RGB
+[diag]   After convert : 400 � 300  mode=RGB
+[diag] Preprocessing   :
+[diag]   PadToSquare   : left=0 top=50 right=0 bottom=50  \u2192  400�400
+[diag]   Resize        : 400�400  \u2192  224�224
+[diag]   Normalize     : ImageNet mean/std
+[diag]   Tensor shape  : [1, 3, 224, 224]  dtype=torch.float32
+[diag]   Tensor stats  : min=-2.1179  max=1.4612  mean=-1.0189
+[diag] Inference       : OK
+[diag] Probabilities   :
+[diag]   flooding              :   0.04%
+[diag]   non_environmental     :  17.34%
+[diag]   pollution             :  64.45%  \u25c0 predicted
+[diag]   waste                 :  18.18%
+[diag] Predicted class : pollution
+[diag] Confidence      : 64.45%  (threshold 70%)
+[diag] Backend decision: MANUAL_REVIEW
+[diag]   Result        : 200 OK � response sent
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+[classifier] 127.0.0.1 - "POST /classify HTTP/1.1" 200 -

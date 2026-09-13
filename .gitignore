@@ -131,4 +131,8 @@ final_1000_dataset/**/*.pth
 # Inference service environment file
 # (The template .env.example IS committed; actual .env is NOT)
 # ============================================================
-image_validation/.env
+image_validation/.env
+
+# Production model checkpoints - do not commit
+image_validation/checkpoints/exp8/best.pt
+image_validation/checkpoints/exp2_2/best_model.pt

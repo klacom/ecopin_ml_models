@@ -1,0 +1,33 @@
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+[classifier] EcoPin Image Validation Classifier � Starting Up
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+[classifier] Architecture   : efficientnet_b0
+[classifier] Num classes    : 4
+[classifier] Class order    : ['flooding', 'non_environmental', 'pollution', 'waste']
+[classifier] Image size     : 224 � 224
+[classifier] Preprocessing  : PadToSquare(fill=0) \u2192 Resize(224�224) \u2192 ToTensor \u2192 ImageNet Normalize
+[classifier]                  mean=[0.485, 0.456, 0.406]
+[classifier]                  std =[0.229, 0.224, 0.225]
+[classifier] Conf. threshold: 0.70 (backend threshold, shown in diagnostics only)
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+[classifier] Device         : cpu
+[classifier] Checkpoint     : C:\dev\ecopin_ml_models\image_validation\checkpoints\exp2_2\best_model.pt
+[classifier] Checkpoint size: 15.6 MB  \u2713 file exists
+\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500
+[classifier] Loading model weights...
+[classifier] Checkpoint format: dictionary (model_state_dict key found)
+[classifier]   Saved epoch    : 16
+[classifier]   Best Macro F1  : 0.7387
+[classifier]   Best Val Acc   : 74.00%
+[classifier]   Base checkpoint: c:\dev\ecopin_ml_models\baseline_original_350\best_model.pt
+[classifier]   Embedded classes: ['flooding', 'non_environmental', 'pollution', 'waste']
+[classifier]   Class names match service config  \u2713
+[classifier] Checkpoint loaded into model  \u2713
+[classifier] Model set to eval() mode      \u2713
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+[classifier] Listening on http://127.0.0.1:8000
+[classifier]   GET  /health
+[classifier]   POST /classify           (raw image bytes)
+[classifier]   POST /classify-multipart (multipart, field='file')
+\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550
+[classifier] 127.0.0.1 - "GET /health HTTP/1.1" 200 -
