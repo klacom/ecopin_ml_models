@@ -1,0 +1,911 @@
+[
+  {
+    "image_id": "POL_220",
+    "filename": "POL_220.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_220.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_101",
+    "filename": "POL_101.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_101.jpg",
+    "notes": "Atacama: The toxic desert.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_102",
+    "filename": "POL_102.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_102.jpg",
+    "notes": "No swimming in the river after all.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_103",
+    "filename": "POL_103.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_103.jpg",
+    "notes": "Litter Me Beautiful.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_104",
+    "filename": "POL_104.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_104.jpg",
+    "notes": "Siem Reap dump cow.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_105",
+    "filename": "POL_105.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_105.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_106",
+    "filename": "POL_106.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_106.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_107",
+    "filename": "POL_107.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_107.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_108",
+    "filename": "POL_108.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_108.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_109",
+    "filename": "POL_109.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_109.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_110",
+    "filename": "POL_110.jpg",
+    "subcategory": "land_pollution",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_110.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_111",
+    "filename": "POL_111.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_111.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_112",
+    "filename": "POL_112.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_112.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_113",
+    "filename": "POL_113.jpg",
+    "subcategory": "land_pollution",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_113.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_114",
+    "filename": "POL_114.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_114.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_115",
+    "filename": "POL_115.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_115.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_116",
+    "filename": "POL_116.jpg",
+    "subcategory": "land_pollution",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_116.jpg",
+    "notes": "rubbish_mohit.",
+    "location": "Bangkok, Thailand"
+  },
+  {
+    "image_id": "POL_117",
+    "filename": "POL_117.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_117.jpg",
+    "notes": "Thu gom r\u00e1c trong ng\u00e0y Xanh S\u1ea1ch - huy\u1ec7n \u0110\u00f4ng H\u1ea3i, B\u1ea1c Li\u00eau.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_118",
+    "filename": "POL_118.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_118.jpg",
+    "notes": "AlleyWay News 3.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_119",
+    "filename": "POL_119.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_119.jpg",
+    "notes": "Grace Illegal Dumping, BLM Pocatello Field Office.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_120",
+    "filename": "POL_120.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_120.jpg",
+    "notes": "Silver Springs Illegal Dump $66,000 Cleanup.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_121",
+    "filename": "POL_121.jpg",
+    "subcategory": "land_pollution",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_121.jpg",
+    "notes": "rubbish in the forest.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_122",
+    "filename": "POL_122.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_122.jpg",
+    "notes": "Illegal Dumping.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_123",
+    "filename": "POL_123.jpg",
+    "subcategory": "land_pollution",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_123.jpg",
+    "notes": "Taiwan - Illegal Dumping.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_124",
+    "filename": "POL_124.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_124.jpg",
+    "notes": "Illegal Garbage Dump 7.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_125",
+    "filename": "POL_125.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_125.jpg",
+    "notes": "Illegal dump at the hearth of the Belgian Forest.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_126",
+    "filename": "POL_126.jpg",
+    "subcategory": "land_pollution",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_126.jpg",
+    "notes": "Illegal Garbage Dump 4.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_127",
+    "filename": "POL_127.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_127.jpg",
+    "notes": "Illegal Garbage Dump 3.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_128",
+    "filename": "POL_128.jpg",
+    "subcategory": "land_pollution",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_128.jpg",
+    "notes": "Illegal Garbage Dump in Yacolt Burn State Forest.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_129",
+    "filename": "POL_129.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_129.jpg",
+    "notes": "Millican Cliffs illegal dump site in the Prineville area.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_130",
+    "filename": "POL_130.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_130.jpg",
+    "notes": "Illegal dumping at Jalan Kilang Tebu.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_131",
+    "filename": "POL_131.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_131.jpg",
+    "notes": "Illegal dumping at Jalan Kilang Tebu.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_132",
+    "filename": "POL_132.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_132.jpg",
+    "notes": "Cleaning up an illegal dump site near Grande Prairie.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_133",
+    "filename": "POL_133.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_133.jpg",
+    "notes": "Holiday Feeling.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_134",
+    "filename": "POL_134.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_134.jpg",
+    "notes": "Dump site and abandoned vehicle North Unit Canal in the Prineville area.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_135",
+    "filename": "POL_135.jpg",
+    "subcategory": "land_pollution",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_135.jpg",
+    "notes": "Environmental Excellence award - before the cleanup.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_136",
+    "filename": "POL_136.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_136.jpg",
+    "notes": "Shotgun shells left behind in the Prineville area.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_137",
+    "filename": "POL_137.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_137.jpg",
+    "notes": "Crescent Lake Road cleanup.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_138",
+    "filename": "POL_138.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_138.jpg",
+    "notes": "Asbestos Shingles snd Asphalt Shingles.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_139",
+    "filename": "POL_139.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_139.jpg",
+    "notes": "trackside dump trash junk.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_140",
+    "filename": "POL_140.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_140.jpg",
+    "notes": "20201011-132703LC.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_141",
+    "filename": "POL_141.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_141.jpg",
+    "notes": "WHY???.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_142",
+    "filename": "POL_142.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_142.jpg",
+    "notes": "52wstban.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_143",
+    "filename": "POL_143.jpg",
+    "subcategory": "land_pollution",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_143.jpg",
+    "notes": "Illegal dumping site and trash in the river.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_144",
+    "filename": "POL_144.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_144.jpg",
+    "notes": "Illegal dumping site and trash in the river.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_145",
+    "filename": "POL_145.jpg",
+    "subcategory": "land_pollution",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_145.jpg",
+    "notes": "Sep032008 039.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_146",
+    "filename": "POL_146.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_146.jpg",
+    "notes": "Dumped.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_147",
+    "filename": "POL_147.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_147.jpg",
+    "notes": "final disposal in lusaka.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_148",
+    "filename": "POL_148.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_148.jpg",
+    "notes": "Rust-colored mining runoff at the abandoned mining town of New Idria, CA - newid.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_149",
+    "filename": "POL_149.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_149.jpg",
+    "notes": "Chicken!.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_150",
+    "filename": "POL_150.jpg",
+    "subcategory": "land_pollution",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_150.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_200",
+    "filename": "POL_200.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_200.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_201",
+    "filename": "POL_201.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_201.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_202",
+    "filename": "POL_202.jpg",
+    "subcategory": "construction_debris",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_202.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_203",
+    "filename": "POL_203.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_203.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_204",
+    "filename": "POL_204.jpg",
+    "subcategory": "construction_debris",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_204.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_205",
+    "filename": "POL_205.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_205.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_206",
+    "filename": "POL_206.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_206.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_207",
+    "filename": "POL_207.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_207.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_208",
+    "filename": "POL_208.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_208.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_209",
+    "filename": "POL_209.jpg",
+    "subcategory": "construction_debris",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_209.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_210",
+    "filename": "POL_210.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_210.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_211",
+    "filename": "POL_211.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_211.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_212",
+    "filename": "POL_212.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_212.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_213",
+    "filename": "POL_213.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_213.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_214",
+    "filename": "POL_214.jpg",
+    "subcategory": "construction_debris",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_214.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_215",
+    "filename": "POL_215.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_215.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_216",
+    "filename": "POL_216.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_216.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_217",
+    "filename": "POL_217.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_217.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_218",
+    "filename": "POL_218.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_218.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_219",
+    "filename": "POL_219.jpg",
+    "subcategory": "construction_debris",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_219.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_221",
+    "filename": "POL_221.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_221.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_222",
+    "filename": "POL_222.jpg",
+    "subcategory": "construction_debris",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_222.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_223",
+    "filename": "POL_223.jpg",
+    "subcategory": "construction_debris",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_223.jpg",
+    "notes": "TRASH???.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_224",
+    "filename": "POL_224.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_224.jpg",
+    "notes": "Spilled construction waste.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_225",
+    "filename": "POL_225.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_225.jpg",
+    "notes": "Spilled construction waste.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_226",
+    "filename": "POL_226.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_226.jpg",
+    "notes": "Bauschutt / Construction waste.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_227",
+    "filename": "POL_227.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_227.jpg",
+    "notes": "Illegaler Bauschutt / illegal construction waste.",
+    "location": ""
+  },
+  {
+    "image_id": "POL_228",
+    "filename": "POL_228.jpg",
+    "subcategory": "construction_debris",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_228.jpg",
+    "notes": "The building isn't even finished yet, and look how much is going to waste!",
+    "location": ""
+  },
+  {
+    "image_id": "POL_229",
+    "filename": "POL_229.jpg",
+    "subcategory": "construction_debris",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_229.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_230",
+    "filename": "POL_230.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_230.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_231",
+    "filename": "POL_231.jpg",
+    "subcategory": "construction_debris",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_231.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_232",
+    "filename": "POL_232.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_232.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_233",
+    "filename": "POL_233.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_233.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_234",
+    "filename": "POL_234.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_234.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_235",
+    "filename": "POL_235.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_235.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_236",
+    "filename": "POL_236.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_236.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_237",
+    "filename": "POL_237.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_237.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_238",
+    "filename": "POL_238.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_238.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_239",
+    "filename": "POL_239.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_239.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_240",
+    "filename": "POL_240.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_240.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_241",
+    "filename": "POL_241.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_241.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_242",
+    "filename": "POL_242.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_242.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_243",
+    "filename": "POL_243.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_243.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_244",
+    "filename": "POL_244.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_244.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_245",
+    "filename": "POL_245.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_245.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_246",
+    "filename": "POL_246.jpg",
+    "subcategory": "construction_debris",
+    "split": "test",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\test\\pollution\\POL_246.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_247",
+    "filename": "POL_247.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_247.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_248",
+    "filename": "POL_248.jpg",
+    "subcategory": "construction_debris",
+    "split": "val",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\val\\pollution\\POL_248.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_249",
+    "filename": "POL_249.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_249.jpg",
+    "notes": "",
+    "location": ""
+  },
+  {
+    "image_id": "POL_250",
+    "filename": "POL_250.jpg",
+    "subcategory": "construction_debris",
+    "split": "train",
+    "full_path": "C:\\dev\\datasets\\ecopin_dataset\\split\\train\\pollution\\POL_250.jpg",
+    "notes": "",
+    "location": ""
+  }
+]
