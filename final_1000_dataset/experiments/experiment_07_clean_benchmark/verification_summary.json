@@ -1,0 +1,88 @@
+{
+  "verification_summary": {
+    "total_images": 100,
+    "by_original_class": {
+      "flooding": {
+        "total": 25,
+        "verified_correct": 25,
+        "verified_mislabeled": 0,
+        "ambiguous": 0,
+        "insufficient_evidence": 0,
+        "breakdown_by_confidence": {
+          "HIGH": 9,
+          "MEDIUM": 16,
+          "LOW": 0
+        }
+      },
+      "non_environmental": {
+        "total": 25,
+        "verified_correct": 25,
+        "verified_mislabeled": 0,
+        "ambiguous": 0,
+        "insufficient_evidence": 0,
+        "breakdown_by_confidence": {
+          "HIGH": 5,
+          "MEDIUM": 20,
+          "LOW": 0
+        }
+      },
+      "pollution": {
+        "total": 25,
+        "verified_correct": 14,
+        "verified_mislabeled": 10,
+        "ambiguous": 1,
+        "insufficient_evidence": 0,
+        "breakdown_by_confidence": {
+          "HIGH": 12,
+          "MEDIUM": 13,
+          "LOW": 0
+        }
+      },
+      "waste": {
+        "total": 25,
+        "verified_correct": 25,
+        "verified_mislabeled": 0,
+        "ambiguous": 0,
+        "insufficient_evidence": 0,
+        "breakdown_by_confidence": {
+          "HIGH": 12,
+          "MEDIUM": 13,
+          "LOW": 0
+        }
+      }
+    },
+    "by_verification_status": {
+      "VERIFIED_CORRECT_LABEL": 89,
+      "VERIFIED_MISLABELED": 10,
+      "AMBIGUOUS": 1,
+      "INSUFFICIENT_EVIDENCE": 0
+    },
+    "protected_cases_analysis": {
+      "total_protected": 12,
+      "verified_mislabeled": 10,
+      "verified_correct": 1,
+      "ambiguous": 1,
+      "exp04_agreement": 11,
+      "exp04_disagreement": 1,
+      "exp06_agreement": 11,
+      "exp06_disagreement": 0
+    },
+    "clean_benchmark_composition": {
+      "flooding": 25,
+      "non_environmental": 25,
+      "pollution": 15,
+      "waste": 35,
+      "ambiguous": 1,
+      "total_excluding_ambiguous": 99
+    },
+    "key_findings": [
+      "89% of original labels are verified as correct",
+      "10% of original labels are independently verified as mislabeled (all in pollution class)",
+      "1% of images are ambiguous (POL_246)",
+      "Pollution class has the most label uncertainty (40% mislabeled rate)",
+      "All 12 protected pollution cases were independently reviewed: 10 confirmed as waste, 1 confirmed as pollution (POL_135 e-waste), 1 ambiguous (POL_246)",
+      "Exp06 independent verification agrees with Exp04 on 11/12 cases, disagrees on POL_135 (e-waste classification)",
+      "Flooding, non_environmental, and waste classes show no label noise"
+    ]
+  }
+}

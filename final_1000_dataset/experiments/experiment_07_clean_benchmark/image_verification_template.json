@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "experiment": "experiment_07_clean_benchmark",
+    "verification_date": "2026-09-13",
+    "verifier": "independent_review",
+    "total_images": 100,
+    "taxonomy_sources": [
+      "Dataset metadata CSV (ecopin_dataset.csv)",
+      "Experiment 04 audit report",
+      "Experiment 05 report",
+      "Experiment 06 error analysis",
+      "Research paper (PDF - not text-parseable)"
+    ]
+  },
+  "images": []
+}
