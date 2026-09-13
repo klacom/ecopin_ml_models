@@ -1,0 +1,72 @@
+{
+  "sanitization_date": "2026-09-13 13:04:45",
+  "source_dataset": "c:\\dev\\datasets\\ecopin_dataset\\split",
+  "sanitized_dataset": "c:\\dev\\datasets\\ecopin_dataset\\experiment_03_sanitized",
+  "total_images_changed": 5,
+  "total_candidates_audited": 7,
+  "applied_changes": [
+    {
+      "image_id": "NEG_126",
+      "filename": "NEG_126.jpg",
+      "split": "train",
+      "original_label": "non_environmental",
+      "new_label": "waste",
+      "reason": "Open rickshaw overflowing with uncollected trash bags and loose garbage.",
+      "verified": true
+    },
+    {
+      "image_id": "NEG_136",
+      "filename": "NEG_136.jpg",
+      "split": "train",
+      "original_label": "non_environmental",
+      "new_label": "waste",
+      "reason": "Pick-up truck overloaded with a high pile of junk, mattresses, and discarded household waste.",
+      "verified": true
+    },
+    {
+      "image_id": "NEG_141",
+      "filename": "NEG_141.jpg",
+      "split": "train",
+      "original_label": "non_environmental",
+      "new_label": "waste",
+      "reason": "Motorized tricycle loaded high with unbagged loose garbage and refuse.",
+      "verified": true
+    },
+    {
+      "image_id": "NEG_142",
+      "filename": "NEG_142.jpg",
+      "split": "val",
+      "original_label": "non_environmental",
+      "new_label": "waste",
+      "reason": "Outdoor dumpsters with overflowing trash and loose garbage scattered on surrounding ground.",
+      "verified": true
+    },
+    {
+      "image_id": "NEG_248",
+      "filename": "NEG_248.jpg",
+      "split": "train",
+      "original_label": "non_environmental",
+      "new_label": "waste",
+      "reason": "Discarded plastic garbage, empty bottles, and litter scattered across ground.",
+      "verified": true
+    }
+  ],
+  "protected_test_candidates_unchanged": [
+    {
+      "image_id": "NEG_222",
+      "filename": "NEG_222.jpg",
+      "split": "test",
+      "original_label": "non_environmental",
+      "new_label": "non_environmental (UNCHANGED)",
+      "reason": "Protected by Test-Set Protection Rule to ensure test set remains 100% identical across Exp 01/02/03."
+    },
+    {
+      "image_id": "NEG_249",
+      "filename": "NEG_249.jpg",
+      "split": "test",
+      "original_label": "non_environmental",
+      "new_label": "non_environmental (UNCHANGED)",
+      "reason": "Protected by Test-Set Protection Rule to ensure test set remains 100% identical across Exp 01/02/03."
+    }
+  ]
+}
