@@ -1,0 +1,20 @@
+{
+  "experiment": "3.2",
+  "model_name": "linear",
+  "architecture": "LinearClassifier(\n  (fc): Linear(in_features=512, out_features=1, bias=True)\n)",
+  "n_params": 513,
+  "seed": 42,
+  "batch_size": 64,
+  "max_epochs": 200,
+  "lr": 0.001,
+  "weight_decay": 0.0,
+  "dropout": 0.0,
+  "patience": 15,
+  "early_stop_metric": "val_macro_f1",
+  "pos_weight": 0.75,
+  "best_epoch": 38,
+  "best_val_macro_f1": 0.878616,
+  "clip_model": "ViT-B/32",
+  "emb_dir": "C:\\dev\\datasets\\ecopin_dataset\\embeddings\\exp03_2",
+  "emb_dim": 512
+}

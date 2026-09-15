@@ -1,0 +1,344 @@
+{
+  "model": "reg_mlp",
+  "recommended_threshold": 0.45,
+  "review_zone": {
+    "lo": 0.35,
+    "hi": 0.65
+  },
+  "val_at_recommended": {
+    "t": 0.45,
+    "acc": 0.9056,
+    "mf1": 0.8958,
+    "p_inv": 0.8308,
+    "r_inv": 0.9,
+    "f1_inv": 0.864,
+    "p_val": 0.9478,
+    "r_val": 0.9083,
+    "f1_val": 0.9277,
+    "TP": 109,
+    "FP": 6,
+    "TN": 54,
+    "FN": 11,
+    "false_valid": 6,
+    "false_invalid": 11
+  },
+  "test_at_recommended": {
+    "t": 0.45,
+    "acc": 0.9222,
+    "mf1": 0.911,
+    "p_inv": 0.9107,
+    "r_inv": 0.85,
+    "f1_inv": 0.8793,
+    "p_val": 0.9274,
+    "r_val": 0.9583,
+    "f1_val": 0.9426,
+    "TP": 115,
+    "FP": 9,
+    "TN": 51,
+    "FN": 5,
+    "false_valid": 9,
+    "false_invalid": 5
+  },
+  "test_at_0.50": {
+    "t": 0.5,
+    "acc": 0.9278,
+    "mf1": 0.9184,
+    "p_inv": 0.8983,
+    "r_inv": 0.8833,
+    "f1_inv": 0.8908,
+    "p_val": 0.9421,
+    "r_val": 0.95,
+    "f1_val": 0.9461,
+    "TP": 114,
+    "FP": 7,
+    "TN": 53,
+    "FN": 6,
+    "false_valid": 7,
+    "false_invalid": 6
+  },
+  "false_valid_test": 9,
+  "false_invalid_test": 5,
+  "val_threshold_sweep": [
+    {
+      "t": 0.3,
+      "acc": 0.8833,
+      "mf1": 0.8693,
+      "p_inv": 0.8197,
+      "r_inv": 0.8333,
+      "f1_inv": 0.8264,
+      "p_val": 0.916,
+      "r_val": 0.9083,
+      "f1_val": 0.9121,
+      "TP": 109,
+      "FP": 10,
+      "TN": 50,
+      "FN": 11,
+      "false_valid": 10,
+      "false_invalid": 11
+    },
+    {
+      "t": 0.35,
+      "acc": 0.8944,
+      "mf1": 0.8827,
+      "p_inv": 0.8254,
+      "r_inv": 0.8667,
+      "f1_inv": 0.8455,
+      "p_val": 0.9316,
+      "r_val": 0.9083,
+      "f1_val": 0.9198,
+      "TP": 109,
+      "FP": 8,
+      "TN": 52,
+      "FN": 11,
+      "false_valid": 8,
+      "false_invalid": 11
+    },
+    {
+      "t": 0.4,
+      "acc": 0.9,
+      "mf1": 0.8893,
+      "p_inv": 0.8281,
+      "r_inv": 0.8833,
+      "f1_inv": 0.8548,
+      "p_val": 0.9397,
+      "r_val": 0.9083,
+      "f1_val": 0.9237,
+      "TP": 109,
+      "FP": 7,
+      "TN": 53,
+      "FN": 11,
+      "false_valid": 7,
+      "false_invalid": 11
+    },
+    {
+      "t": 0.45,
+      "acc": 0.9056,
+      "mf1": 0.8958,
+      "p_inv": 0.8308,
+      "r_inv": 0.9,
+      "f1_inv": 0.864,
+      "p_val": 0.9478,
+      "r_val": 0.9083,
+      "f1_val": 0.9277,
+      "TP": 109,
+      "FP": 6,
+      "TN": 54,
+      "FN": 11,
+      "false_valid": 6,
+      "false_invalid": 11
+    },
+    {
+      "t": 0.5,
+      "acc": 0.9056,
+      "mf1": 0.8958,
+      "p_inv": 0.8308,
+      "r_inv": 0.9,
+      "f1_inv": 0.864,
+      "p_val": 0.9478,
+      "r_val": 0.9083,
+      "f1_val": 0.9277,
+      "TP": 109,
+      "FP": 6,
+      "TN": 54,
+      "FN": 11,
+      "false_valid": 6,
+      "false_invalid": 11
+    },
+    {
+      "t": 0.55,
+      "acc": 0.8944,
+      "mf1": 0.8852,
+      "p_inv": 0.7971,
+      "r_inv": 0.9167,
+      "f1_inv": 0.8527,
+      "p_val": 0.955,
+      "r_val": 0.8833,
+      "f1_val": 0.9177,
+      "TP": 106,
+      "FP": 5,
+      "TN": 55,
+      "FN": 14,
+      "false_valid": 5,
+      "false_invalid": 14
+    },
+    {
+      "t": 0.6,
+      "acc": 0.8889,
+      "mf1": 0.8796,
+      "p_inv": 0.7857,
+      "r_inv": 0.9167,
+      "f1_inv": 0.8462,
+      "p_val": 0.9545,
+      "r_val": 0.875,
+      "f1_val": 0.913,
+      "TP": 105,
+      "FP": 5,
+      "TN": 55,
+      "FN": 15,
+      "false_valid": 5,
+      "false_invalid": 15
+    },
+    {
+      "t": 0.65,
+      "acc": 0.8889,
+      "mf1": 0.8804,
+      "p_inv": 0.7778,
+      "r_inv": 0.9333,
+      "f1_inv": 0.8485,
+      "p_val": 0.963,
+      "r_val": 0.8667,
+      "f1_val": 0.9123,
+      "TP": 104,
+      "FP": 4,
+      "TN": 56,
+      "FN": 16,
+      "false_valid": 4,
+      "false_invalid": 16
+    },
+    {
+      "t": 0.7,
+      "acc": 0.8833,
+      "mf1": 0.8748,
+      "p_inv": 0.7671,
+      "r_inv": 0.9333,
+      "f1_inv": 0.8421,
+      "p_val": 0.9626,
+      "r_val": 0.8583,
+      "f1_val": 0.9075,
+      "TP": 103,
+      "FP": 4,
+      "TN": 56,
+      "FN": 17,
+      "false_valid": 4,
+      "false_invalid": 17
+    },
+    {
+      "t": 0.75,
+      "acc": 0.8833,
+      "mf1": 0.8748,
+      "p_inv": 0.7671,
+      "r_inv": 0.9333,
+      "f1_inv": 0.8421,
+      "p_val": 0.9626,
+      "r_val": 0.8583,
+      "f1_val": 0.9075,
+      "TP": 103,
+      "FP": 4,
+      "TN": 56,
+      "FN": 17,
+      "false_valid": 4,
+      "false_invalid": 17
+    },
+    {
+      "t": 0.8,
+      "acc": 0.8667,
+      "mf1": 0.8582,
+      "p_inv": 0.7368,
+      "r_inv": 0.9333,
+      "f1_inv": 0.8235,
+      "p_val": 0.9615,
+      "r_val": 0.8333,
+      "f1_val": 0.8929,
+      "TP": 100,
+      "FP": 4,
+      "TN": 56,
+      "FN": 20,
+      "false_valid": 4,
+      "false_invalid": 20
+    },
+    {
+      "t": 0.85,
+      "acc": 0.85,
+      "mf1": 0.8418,
+      "p_inv": 0.7089,
+      "r_inv": 0.9333,
+      "f1_inv": 0.8058,
+      "p_val": 0.9604,
+      "r_val": 0.8083,
+      "f1_val": 0.8778,
+      "TP": 97,
+      "FP": 4,
+      "TN": 56,
+      "FN": 23,
+      "false_valid": 4,
+      "false_invalid": 23
+    },
+    {
+      "t": 0.9,
+      "acc": 0.8222,
+      "mf1": 0.8156,
+      "p_inv": 0.6628,
+      "r_inv": 0.95,
+      "f1_inv": 0.7808,
+      "p_val": 0.9681,
+      "r_val": 0.7583,
+      "f1_val": 0.8505,
+      "TP": 91,
+      "FP": 3,
+      "TN": 57,
+      "FN": 29,
+      "false_valid": 3,
+      "false_invalid": 29
+    }
+  ],
+  "fn_images": [
+    {
+      "filename": "WST_291.jpeg",
+      "prob_valid": 0.0304
+    },
+    {
+      "filename": "FLD_115.jpg",
+      "prob_valid": 0.2154
+    },
+    {
+      "filename": "FLD_026.jpg",
+      "prob_valid": 0.2498
+    },
+    {
+      "filename": "WST_254.jpg",
+      "prob_valid": 0.2743
+    },
+    {
+      "filename": "WST_018.jpg",
+      "prob_valid": 0.3246
+    }
+  ],
+  "fp_images": [
+    {
+      "filename": "NEG_272.jpg",
+      "prob_valid": 0.9792
+    },
+    {
+      "filename": "NEG_396.jpg",
+      "prob_valid": 0.9561
+    },
+    {
+      "filename": "NEG_170.jpg",
+      "prob_valid": 0.7055
+    },
+    {
+      "filename": "NEG_151.jpg",
+      "prob_valid": 0.6926
+    },
+    {
+      "filename": "NEG_162.jpg",
+      "prob_valid": 0.6388
+    },
+    {
+      "filename": "NEG_248.jpg",
+      "prob_valid": 0.6081
+    },
+    {
+      "filename": "NEG_092.jpg",
+      "prob_valid": 0.6042
+    },
+    {
+      "filename": "NEG_065.jpg",
+      "prob_valid": 0.4545
+    },
+    {
+      "filename": "NEG_155.jpg",
+      "prob_valid": 0.4543
+    }
+  ]
+}
