@@ -1,0 +1,1096 @@
+{
+  "linear": {
+    "best_threshold_mf1": 0.5,
+    "best_threshold_inv_recall": 0.75,
+    "val_roc_auc": 0.9217,
+    "val_at_default": {
+      "threshold": 0.5,
+      "accuracy": 0.8667,
+      "macro_f1": 0.8474,
+      "precision_invalid": 0.8214,
+      "recall_invalid": 0.7667,
+      "f1_invalid": 0.7931,
+      "precision_valid": 0.8871,
+      "recall_valid": 0.9167,
+      "f1_valid": 0.9016,
+      "TP": 110,
+      "FP": 14,
+      "TN": 46,
+      "FN": 10
+    },
+    "val_at_best_t": {
+      "threshold": 0.5,
+      "accuracy": 0.8667,
+      "macro_f1": 0.8474,
+      "precision_invalid": 0.8214,
+      "recall_invalid": 0.7667,
+      "f1_invalid": 0.7931,
+      "precision_valid": 0.8871,
+      "recall_valid": 0.9167,
+      "f1_valid": 0.9016,
+      "TP": 110,
+      "FP": 14,
+      "TN": 46,
+      "FN": 10
+    },
+    "test_at_default_t": {
+      "threshold": 0.5,
+      "accuracy": 0.9111,
+      "macro_f1": 0.8973,
+      "precision_invalid": 0.9074,
+      "recall_invalid": 0.8167,
+      "f1_invalid": 0.8596,
+      "precision_valid": 0.9127,
+      "recall_valid": 0.9583,
+      "f1_valid": 0.935,
+      "TP": 115,
+      "FP": 11,
+      "TN": 49,
+      "FN": 5
+    },
+    "test_at_best_t": {
+      "threshold": 0.5,
+      "accuracy": 0.9111,
+      "macro_f1": 0.8973,
+      "precision_invalid": 0.9074,
+      "recall_invalid": 0.8167,
+      "f1_invalid": 0.8596,
+      "precision_valid": 0.9127,
+      "recall_valid": 0.9583,
+      "f1_valid": 0.935,
+      "TP": 115,
+      "FP": 11,
+      "TN": 49,
+      "FN": 5
+    },
+    "val": {
+      "false_negatives": [
+        {
+          "filename": "WST_267.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.8132,
+          "prob_valid": 0.1868
+        },
+        {
+          "filename": "FLD_066.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.7524,
+          "prob_valid": 0.2476
+        },
+        {
+          "filename": "FLD_070.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.7433,
+          "prob_valid": 0.2567
+        },
+        {
+          "filename": "WST_291.jpeg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.7065,
+          "prob_valid": 0.2935
+        },
+        {
+          "filename": "FLD_060.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6838,
+          "prob_valid": 0.3162
+        },
+        {
+          "filename": "WST_238.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6764,
+          "prob_valid": 0.3236
+        },
+        {
+          "filename": "FLD_088.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6137,
+          "prob_valid": 0.3863
+        },
+        {
+          "filename": "WST_024.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.557,
+          "prob_valid": 0.443
+        },
+        {
+          "filename": "FLD_183.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.5388,
+          "prob_valid": 0.4612
+        },
+        {
+          "filename": "POL_036.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.5287,
+          "prob_valid": 0.4713
+        }
+      ],
+      "false_positives": [
+        {
+          "filename": "NEG_150.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.7411,
+          "prob_valid": 0.7411
+        },
+        {
+          "filename": "NEG_155.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.719,
+          "prob_valid": 0.719
+        },
+        {
+          "filename": "NEG_128.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.703,
+          "prob_valid": 0.703
+        },
+        {
+          "filename": "NEG_156.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6883,
+          "prob_valid": 0.6883
+        },
+        {
+          "filename": "NEG_153.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6701,
+          "prob_valid": 0.6701
+        },
+        {
+          "filename": "NEG_246.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6323,
+          "prob_valid": 0.6323
+        },
+        {
+          "filename": "NEG_249.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6047,
+          "prob_valid": 0.6047
+        },
+        {
+          "filename": "NEG_145.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5993,
+          "prob_valid": 0.5993
+        },
+        {
+          "filename": "NEG_269.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5681,
+          "prob_valid": 0.5681
+        },
+        {
+          "filename": "NEG_270.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5602,
+          "prob_valid": 0.5602
+        },
+        {
+          "filename": "NEG_078.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5446,
+          "prob_valid": 0.5446
+        },
+        {
+          "filename": "NEG_228.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5441,
+          "prob_valid": 0.5441
+        },
+        {
+          "filename": "NEG_207.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.541,
+          "prob_valid": 0.541
+        },
+        {
+          "filename": "NEG_152.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5073,
+          "prob_valid": 0.5073
+        }
+      ],
+      "n_fn": 10,
+      "n_fp": 14,
+      "review_zone_count": 52,
+      "auto_accept": 99,
+      "auto_reject": 29
+    },
+    "test": {
+      "false_negatives": [
+        {
+          "filename": "WST_068.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.683,
+          "prob_valid": 0.317
+        },
+        {
+          "filename": "POL_021.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6205,
+          "prob_valid": 0.3795
+        },
+        {
+          "filename": "FLD_045.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.5936,
+          "prob_valid": 0.4064
+        },
+        {
+          "filename": "FLD_176.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.5849,
+          "prob_valid": 0.4151
+        },
+        {
+          "filename": "WST_295.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.5647,
+          "prob_valid": 0.4353
+        }
+      ],
+      "false_positives": [
+        {
+          "filename": "NEG_157.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.8385,
+          "prob_valid": 0.8385
+        },
+        {
+          "filename": "NEG_170.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.8329,
+          "prob_valid": 0.8329
+        },
+        {
+          "filename": "NEG_142.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6381,
+          "prob_valid": 0.6381
+        },
+        {
+          "filename": "NEG_144.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6368,
+          "prob_valid": 0.6368
+        },
+        {
+          "filename": "NEG_167.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6227,
+          "prob_valid": 0.6227
+        },
+        {
+          "filename": "NEG_162.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6096,
+          "prob_valid": 0.6096
+        },
+        {
+          "filename": "NEG_129.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6049,
+          "prob_valid": 0.6049
+        },
+        {
+          "filename": "NEG_151.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5882,
+          "prob_valid": 0.5882
+        },
+        {
+          "filename": "NEG_244.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5663,
+          "prob_valid": 0.5663
+        },
+        {
+          "filename": "NEG_255.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5496,
+          "prob_valid": 0.5496
+        },
+        {
+          "filename": "NEG_048.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5181,
+          "prob_valid": 0.5181
+        }
+      ],
+      "n_fn": 5,
+      "n_fp": 11,
+      "review_zone_count": 43,
+      "auto_accept": 102,
+      "auto_reject": 35
+    }
+  },
+  "small_mlp": {
+    "best_threshold_mf1": 0.43,
+    "best_threshold_inv_recall": 0.87,
+    "val_roc_auc": 0.9315,
+    "val_at_default": {
+      "threshold": 0.5,
+      "accuracy": 0.8833,
+      "macro_f1": 0.8732,
+      "precision_invalid": 0.7826,
+      "recall_invalid": 0.9,
+      "f1_invalid": 0.8372,
+      "precision_valid": 0.9459,
+      "recall_valid": 0.875,
+      "f1_valid": 0.9091,
+      "TP": 105,
+      "FP": 6,
+      "TN": 54,
+      "FN": 15
+    },
+    "val_at_best_t": {
+      "threshold": 0.43,
+      "accuracy": 0.8833,
+      "macro_f1": 0.8732,
+      "precision_invalid": 0.7826,
+      "recall_invalid": 0.9,
+      "f1_invalid": 0.8372,
+      "precision_valid": 0.9459,
+      "recall_valid": 0.875,
+      "f1_valid": 0.9091,
+      "TP": 105,
+      "FP": 6,
+      "TN": 54,
+      "FN": 15
+    },
+    "test_at_default_t": {
+      "threshold": 0.5,
+      "accuracy": 0.8833,
+      "macro_f1": 0.8703,
+      "precision_invalid": 0.8095,
+      "recall_invalid": 0.85,
+      "f1_invalid": 0.8293,
+      "precision_valid": 0.9231,
+      "recall_valid": 0.9,
+      "f1_valid": 0.9114,
+      "TP": 108,
+      "FP": 9,
+      "TN": 51,
+      "FN": 12
+    },
+    "test_at_best_t": {
+      "threshold": 0.43,
+      "accuracy": 0.8833,
+      "macro_f1": 0.8703,
+      "precision_invalid": 0.8095,
+      "recall_invalid": 0.85,
+      "f1_invalid": 0.8293,
+      "precision_valid": 0.9231,
+      "recall_valid": 0.9,
+      "f1_valid": 0.9114,
+      "TP": 108,
+      "FP": 9,
+      "TN": 51,
+      "FN": 12
+    },
+    "val": {
+      "false_negatives": [
+        {
+          "filename": "WST_267.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9966,
+          "prob_valid": 0.0034
+        },
+        {
+          "filename": "WST_238.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9935,
+          "prob_valid": 0.0065
+        },
+        {
+          "filename": "FLD_070.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9924,
+          "prob_valid": 0.0076
+        },
+        {
+          "filename": "WST_024.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9888,
+          "prob_valid": 0.0112
+        },
+        {
+          "filename": "WST_291.jpeg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9881,
+          "prob_valid": 0.0119
+        },
+        {
+          "filename": "FLD_066.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9825,
+          "prob_valid": 0.0175
+        },
+        {
+          "filename": "POL_020.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9825,
+          "prob_valid": 0.0175
+        },
+        {
+          "filename": "WST_299.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9818,
+          "prob_valid": 0.0182
+        },
+        {
+          "filename": "WST_101.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9634,
+          "prob_valid": 0.0366
+        },
+        {
+          "filename": "FLD_060.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.961,
+          "prob_valid": 0.039
+        },
+        {
+          "filename": "POL_036.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.934,
+          "prob_valid": 0.066
+        },
+        {
+          "filename": "FLD_088.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.748,
+          "prob_valid": 0.252
+        },
+        {
+          "filename": "POL_145.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.7039,
+          "prob_valid": 0.2961
+        },
+        {
+          "filename": "FLD_183.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6946,
+          "prob_valid": 0.3054
+        },
+        {
+          "filename": "WST_262.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.5897,
+          "prob_valid": 0.4103
+        }
+      ],
+      "false_positives": [
+        {
+          "filename": "NEG_150.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.9922,
+          "prob_valid": 0.9922
+        },
+        {
+          "filename": "NEG_156.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.9806,
+          "prob_valid": 0.9806
+        },
+        {
+          "filename": "NEG_246.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.8614,
+          "prob_valid": 0.8614
+        },
+        {
+          "filename": "NEG_065.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.8222,
+          "prob_valid": 0.8222
+        },
+        {
+          "filename": "NEG_092.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.8135,
+          "prob_valid": 0.8135
+        },
+        {
+          "filename": "NEG_249.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.7117,
+          "prob_valid": 0.7117
+        }
+      ],
+      "n_fn": 15,
+      "n_fp": 6,
+      "review_zone_count": 10,
+      "auto_accept": 106,
+      "auto_reject": 64
+    },
+    "test": {
+      "false_negatives": [
+        {
+          "filename": "WST_068.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9927,
+          "prob_valid": 0.0073
+        },
+        {
+          "filename": "POL_021.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9818,
+          "prob_valid": 0.0182
+        },
+        {
+          "filename": "FLD_068.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9787,
+          "prob_valid": 0.0213
+        },
+        {
+          "filename": "WST_014.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9684,
+          "prob_valid": 0.0316
+        },
+        {
+          "filename": "POL_027.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.949,
+          "prob_valid": 0.051
+        },
+        {
+          "filename": "FLD_176.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9369,
+          "prob_valid": 0.0631
+        },
+        {
+          "filename": "POL_225.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.8954,
+          "prob_valid": 0.1046
+        },
+        {
+          "filename": "FLD_026.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.7843,
+          "prob_valid": 0.2157
+        },
+        {
+          "filename": "POL_121.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.7619,
+          "prob_valid": 0.2381
+        },
+        {
+          "filename": "FLD_115.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.7462,
+          "prob_valid": 0.2538
+        },
+        {
+          "filename": "POL_222.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6831,
+          "prob_valid": 0.3169
+        },
+        {
+          "filename": "POL_140.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.5745,
+          "prob_valid": 0.4255
+        }
+      ],
+      "false_positives": [
+        {
+          "filename": "NEG_157.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.9993,
+          "prob_valid": 0.9993
+        },
+        {
+          "filename": "NEG_167.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.9913,
+          "prob_valid": 0.9913
+        },
+        {
+          "filename": "NEG_151.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.8318,
+          "prob_valid": 0.8318
+        },
+        {
+          "filename": "NEG_142.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.7178,
+          "prob_valid": 0.7178
+        },
+        {
+          "filename": "NEG_144.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6856,
+          "prob_valid": 0.6856
+        },
+        {
+          "filename": "NEG_170.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6736,
+          "prob_valid": 0.6736
+        },
+        {
+          "filename": "NEG_006.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6237,
+          "prob_valid": 0.6237
+        },
+        {
+          "filename": "NEG_162.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5549,
+          "prob_valid": 0.5549
+        },
+        {
+          "filename": "NEG_183.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.5223,
+          "prob_valid": 0.5223
+        }
+      ],
+      "n_fn": 12,
+      "n_fp": 9,
+      "review_zone_count": 6,
+      "auto_accept": 112,
+      "auto_reject": 62
+    }
+  },
+  "reg_mlp": {
+    "best_threshold_mf1": 0.49,
+    "best_threshold_inv_recall": 0.78,
+    "val_roc_auc": 0.9392,
+    "val_at_default": {
+      "threshold": 0.5,
+      "accuracy": 0.8833,
+      "macro_f1": 0.8723,
+      "precision_invalid": 0.791,
+      "recall_invalid": 0.8833,
+      "f1_invalid": 0.8346,
+      "precision_valid": 0.9381,
+      "recall_valid": 0.8833,
+      "f1_valid": 0.9099,
+      "TP": 106,
+      "FP": 7,
+      "TN": 53,
+      "FN": 14
+    },
+    "val_at_best_t": {
+      "threshold": 0.49,
+      "accuracy": 0.8833,
+      "macro_f1": 0.8723,
+      "precision_invalid": 0.791,
+      "recall_invalid": 0.8833,
+      "f1_invalid": 0.8346,
+      "precision_valid": 0.9381,
+      "recall_valid": 0.8833,
+      "f1_valid": 0.9099,
+      "TP": 106,
+      "FP": 7,
+      "TN": 53,
+      "FN": 14
+    },
+    "test_at_default_t": {
+      "threshold": 0.5,
+      "accuracy": 0.9111,
+      "macro_f1": 0.9008,
+      "precision_invalid": 0.8548,
+      "recall_invalid": 0.8833,
+      "f1_invalid": 0.8689,
+      "precision_valid": 0.9407,
+      "recall_valid": 0.925,
+      "f1_valid": 0.9328,
+      "TP": 111,
+      "FP": 7,
+      "TN": 53,
+      "FN": 9
+    },
+    "test_at_best_t": {
+      "threshold": 0.49,
+      "accuracy": 0.9111,
+      "macro_f1": 0.9008,
+      "precision_invalid": 0.8548,
+      "recall_invalid": 0.8833,
+      "f1_invalid": 0.8689,
+      "precision_valid": 0.9407,
+      "recall_valid": 0.925,
+      "f1_valid": 0.9328,
+      "TP": 111,
+      "FP": 7,
+      "TN": 53,
+      "FN": 9
+    },
+    "val": {
+      "false_negatives": [
+        {
+          "filename": "WST_267.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9862,
+          "prob_valid": 0.0138
+        },
+        {
+          "filename": "WST_238.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9675,
+          "prob_valid": 0.0325
+        },
+        {
+          "filename": "FLD_070.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9637,
+          "prob_valid": 0.0363
+        },
+        {
+          "filename": "WST_291.jpeg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9627,
+          "prob_valid": 0.0373
+        },
+        {
+          "filename": "FLD_066.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.947,
+          "prob_valid": 0.053
+        },
+        {
+          "filename": "WST_024.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9108,
+          "prob_valid": 0.0892
+        },
+        {
+          "filename": "FLD_060.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.8968,
+          "prob_valid": 0.1032
+        },
+        {
+          "filename": "POL_020.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.89,
+          "prob_valid": 0.11
+        },
+        {
+          "filename": "WST_299.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.8547,
+          "prob_valid": 0.1453
+        },
+        {
+          "filename": "POL_036.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.7825,
+          "prob_valid": 0.2175
+        },
+        {
+          "filename": "FLD_088.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6803,
+          "prob_valid": 0.3197
+        },
+        {
+          "filename": "FLD_183.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6514,
+          "prob_valid": 0.3486
+        },
+        {
+          "filename": "WST_262.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6281,
+          "prob_valid": 0.3719
+        },
+        {
+          "filename": "WST_101.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.5687,
+          "prob_valid": 0.4313
+        }
+      ],
+      "false_positives": [
+        {
+          "filename": "NEG_150.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.9576,
+          "prob_valid": 0.9576
+        },
+        {
+          "filename": "NEG_156.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.914,
+          "prob_valid": 0.914
+        },
+        {
+          "filename": "NEG_246.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.7743,
+          "prob_valid": 0.7743
+        },
+        {
+          "filename": "NEG_128.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.7353,
+          "prob_valid": 0.7353
+        },
+        {
+          "filename": "NEG_249.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6947,
+          "prob_valid": 0.6947
+        },
+        {
+          "filename": "NEG_092.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6854,
+          "prob_valid": 0.6854
+        },
+        {
+          "filename": "NEG_155.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6361,
+          "prob_valid": 0.6361
+        }
+      ],
+      "n_fn": 14,
+      "n_fp": 7,
+      "review_zone_count": 13,
+      "auto_accept": 108,
+      "auto_reject": 59
+    },
+    "test": {
+      "false_negatives": [
+        {
+          "filename": "WST_068.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.9617,
+          "prob_valid": 0.0383
+        },
+        {
+          "filename": "POL_021.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.949,
+          "prob_valid": 0.051
+        },
+        {
+          "filename": "FLD_176.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.8964,
+          "prob_valid": 0.1036
+        },
+        {
+          "filename": "FLD_068.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.7756,
+          "prob_valid": 0.2244
+        },
+        {
+          "filename": "WST_014.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6936,
+          "prob_valid": 0.3064
+        },
+        {
+          "filename": "POL_222.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6892,
+          "prob_valid": 0.3108
+        },
+        {
+          "filename": "POL_027.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6339,
+          "prob_valid": 0.3661
+        },
+        {
+          "filename": "POL_225.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.6066,
+          "prob_valid": 0.3934
+        },
+        {
+          "filename": "FLD_115.jpg",
+          "true": "valid",
+          "pred": "invalid",
+          "confidence_of_pred": 0.5232,
+          "prob_valid": 0.4768
+        }
+      ],
+      "false_positives": [
+        {
+          "filename": "NEG_157.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.9895,
+          "prob_valid": 0.9895
+        },
+        {
+          "filename": "NEG_167.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.9442,
+          "prob_valid": 0.9442
+        },
+        {
+          "filename": "NEG_170.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.8474,
+          "prob_valid": 0.8474
+        },
+        {
+          "filename": "NEG_144.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.7353,
+          "prob_valid": 0.7353
+        },
+        {
+          "filename": "NEG_142.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.7215,
+          "prob_valid": 0.7215
+        },
+        {
+          "filename": "NEG_151.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6982,
+          "prob_valid": 0.6982
+        },
+        {
+          "filename": "NEG_162.jpg",
+          "true": "invalid",
+          "pred": "valid",
+          "confidence_of_pred": 0.6554,
+          "prob_valid": 0.6554
+        }
+      ],
+      "n_fn": 9,
+      "n_fp": 7,
+      "review_zone_count": 10,
+      "auto_accept": 114,
+      "auto_reject": 56
+    }
+  }
+}
