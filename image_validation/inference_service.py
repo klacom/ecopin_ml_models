@@ -4,6 +4,9 @@ EcoPin Image Validation — Experiment 3.2 Inference Service (Production)
 Pipeline : image  →  CLIP ViT-B/32 (frozen)  →  512-d embedding
            →  Regularized MLP  →  P(valid)  →  VALID / INVALID / MANUAL_REVIEW
 
+           Additionally: zero-shot CLIP category classification over the
+           EcoPin issue-type labels when the image is VALID or MANUAL_REVIEW.
+
 Model    : Experiment 3.2 Regularized MLP
            artifacts/exp03_2_clip_refined/reg_mlp/best.pt
            Architecture: 512 → 128 → ReLU → Dropout(0.3) → 32 → ReLU → Dropout(0.3) → 1
@@ -17,6 +20,9 @@ Thresholds (configurable via env vars):
   THRESHOLD  = 0.50   P(valid) >= threshold  →  VALID
   REVIEW_LO  = 0.35   P(valid) in [0.35, 0.65]  →  MANUAL_REVIEW zone
   REVIEW_HI  = 0.65
+
+Issue categories (zero-shot CLIP, only run when not REJECTED):
+  waste, flooding, pollution, illegal_logging, others
 
 API:
   GET  /health
@@ -32,7 +38,8 @@ Response JSON:
       "INVALID": <float>
     },
     "decision": "APPROVED" | "REJECTED" | "MANUAL_REVIEW",
-    "in_review_zone": true | false
+    "in_review_zone": true | false,
+    "predicted_category": "waste" | "flooding" | "pollution" | "illegal_logging" | "others" | null
   }
 """
 
@@ -61,6 +68,19 @@ MAX_BODY     = int(os.environ.get("MAX_BODY_BYTES", str(20 * 1024 * 1024)))
 
 EMB_DIM = 512
 
+# EcoPin issue-type labels used for zero-shot CLIP category classification.
+# These must match the canonical issue_type values expected by the backend.
+ISSUE_CATEGORIES = ["waste", "flooding", "pollution", "illegal_logging", "others"]
+
+# Natural-language prompts that CLIP understands well for each category.
+CATEGORY_PROMPTS = [
+    "a photo of garbage, trash, or solid waste in the environment",
+    "a photo of flooding, water inundation, or submerged areas",
+    "a photo of air, water, or land pollution such as smoke or chemical spills",
+    "a photo of illegal logging, deforestation, or cut trees",
+    "a photo of an environmental issue or problem outdoors",
+]
+
 # ── DIAGNOSTIC HELPERS ────────────────────────────────────────────────────────
 def _sep(c="─", w=66):
     sys.stderr.write(c * w + "\n")
@@ -85,6 +105,7 @@ _sep("═")
 _log("EcoPin Image Validation — Experiment 3.2 Inference Service")
 _log("Classifier  : Regularized MLP (RegMLP)")
 _log("Extractor   : CLIP ViT-B/32 (frozen, 512-d embeddings)")
+_log("Categories  : zero-shot CLIP over EcoPin issue types")
 _sep("═")
 _log(f"CLIP model  : {CLIP_MODEL}")
 _log(f"Checkpoint  : {CHECKPOINT_PATH}")
@@ -122,6 +143,21 @@ try:
     _log(f"CLIP loaded : {total_p} params, {trainable} trainable  ✓ frozen")
 except Exception as exc:
     _log(f"ERROR loading CLIP: {exc}")
+    sys.exit(1)
+
+# Pre-encode category text prompts (done once at startup, not per request).
+_sep()
+_log("Encoding category prompts …")
+try:
+    _category_tokens = _clip.tokenize(CATEGORY_PROMPTS).to(device)
+    with torch.no_grad():
+        _category_text_features = clip_model.encode_text(_category_tokens)
+        _category_text_features = _category_text_features / _category_text_features.norm(dim=-1, keepdim=True)
+    _log(f"Category prompts encoded : {len(ISSUE_CATEGORIES)} labels  ✓")
+    for i, (cat, prompt) in enumerate(zip(ISSUE_CATEGORIES, CATEGORY_PROMPTS)):
+        _log(f"  [{i}] {cat!r:20s} ← {prompt[:60]}")
+except Exception as exc:
+    _log(f"ERROR encoding category prompts: {exc}")
     sys.exit(1)
 
 # Load RegMLP classifier
@@ -172,6 +208,19 @@ def _decision(prob_valid: float) -> tuple:
         decision = "MANUAL_REVIEW" if in_review_zone else "REJECTED"
     return predicted_class, decision, in_review_zone
 
+# ── CATEGORY CLASSIFICATION ───────────────────────────────────────────────────
+def _classify_category(image_embedding: torch.Tensor) -> str:
+    """
+    Zero-shot CLIP category classification using pre-encoded text prompts.
+    Returns the best-matching EcoPin issue-type label.
+    Only called when the image is not REJECTED.
+    """
+    with torch.no_grad():
+        # image_embedding is already L2-normalised (512-d, float)
+        similarities = (image_embedding @ _category_text_features.T).squeeze(0)
+        best_idx = similarities.argmax().item()
+    return ISSUE_CATEGORIES[best_idx]
+
 # ── INFERENCE ─────────────────────────────────────────────────────────────────
 def run_inference(image_bytes: bytes) -> dict:
     t0 = time.perf_counter()
@@ -210,9 +259,18 @@ def run_inference(image_bytes: bytes) -> dict:
     predicted_class, decision_label, in_review_zone = _decision(prob_valid)
     prob_invalid = 1.0 - prob_valid
 
+    # Stage 5: zero-shot category classification (skip for definite REJECTED images)
+    predicted_category = None
+    if decision_label != "REJECTED":
+        try:
+            predicted_category = _classify_category(embedding)
+            _log(f"  Category     : {predicted_category}")
+        except Exception as exc:
+            _log(f"  Category     : FAILED (non-fatal) — {exc}")
+
     elapsed_ms = (time.perf_counter() - t0) * 1000
     _log(f"  Decision     : {predicted_class}  ({decision_label})  "
-         f"review_zone={in_review_zone}  {elapsed_ms:.1f}ms")
+         f"review_zone={in_review_zone}  category={predicted_category}  {elapsed_ms:.1f}ms")
 
     return {
         "predicted_class": predicted_class,
@@ -221,11 +279,12 @@ def run_inference(image_bytes: bytes) -> dict:
             "VALID":   round(prob_valid,   6),
             "INVALID": round(prob_invalid, 6),
         },
-        "decision":       decision_label,
-        "in_review_zone": in_review_zone,
-        "threshold":      THRESHOLD,
-        "review_zone":    [REVIEW_LO, REVIEW_HI],
-        "inference_ms":   round(elapsed_ms, 1),
+        "decision":           decision_label,
+        "in_review_zone":     in_review_zone,
+        "predicted_category": predicted_category,   # EcoPin issue type or null
+        "threshold":          THRESHOLD,
+        "review_zone":        [REVIEW_LO, REVIEW_HI],
+        "inference_ms":       round(elapsed_ms, 1),
     }
 
 # ── HTTP HANDLER ──────────────────────────────────────────────────────────────
@@ -269,33 +328,61 @@ class Handler(BaseHTTPRequestHandler):
         else:
             self._send_json(404, {"error": "Not found"})
 
-    def _handle_classify(self, image_bytes):
+    def _handle_classify(self, image_bytes, source_path="POST /classify", client="?"):
         _sep()
-        _log(f"POST /classify  from {self.address_string()}")
+        _log(f"── INCOMING REQUEST ─────────────────────────────")
+        _log(f"  endpoint    : {source_path}")
+        _log(f"  from        : {client}")
+        _log(f"  body size   : {len(image_bytes):,} bytes  ({len(image_bytes)/1024:.1f} KB)")
         try:
             with _model_lock:
                 result = run_inference(image_bytes)
         except RuntimeError as exc:
+            _log(f"── OUTGOING RESPONSE (ERROR) ────────────────────")
+            _log(f"  status      : 500")
+            _log(f"  error       : {exc}")
             _sep()
             self._send_json(500, {"error": str(exc)})
             return
         except Exception as exc:
             _log(f"  Unexpected: {exc}\n{traceback.format_exc()}")
+            _log(f"── OUTGOING RESPONSE (ERROR) ────────────────────")
+            _log(f"  status      : 500")
+            _log(f"  error       : {exc}")
             _sep()
             self._send_json(500, {"error": f"Inference failed: {exc}"})
             return
+        _log(f"── OUTGOING RESPONSE ────────────────────────────")
+        _log(f"  status           : 200")
+        _log(f"  predicted_class  : {result['predicted_class']}")
+        _log(f"  confidence       : {result['confidence']:.6f}")
+        _log(f"  decision         : {result['decision']}")
+        _log(f"  in_review_zone   : {result['in_review_zone']}")
+        _log(f"  predicted_category: {result.get('predicted_category')}")
+        _log(f"  inference_ms     : {result['inference_ms']}")
         _sep()
         self._send_json(200, result)
 
     def do_POST(self):
+        client = self.address_string()
+        _sep()
+        _log(f"── HTTP REQUEST  ──────────────────────────────────")
+        _log(f"  method      : POST")
+        _log(f"  path        : {self.path}")
+        _log(f"  from        : {client}")
+        _log(f"  content-type: {self.headers.get('Content-Type', '(none)')}")
+        raw_len = self.headers.get("Content-Length", "(unknown)")
+        _log(f"  content-len : {raw_len} bytes")
+
         if self.path == "/classify":
             body = self._read_body()
             if body is None:
                 return
             if not body:
+                _log(f"  ✗ empty body — rejecting with 400")
                 self._send_json(400, {"error": "Empty request body"})
                 return
-            self._handle_classify(body)
+            self._handle_classify(body, source_path="POST /classify", client=client)
 
         elif self.path == "/classify-multipart":
             body = self._read_body()
@@ -303,6 +390,7 @@ class Handler(BaseHTTPRequestHandler):
                 return
             ctype = self.headers.get("Content-Type", "")
             if "multipart/form-data" not in ctype:
+                _log(f"  ✗ wrong content-type — rejecting with 400")
                 self._send_json(400, {"error": "Expected multipart/form-data"})
                 return
             try:
@@ -313,6 +401,7 @@ class Handler(BaseHTTPRequestHandler):
                         boundary = part.split("=", 1)[1].strip().strip('"').encode("ascii")
                         break
                 if not boundary:
+                    _log(f"  ✗ missing boundary — rejecting with 400")
                     self._send_json(400, {"error": "Missing boundary"}); return
                 delimiter = b"--" + boundary
                 file_bytes = None
@@ -332,12 +421,15 @@ class Handler(BaseHTTPRequestHandler):
                             file_bytes = payload
                             break
                 if not file_bytes:
+                    _log(f"  ✗ missing 'file' field — rejecting with 400")
                     self._send_json(400, {"error": "Missing 'file' field"}); return
-                self._handle_classify(file_bytes)
+                self._handle_classify(file_bytes, source_path="POST /classify-multipart", client=client)
             except Exception as exc:
+                _log(f"  ✗ multipart parse error: {exc}")
                 self._send_json(500, {"error": f"Request handling failed: {exc}"})
 
         else:
+            _log(f"  ✗ unknown path — rejecting with 404")
             self._send_json(404, {"error": "Not found"})
 
 # ── ENTRY POINT ───────────────────────────────────────────────────────────────
