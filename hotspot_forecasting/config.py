@@ -6,7 +6,7 @@ load_dotenv()
 
 # Server Settings
 HOST = os.environ.get("HOST", "127.0.0.1")
-PORT = int(os.environ.get("PORT", "8001"))
+PORT = int(os.environ.get("PORT", "8002"))
 
 # Supabase Credentials
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
