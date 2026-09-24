@@ -19,6 +19,9 @@ def solve_vrp():
     num_vehicles = data.get('num_vehicles', 1)
     depot = data.get('depot', 0)
 
+    print(f"\n[VRP Solver] Request received: {len(distance_matrix) if distance_matrix else 0} nodes, {num_vehicles} vehicle(s), depot index {depot}")
+
+
     if not distance_matrix:
         return jsonify({"error": "distance_matrix is required"}), 400
 
@@ -67,10 +70,14 @@ def solve_vrp():
     search_parameters.time_limit.FromSeconds(2) # Give it 2 seconds to optimize
 
     # Solve the problem.
+    print(f"[VRP Solver] Starting OR-Tools optimization (2s time limit)...")
     solution = routing.SolveWithParameters(search_parameters)
 
     if not solution:
+        print(f"[VRP Solver] WARNING: No solution found!")
         return jsonify({"error": "No solution found by OR-Tools"}), 400
+    else:
+        print(f"[VRP Solver] Optimization complete. Solution found.")
 
     # Extract routes
     routes = []
@@ -83,6 +90,7 @@ def solve_vrp():
             index = solution.Value(routing.NextVar(index))
         # Add the final return to depot node if desired, but we'll exclude the end depot for the raw output
         routes.append(route)
+        print(f"[VRP Solver]   Vehicle {vehicle_id} route: {route}")
 
     return jsonify({
         "status": "success",
