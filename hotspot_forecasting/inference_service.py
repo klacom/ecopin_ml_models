@@ -7,7 +7,7 @@ from spatial_analysis import run_dbscan_hotspots
 
 class HotspotHandler(BaseHTTPRequestHandler):
     def do_POST(self):
-        if self.path == '/forecast':
+        if '/forecast' in self.path:
             content_length = int(self.headers['Content-Length'])
             post_data = self.rfile.read(content_length)
 
@@ -37,11 +37,12 @@ class HotspotHandler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
         else:
+            print(f"[Server] 404 Not Found: POST {self.path}")
             self.send_response(404)
             self.end_headers()
 
     def do_GET(self):
-        if self.path == '/health':
+        if '/health' in self.path:
             self.send_response(200)
             self.send_header('Content-Type', 'application/json')
             self.end_headers()
@@ -54,6 +55,7 @@ class HotspotHandler(BaseHTTPRequestHandler):
                 }
             }).encode('utf-8'))
         else:
+            print(f"[Server] 404 Not Found: GET {self.path}")
             self.send_response(404)
             self.end_headers()
 
