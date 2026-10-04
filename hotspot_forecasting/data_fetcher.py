@@ -36,7 +36,7 @@ def fetch_reports(time_horizon: str, bbox=None):
         supabase.table('reports')
         .select('id, location, created_at, issue_type, status')
         .gte('created_at', start_date)
-        .in_('status', ['verified', 'completed', 'resolved'])
+        .in_('status', ['closed', 'completed', 'resolved'])
         .execute()
     )
     reports = response.data
