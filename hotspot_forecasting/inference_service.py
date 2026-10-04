@@ -36,6 +36,30 @@ class HotspotHandler(BaseHTTPRequestHandler):
                 self.send_header('Content-Type', 'application/json')
                 self.end_headers()
                 self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
+        elif '/feedback' in self.path:
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length)
+            
+            try:
+                payload = json.loads(post_data.decode('utf-8'))
+                print(f"[Server] Feedback received for task {payload.get('task_id')}")
+                
+                # Import here to avoid circular imports if any, or just at top
+                from training_loop import handle_feedback
+                handle_feedback(payload)
+                
+                self.send_response(200)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps({"status": "updated"}).encode('utf-8'))
+            except Exception as e:
+                import traceback
+                print(f"[Server] Feedback Error: {e}")
+                traceback.print_exc()
+                self.send_response(500)
+                self.send_header('Content-Type', 'application/json')
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
         else:
             print(f"[Server] 404 Not Found: POST {self.path}")
             self.send_response(404)
