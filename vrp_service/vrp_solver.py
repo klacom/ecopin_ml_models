@@ -232,7 +232,12 @@ def solve_v5(data):
     parameters = pywrapcp.DefaultRoutingSearchParameters()
     parameters.first_solution_strategy = routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC
     parameters.local_search_metaheuristic = routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH
-    parameters.time_limit.FromMilliseconds(round(limit * 1000))
+    remaining_ms = math.floor((limit - (time.monotonic() - started)) * 1000)
+    if remaining_ms <= 0:
+        return {"contract_version": "v5", "status": "failed", "routes": [],
+                "unassigned": [{"task_id": task["id"], "reason": preexcluded.get(task["id"], "solver_timeout")} for task in tasks],
+                "solver_diagnostics": {"error_code": "solver_timeout", "elapsed_seconds": round(time.monotonic() - started, 3)}}
+    parameters.time_limit.FromMilliseconds(remaining_ms)
     solution = routing.SolveWithParameters(parameters)
     elapsed = round(time.monotonic() - started, 3)
     if solution is None:
