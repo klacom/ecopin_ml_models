@@ -1,12 +1,12 @@
 from supabase import create_client, Client
-from config import SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, TIME_HORIZONS
+from config import SUPABASE_URL, SUPABASE_SECRET_KEY, TIME_HORIZONS
 from datetime import datetime, timedelta
 import struct
 
 def get_supabase_client() -> Client:
-    if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
+    if not SUPABASE_URL or not SUPABASE_SECRET_KEY:
         raise ValueError("Supabase credentials not configured.")
-    return create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
+    return create_client(SUPABASE_URL, SUPABASE_SECRET_KEY)
 
 def parse_wkb_location(hex_str):
     """Parse a PostGIS WKB hex string and return (lon, lat)."""
