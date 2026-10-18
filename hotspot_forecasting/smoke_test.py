@@ -1,16 +1,12 @@
-from data_fetcher import fetch_reports
-from spatial_analysis import run_dbscan_hotspots
-from config import DEFAULT_BBOX
+"""Optional read-only smoke check against a migrated Supabase database."""
+from data_fetcher import fetch_zone_history
+from zone_forecaster import build_projection, utc_datetime
 
-reports = fetch_reports('monthly', DEFAULT_BBOX)
-print("Reports fetched:", len(reports))
 
-result = run_dbscan_hotspots(reports)
-print("Hotspot clusters:", result["hotspot_count"])
-print("Heatmap points:", len(result["heatmap_geojson"]["features"]))
-print("GeoJSON features:", len(result["geojson"]["features"]))
-
-for rid, r in result["region_analyses"].items():
-    print("  Cluster #" + str(r["rank"]) + ": " + str(r["report_count"]) + " reports, "
-          + r["risk_level"] + " risk, top=" + str(r["top_issue_type"])
-          + ", radius=" + str(r["region_radius_meters"]) + "m")
+if __name__ == '__main__':
+    now = utc_datetime()
+    zones, history = fetch_zone_history('h3', now)
+    for horizon in ('7d', '30d', '90d'):
+        result = build_projection(zones, history, horizon, now)
+        print(horizon, result['forecast_date_start'], result['forecast_date_end'],
+              'zones:', result['total_regions'], 'high risk:', result['hotspot_count'])
