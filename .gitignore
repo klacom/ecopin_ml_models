@@ -146,3 +146,6 @@ hotspot_forecasting/.env
 # Graphify knowledge graph outputs
 graphify-out/
 
+
+test/
+tests/
