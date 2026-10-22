@@ -1,0 +1,9 @@
+**
+!Dockerfile
+!requirements-lambda.txt
+!inference_service_exp32.py
+!lambda_handler.py
+!artifacts/
+!artifacts/exp03_2_clip_refined/
+!artifacts/exp03_2_clip_refined/reg_mlp/
+!artifacts/exp03_2_clip_refined/reg_mlp/best.pt

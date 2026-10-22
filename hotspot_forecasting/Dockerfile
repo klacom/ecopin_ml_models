@@ -15,7 +15,7 @@ COPY . .
 
 # Environment variable to tell the adapter what port the app listens on
 # The server is hardcoded to listen on PORT from env or 8002 by default
-ENV PORT=8002
+ENV HOST=0.0.0.0 PORT=8002 AWS_LWA_PORT=8002 AWS_LWA_READINESS_CHECK_PATH=/health PYTHONDONTWRITEBYTECODE=1
 
 # Command to run the Python built-in server
 CMD ["python", "inference_service.py"]
