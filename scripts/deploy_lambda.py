@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 SERVICES = {
-    'forecasting': ('ecopin-temp-hotspot-forecasting-aka-spatial-analysis', 'GET', '/health', 200),
+    'forecasting': ('ecopin-temp-hotspot-forecasting-aka-spatial-analysis', 'POST', '/forecast/project', 200),
     'vrp': ('ecopin-vrp-service', 'POST', '/solve_vrp', 400),
     'image-validation': ('clip-validator', 'GET', '/clip-validator', 200),
 }
@@ -32,7 +32,8 @@ def main():
              'rawQueryString': '', 'headers': {'content-type': 'application/json'},
              'requestContext': {'http': {'method': method, 'path': path,
                 'sourceIp': '127.0.0.1', 'protocol': 'HTTP/1.1'}},
-             'body': '{}' if method == 'POST' else '', 'isBase64Encoded': False}
+             'body': json.dumps({'horizon': '7d', 'zone_type': 'h3'}) if args.service == 'forecasting'
+                 else '{}' if method == 'POST' else '', 'isBase64Encoded': False}
     changed = False
     try:
         aws('lambda', 'update-function-code', '--function-name', function,
@@ -51,6 +52,8 @@ def main():
             body = json.loads(result['body'])
             if args.service == 'forecasting' and body.get('model_version') != 'zone-timeseries-v1':
                 raise RuntimeError('Unexpected forecasting model version')
+            if args.service == 'forecasting' and not body.get('region_analyses'):
+                raise RuntimeError('Forecast database smoke test returned no stable zones')
             if args.service == 'image-validation' and body.get('experiment') != '3.2':
                 raise RuntimeError('Unexpected image validation experiment')
         print(f'Healthy Lambda deployment: {function}')

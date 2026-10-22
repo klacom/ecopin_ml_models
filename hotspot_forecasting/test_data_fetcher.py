@@ -2,7 +2,7 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-from data_fetcher import fetch_zone_history
+from data_fetcher import fetch_zone_history, get_supabase_client
 from test_zone_forecaster import NOW, ZONE
 
 
@@ -22,6 +22,12 @@ class Query:
 
 
 class ZoneHistoryTests(unittest.TestCase):
+    @patch('data_fetcher.SUPABASE_URL', 'https://example.supabase.co')
+    @patch('data_fetcher.SUPABASE_SECRET_KEY', 'sb_secret_deployment_test_not_a_real_key')
+    def test_client_accepts_modern_secret_key_without_a_network_request(self):
+        client = get_supabase_client()
+        self.assertIsNotNone(client.table('spatial_zones').select('id'))
+
     @patch('data_fetcher.get_supabase_client')
     def test_fetches_all_history_pages_from_validated_view(self, get_client):
         history = [{'zone_id': 'stable-zone', 'week_start': '2026-01-05', 'report_count': i} for i in range(2001)]

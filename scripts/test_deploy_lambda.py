@@ -11,7 +11,7 @@ spec.loader.exec_module(deploy)
 
 
 class DeploymentTests(unittest.TestCase):
-    def execute(self, fail=False):
+    def execute(self, fail=False, service='image-validation'):
         calls = []
 
         def aws(*arguments):
@@ -21,11 +21,16 @@ class DeploymentTests(unittest.TestCase):
             if arguments[1] == 'get-function-configuration':
                 return {'RevisionId': 'current'}
             if arguments[1] == 'invoke':
+                if service == 'forecasting':
+                    event = json.loads(Path(arguments[arguments.index('--payload') + 1][8:]).read_text())
+                    self.assertEqual(event['rawPath'], '/forecast/project')
+                    self.assertEqual(json.loads(event['body']), {'horizon': '7d', 'zone_type': 'h3'})
                 Path(arguments[-1]).write_text(json.dumps({'statusCode': 500 if fail else 200,
-                    'body': json.dumps({'experiment': '3.2'})}))
+                    'body': json.dumps({'experiment': '3.2', 'model_version': 'zone-timeseries-v1',
+                                        'region_analyses': {'stable-zone': {}}})}))
             return {}
 
-        with patch.object(deploy, 'aws', side_effect=aws), patch.object(sys, 'argv', ['deploy', 'image-validation', 'new-image']):
+        with patch.object(deploy, 'aws', side_effect=aws), patch.object(sys, 'argv', ['deploy', service, 'new-image']):
             if fail:
                 with self.assertRaises(RuntimeError):
                     deploy.main()
@@ -38,6 +43,10 @@ class DeploymentTests(unittest.TestCase):
         updates = [call for call in calls if call[1] == 'update-function-code']
         self.assertEqual(len(updates), 1)
         self.assertIn('original', updates[0])
+
+    def test_forecasting_deployment_exercises_the_database_backed_endpoint(self):
+        calls = self.execute(service='forecasting')
+        self.assertEqual(len([call for call in calls if call[1] == 'invoke']), 1)
 
     def test_failed_smoke_restores_previous_image_with_current_revision(self):
         calls = self.execute(fail=True)
