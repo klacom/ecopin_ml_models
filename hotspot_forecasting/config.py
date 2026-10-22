@@ -10,9 +10,15 @@ PORT = int(os.environ.get("PORT", "8002"))
 
 # Supabase Credentials
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
-SUPABASE_SERVICE_ROLE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+SUPABASE_SECRET_KEY = (
+    os.environ.get("SUPABASE_SECRET_KEY")
+    or os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+    or os.environ.get("SUPABASE_KEY")
+)
+# Backwards compatibility alias
+SUPABASE_SERVICE_ROLE_KEY = SUPABASE_SECRET_KEY
 
-if not SUPABASE_URL or not SUPABASE_SERVICE_ROLE_KEY:
+if not SUPABASE_URL or not SUPABASE_SECRET_KEY:
     print("WARNING: Supabase credentials not found in environment variables.")
 
 # Time Horizons (in days)

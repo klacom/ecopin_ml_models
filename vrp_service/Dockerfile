@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY vrp_solver.py .
 
 # Environment variable to tell the adapter what port the app listens on
-ENV PORT=8003
+ENV PORT=8003 AWS_LWA_PORT=8003 PYTHONDONTWRITEBYTECODE=1
 
 # Command to run the Flask app using gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:8003", "vrp_solver:app"]
+CMD ["gunicorn", "--timeout", "90", "-b", "0.0.0.0:8003", "vrp_solver:app"]

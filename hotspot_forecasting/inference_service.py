@@ -1,104 +1,82 @@
 import json
+import logging
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from config import HOST, PORT, DEFAULT_BBOX, DBSCAN_EPS_METERS, DBSCAN_MIN_SAMPLES
-from data_fetcher import fetch_reports
-from spatial_analysis import run_dbscan_hotspots
+from urllib.parse import urlsplit
+
+from config import HOST, PORT
+from data_fetcher import fetch_zone_history
+from zone_forecaster import HORIZONS, MODEL_VERSION, build_projection, utc_datetime
 
 
 class HotspotHandler(BaseHTTPRequestHandler):
+    def send_json(self, status, payload):
+        body = json.dumps(payload, allow_nan=False).encode('utf-8')
+        self.send_response(status)
+        self.send_header('Content-Type', 'application/json')
+        self.send_header('Content-Length', str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
     def do_POST(self):
-        if '/forecast' in self.path:
-            content_length = int(self.headers['Content-Length'])
-            post_data = self.rfile.read(content_length)
-
-            try:
-                payload = json.loads(post_data.decode('utf-8'))
-                time_horizon = payload.get('time_horizon', 'weekly')
-                bbox = payload.get('bounding_box', DEFAULT_BBOX)
-
-                print(f"[Server] Forecast request: horizon={time_horizon}")
-                reports = fetch_reports(time_horizon, bbox)
-
-                print(f"[Server] Running DBSCAN on {len(reports)} reports...")
-                result = run_dbscan_hotspots(reports, bbox)
-                result['time_horizon'] = time_horizon
-
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps(result).encode('utf-8'))
-
-            except Exception as e:
-                import traceback
-                print(f"[Server] Error: {e}")
-                traceback.print_exc()
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
-        elif '/feedback' in self.path:
-            content_length = int(self.headers['Content-Length'])
-            post_data = self.rfile.read(content_length)
-            
-            try:
-                payload = json.loads(post_data.decode('utf-8'))
-                print(f"[Server] Feedback received for task {payload.get('task_id')}")
-                
-                # Import here to avoid circular imports if any, or just at top
-                from training_loop import handle_feedback
-                handle_feedback(payload)
-                
-                self.send_response(200)
-                self.send_header('Content-Type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps({"status": "updated"}).encode('utf-8'))
-            except Exception as e:
-                import traceback
-                print(f"[Server] Feedback Error: {e}")
-                traceback.print_exc()
-                self.send_response(500)
-                self.send_header('Content-Type', 'application/json')
-                self.end_headers()
-                self.wfile.write(json.dumps({"error": str(e)}).encode('utf-8'))
-        else:
-            print(f"[Server] 404 Not Found: POST {self.path}")
-            self.send_response(404)
-            self.end_headers()
+        path = urlsplit(self.path).path
+        if path not in ('/forecast/project', '/forecast', '/feedback'):
+            return self.send_json(404, {'error': 'Not found'})
+        try:
+            length = int(self.headers.get('Content-Length', '0'))
+            if length <= 0 or length > 1024 * 1024:
+                raise ValueError('Request must contain a JSON object under 1 MB')
+            payload = json.loads(self.rfile.read(length).decode('utf-8'))
+            if not isinstance(payload, dict):
+                raise ValueError('Request must be a JSON object')
+            if path == '/feedback':
+                try:
+                    from training_loop import handle_feedback
+                    handle_feedback(payload)
+                    return self.send_json(200, {'status': 'updated'})
+                except Exception:
+                    logging.exception('Hotspot feedback failed')
+                    return self.send_json(500, {'error': 'Unable to process feedback'})
+            default_horizon = '7d' if path == '/forecast' else '30d'
+            horizon = payload.get('horizon', payload.get('time_horizon', default_horizon))
+            if not isinstance(horizon, str):
+                raise ValueError('horizon must be 7d, 30d, or 90d')
+            if path == '/forecast':
+                horizon = {'daily': '7d', 'weekly': '7d', 'monthly': '30d'}.get(horizon, horizon)
+            if horizon not in HORIZONS:
+                raise ValueError('horizon must be 7d, 30d, or 90d')
+            zone_type = payload.get('zone_type', 'h3')
+            if zone_type not in ('h3', 'barangay'):
+                raise ValueError('zone_type must be h3 or barangay')
+        except (ValueError, UnicodeDecodeError) as error:
+            return self.send_json(400, {'error': str(error)})
+        try:
+            now = utc_datetime()
+            zones, history = fetch_zone_history(zone_type, now)
+            return self.send_json(200, build_projection(zones, history, horizon, now))
+        except Exception:
+            logging.exception('Hotspot projection failed')
+            return self.send_json(500, {'error': 'Unable to generate hotspot forecast'})
 
     def do_GET(self):
-        if '/health' in self.path:
-            self.send_response(200)
-            self.send_header('Content-Type', 'application/json')
-            self.end_headers()
-            self.wfile.write(json.dumps({
-                "status": "ok",
-                "algorithm": "DBSCAN",
-                "params": {
-                    "eps_meters": DBSCAN_EPS_METERS,
-                    "min_samples": DBSCAN_MIN_SAMPLES,
-                }
-            }).encode('utf-8'))
-        else:
-            print(f"[Server] 404 Not Found: GET {self.path}")
-            self.send_response(404)
-            self.end_headers()
+        if urlsplit(self.path).path != '/health':
+            return self.send_json(404, {'error': 'Not found'})
+        self.send_json(200, {'status': 'ok', 'algorithm': 'Holt damped weekly trend',
+                             'model_version': MODEL_VERSION, 'history_weeks': 52,
+                             'horizons': list(HORIZONS), 'risk_score_type': 'bounded risk index'})
 
     def log_message(self, format, *args):
-        # Suppress default HTTP server logs to reduce noise; we use print() above
         pass
 
 
 def run(server_class=ThreadingHTTPServer, handler_class=HotspotHandler):
-    server_address = (HOST, PORT)
-    httpd = server_class(server_address, handler_class)
-    print(f"[Server] DBSCAN Hotspot Service running on {HOST}:{PORT}")
-    print(f"[Server] eps={DBSCAN_EPS_METERS}m, min_samples={DBSCAN_MIN_SAMPLES}")
+    server = server_class((HOST, PORT), handler_class)
+    print(f'[Server] Forward hotspot forecast service running on {HOST}:{PORT}')
     try:
-        httpd.serve_forever()
+        server.serve_forever()
     except KeyboardInterrupt:
         pass
-    httpd.server_close()
-    print("[Server] Stopped.")
+    finally:
+        server.server_close()
 
 
 if __name__ == '__main__':
