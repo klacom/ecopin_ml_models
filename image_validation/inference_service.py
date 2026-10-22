@@ -81,6 +81,28 @@ CATEGORY_PROMPTS = [
     "a photo of an environmental issue or problem outdoors",
 ]
 
+# EcoPin scale levels for automated severity estimation.
+# Matches backend schema: 'small', 'medium', 'large'
+WASTE_SCALES = ["small", "medium", "large"]
+
+# Natural-language prompts for zero-shot waste/issue scale classification
+SCALE_PROMPTS = [
+    "a photo of a small amount of litter, a single plastic wrapper, a small pile of trash, or minor localized waste on the ground",
+    "a photo of a medium amount of garbage, several bags of trash, moderate roadside waste pile, or multiple boxes discarded",
+    "a photo of a large massive illegal dumpsite, huge mountain of garbage, overflowing dumpsters, or extensive waste spread over a wide area",
+]
+
+# EcoPin obstruction levels for automated severity estimation.
+# Matches backend schema: 'none', 'partial', 'complete'
+OBSTRUCTION_LEVELS = ["none", "partial", "complete"]
+
+# Natural-language prompts for zero-shot obstruction classification
+OBSTRUCTION_PROMPTS = [
+    "a photo of trash or waste lying cleanly off to the side, in a bin, or in an open area without blocking any road, path, sidewalk, or doorway",
+    "a photo of garbage or debris spilling onto the sidewalk, curb, or road shoulder, partially obstructing pedestrian passage or narrow street traffic",
+    "a photo of garbage, fallen debris, or uncollected waste completely blocking a road, sidewalk, drainage canal, or alleyway, preventing people or vehicles from passing",
+]
+
 # ── DIAGNOSTIC HELPERS ────────────────────────────────────────────────────────
 def _sep(c="─", w=66):
     sys.stderr.write(c * w + "\n")
@@ -160,6 +182,36 @@ except Exception as exc:
     _log(f"ERROR encoding category prompts: {exc}")
     sys.exit(1)
 
+# Pre-encode scale text prompts (done once at startup, not per request).
+_sep()
+_log("Encoding scale prompts …")
+try:
+    _scale_tokens = _clip.tokenize(SCALE_PROMPTS).to(device)
+    with torch.no_grad():
+        _scale_text_features = clip_model.encode_text(_scale_tokens)
+        _scale_text_features = _scale_text_features / _scale_text_features.norm(dim=-1, keepdim=True)
+    _log(f"Scale prompts encoded : {len(WASTE_SCALES)} levels  ✓")
+    for i, (scl, prompt) in enumerate(zip(WASTE_SCALES, SCALE_PROMPTS)):
+        _log(f"  [{i}] {scl!r:20s} ← {prompt[:60]}")
+except Exception as exc:
+    _log(f"ERROR encoding scale prompts: {exc}")
+    sys.exit(1)
+
+# Pre-encode obstruction text prompts (done once at startup, not per request).
+_sep()
+_log("Encoding obstruction prompts …")
+try:
+    _obstruction_tokens = _clip.tokenize(OBSTRUCTION_PROMPTS).to(device)
+    with torch.no_grad():
+        _obstruction_text_features = clip_model.encode_text(_obstruction_tokens)
+        _obstruction_text_features = _obstruction_text_features / _obstruction_text_features.norm(dim=-1, keepdim=True)
+    _log(f"Obstruction prompts encoded : {len(OBSTRUCTION_LEVELS)} levels  ✓")
+    for i, (obs, prompt) in enumerate(zip(OBSTRUCTION_LEVELS, OBSTRUCTION_PROMPTS)):
+        _log(f"  [{i}] {obs!r:20s} ← {prompt[:60]}")
+except Exception as exc:
+    _log(f"ERROR encoding obstruction prompts: {exc}")
+    sys.exit(1)
+
 # Load RegMLP classifier
 _log("Loading Regularized MLP classifier …")
 try:
@@ -221,6 +273,43 @@ def _classify_category(image_embedding: torch.Tensor) -> str:
         best_idx = similarities.argmax().item()
     return ISSUE_CATEGORIES[best_idx]
 
+# ── SCALE CLASSIFICATION ───────────────────────────────────────────────────────
+def _classify_scale(image_embedding: torch.Tensor) -> tuple:
+    """
+    Zero-shot CLIP scale classification using pre-encoded text prompts.
+    Returns (predicted_scale, confidence, probabilities_dict).
+    predicted_scale: 'small' | 'medium' | 'large'
+    """
+    with torch.no_grad():
+        # Temperature-scaled logits for calibrated probabilities
+        logits = (image_embedding @ _scale_text_features.T).squeeze(0) * 100.0
+        probs = torch.softmax(logits, dim=-1)
+        best_idx = probs.argmax().item()
+        confidence = probs[best_idx].item()
+        scale_probs = {
+            scale: round(probs[i].item(), 4)
+            for i, scale in enumerate(WASTE_SCALES)
+        }
+    return WASTE_SCALES[best_idx], round(confidence, 4), scale_probs
+
+# ── OBSTRUCTION CLASSIFICATION ─────────────────────────────────────────────────
+def _classify_obstruction(image_embedding: torch.Tensor) -> tuple:
+    """
+    Zero-shot CLIP obstruction classification using pre-encoded text prompts.
+    Returns (predicted_obstruction, confidence, probabilities_dict).
+    predicted_obstruction: 'none' | 'partial' | 'complete'
+    """
+    with torch.no_grad():
+        logits = (image_embedding @ _obstruction_text_features.T).squeeze(0) * 100.0
+        probs = torch.softmax(logits, dim=-1)
+        best_idx = probs.argmax().item()
+        confidence = probs[best_idx].item()
+        obstruction_probs = {
+            obs: round(probs[i].item(), 4)
+            for i, obs in enumerate(OBSTRUCTION_LEVELS)
+        }
+    return OBSTRUCTION_LEVELS[best_idx], round(confidence, 4), obstruction_probs
+
 # ── INFERENCE ─────────────────────────────────────────────────────────────────
 def run_inference(image_bytes: bytes) -> dict:
     t0 = time.perf_counter()
@@ -259,8 +348,15 @@ def run_inference(image_bytes: bytes) -> dict:
     predicted_class, decision_label, in_review_zone = _decision(prob_valid)
     prob_invalid = 1.0 - prob_valid
 
-    # Stage 5: zero-shot category classification (skip for definite REJECTED images)
+    # Stage 5: zero-shot category, scale, and obstruction classification (skip for definite REJECTED images)
     predicted_category = None
+    predicted_scale = None
+    scale_confidence = None
+    scale_probabilities = None
+    predicted_obstruction = None
+    obstruction_confidence = None
+    obstruction_probabilities = None
+
     if decision_label != "REJECTED":
         try:
             predicted_category = _classify_category(embedding)
@@ -268,21 +364,39 @@ def run_inference(image_bytes: bytes) -> dict:
         except Exception as exc:
             _log(f"  Category     : FAILED (non-fatal) — {exc}")
 
+        try:
+            predicted_scale, scale_confidence, scale_probabilities = _classify_scale(embedding)
+            _log(f"  Scale        : {predicted_scale} (conf={scale_confidence:.4f})")
+        except Exception as exc:
+            _log(f"  Scale        : FAILED (non-fatal) — {exc}")
+
+        try:
+            predicted_obstruction, obstruction_confidence, obstruction_probabilities = _classify_obstruction(embedding)
+            _log(f"  Obstruction  : {predicted_obstruction} (conf={obstruction_confidence:.4f})")
+        except Exception as exc:
+            _log(f"  Obstruction  : FAILED (non-fatal) — {exc}")
+
     elapsed_ms = (time.perf_counter() - t0) * 1000
     _log(f"  Decision     : {predicted_class}  ({decision_label})  "
-         f"review_zone={in_review_zone}  category={predicted_category}  {elapsed_ms:.1f}ms")
+         f"review_zone={in_review_zone}  category={predicted_category}  scale={predicted_scale}  obstruction={predicted_obstruction}  {elapsed_ms:.1f}ms")
 
     return {
-        "predicted_class": predicted_class,
-        "confidence":      round(prob_valid, 6),
+        "predicted_class":           predicted_class,
+        "confidence":                round(prob_valid, 6),
         "probabilities": {
             "VALID":   round(prob_valid,   6),
             "INVALID": round(prob_invalid, 6),
         },
-        "decision":           decision_label,
-        "in_review_zone":     in_review_zone,
-        "predicted_category": predicted_category,   # EcoPin issue type or null
-        "threshold":          THRESHOLD,
+        "decision":                  decision_label,
+        "in_review_zone":            in_review_zone,
+        "predicted_category":        predicted_category,        # EcoPin issue type or null
+        "predicted_scale":           predicted_scale,           # small | medium | large or null
+        "scale_confidence":          scale_confidence,
+        "scale_probabilities":       scale_probabilities,
+        "predicted_obstruction":     predicted_obstruction,     # none | partial | complete or null
+        "obstruction_confidence":    obstruction_confidence,
+        "obstruction_probabilities": obstruction_probabilities,
+        "threshold":                 THRESHOLD,
         "review_zone":        [REVIEW_LO, REVIEW_HI],
         "inference_ms":       round(elapsed_ms, 1),
     }
