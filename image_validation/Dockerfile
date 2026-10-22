@@ -3,7 +3,8 @@ WORKDIR ${LAMBDA_TASK_ROOT}
 RUN dnf install -y git && dnf clean all
 COPY requirements-lambda.txt .
 RUN pip install --no-cache-dir torch==2.13.0 torchvision==0.28.0 --index-url https://download.pytorch.org/whl/cpu \
-    && pip install --no-cache-dir -r requirements-lambda.txt
+    && pip install --no-cache-dir setuptools==80.9.0 wheel==0.45.1 \
+    && pip install --no-cache-dir --no-build-isolation -r requirements-lambda.txt
 # Download CLIP during the build; Lambda's filesystem is read-only at runtime.
 ENV HOME=/opt/models EXP32_DEVICE=cpu \
     OMP_NUM_THREADS=1 PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1

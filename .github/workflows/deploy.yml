@@ -48,7 +48,12 @@ jobs:
       - name: Build image
         env:
           CONTEXT: ${{ matrix.context }}
-        run: docker buildx build --platform linux/amd64 --provenance=false --load -t service:test "$CONTEXT"
+        run: |
+          for attempt in 1 2 3; do
+            if docker buildx build --platform linux/amd64 --provenance=false --load -t service:test "$CONTEXT"; then exit 0; fi
+            sleep 15
+          done
+          exit 1
       - name: Smoke test container
         env:
           SERVICE: ${{ matrix.service }}
