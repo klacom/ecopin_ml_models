@@ -61,6 +61,16 @@ class ZoneForecastTests(unittest.TestCase):
         self.assertEqual(classify(1, 40.01), 'high')
         self.assertEqual(classify(4.99, 0), 'low')
 
+    def test_zero_baseline_does_not_fabricate_a_percentage_surge(self):
+        for values in ([0] * 40 + [1] + [0] * 11, [0] * 52):
+            result = ZoneTimeForecaster(7).forecast_zone(values, NOW)
+            self.assertEqual(result['growth_velocity_percent'], 0)
+            self.assertEqual(result['risk_level'], 'low')
+            self.assertLess(result['risk_score'], .1)
+        large = ZoneTimeForecaster(7).forecast_zone([0] * 40 + [1000] + [0] * 11, NOW)
+        self.assertEqual(large['growth_velocity_percent'], 0)
+        self.assertEqual(large['risk_level'], 'high')
+
     def test_projection_preserves_zero_zones_and_forward_dates(self):
         response = build_projection([ZONE], [], '30d', NOW)
         self.assertEqual(response['model_version'], 'zone-timeseries-v1')

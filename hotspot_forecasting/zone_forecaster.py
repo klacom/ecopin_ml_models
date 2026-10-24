@@ -142,7 +142,9 @@ class ZoneTimeForecaster:
         baseline_start = origin - timedelta(days=self.horizon_days)
         baseline = sum(float(count) * overlap_fraction(baseline_start, origin,
                        origin - timedelta(weeks=len(data) - i)) for i, count in enumerate(data))
-        velocity = ((total - baseline) / baseline * 100) if baseline > 0 else (100.0 if total > 0 else 0.0)
+        # A zero baseline has no defined percentage change. Keep the numeric API
+        # neutral; count thresholds still identify a large absolute forecast.
+        velocity = ((total - baseline) / baseline * 100) if baseline > 0 else 0.0
         risk = self.classify_risk(round(total, 2), round(velocity, 1))
         return {'predicted_count': round(total, 2), 'predicted_lower_bound': round(min(lower, total), 2),
                 'predicted_upper_bound': round(max(upper, total), 2), 'growth_velocity_percent': round(velocity, 1),
