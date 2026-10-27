@@ -40,7 +40,7 @@ Response JSON:
     "predicted_category": "waste" | "flooding" | "pollution" | "illegal_logging" | "others" | null
   }
 
-Does NOT modify or replace inference_service.py (the 4-class EfficientNet service).
+Image-derived severity is disabled. Legacy severity response fields remain null.
 """
 
 import io, json, os, sys, threading, traceback, time
@@ -163,6 +163,8 @@ except Exception as exc:
     _log(f"ERROR encoding category prompts: {exc}")
     sys.exit(1)
 
+# Image-derived severity is disabled; citizen inputs supply scale and obstruction.
+
 # Load RegMLP classifier
 _sep()
 _log("Loading Regularized MLP classifier …")
@@ -268,6 +270,8 @@ def run_inference(image_bytes: bytes) -> dict:
 
     # Stage 5: zero-shot category (skipped for definite REJECTED images)
     predicted_category = None
+    predicted_scale = scale_confidence = scale_probabilities = None
+    predicted_obstruction = obstruction_confidence = obstruction_probabilities = None
     if decision != "REJECTED":
         try:
             predicted_category = _classify_category(embedding)
@@ -287,6 +291,12 @@ def run_inference(image_bytes: bytes) -> dict:
         "decision":           decision,
         "in_review_zone":     in_review_zone,
         "predicted_category": predicted_category,
+        "predicted_scale": predicted_scale,
+        "scale_confidence": scale_confidence,
+        "scale_probabilities": scale_probabilities,
+        "predicted_obstruction": predicted_obstruction,
+        "obstruction_confidence": obstruction_confidence,
+        "obstruction_probabilities": obstruction_probabilities,
         "threshold":          THRESHOLD,
         "review_zone":        [REVIEW_LO, REVIEW_HI],
         "inference_ms":       round(elapsed_ms, 1),
