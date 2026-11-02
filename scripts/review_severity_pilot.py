@@ -237,11 +237,11 @@ def launch(store, reviewer):
     show(); window.mainloop()
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parent)
     parser.add_argument('--reviewer',choices=['reviewer1','reviewer2'],required=True)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     try:
         if os.name == 'nt':
             import msvcrt

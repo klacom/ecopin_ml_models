@@ -5,6 +5,7 @@ import unittest
 from unittest.mock import patch
 
 from review_severity_pilot import FIELDS, ReviewStore
+from severity_reviewer_exe import run as run_executable
 
 
 class ReviewStoreTests(unittest.TestCase):
@@ -77,6 +78,17 @@ class ReviewStoreTests(unittest.TestCase):
         with self.assertRaises(ValueError): ReviewStore(self.root, '../reviewer1')
         self.write(self.output, dict(self.row, image_path='../outside.jpg'))
         with self.assertRaises(ValueError): ReviewStore(self.root, 'reviewer1')
+
+
+class ExecutableEntryTests(unittest.TestCase):
+    def test_frozen_app_uses_its_exe_folder_and_reviewer2_without_arguments(self):
+        executable = str(Path('Buddy review folder/EcoPin Review.exe').resolve())
+        with patch('severity_reviewer_exe.sys.executable', executable), \
+             patch('severity_reviewer_exe.sys.frozen', True, create=True), \
+             patch('severity_reviewer_exe.sys.argv', [executable]), \
+             patch('severity_reviewer_exe.run_review') as launch:
+            run_executable()
+        launch.assert_called_once_with(['--root', str(Path(executable).parent), '--reviewer', 'reviewer2'])
 
 
 if __name__ == '__main__':
