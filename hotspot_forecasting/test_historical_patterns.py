@@ -5,7 +5,7 @@ from pathlib import Path
 from historical_patterns import build_pattern_analysis
 from zone_forecaster import week_start
 NOW=datetime(2026,10,29,4,tzinfo=timezone.utc)
-ROSTER=json.loads((Path(__file__).resolve().parents[2]/'ecopin_backend_node/data/pasig-barangay-roster.json').read_text(encoding='utf-8'))['barangays']
+ROSTER=json.loads(Path(__file__).with_name('test_pasig_barangay_roster.json').read_text(encoding='utf-8'))['barangays']
 def report(i,days,code='1381200015',lat=14.57,lon=121.08):
  return {'id':str(i),'created_at':(NOW-timedelta(days=days)).isoformat(),'latitude':lat,'longitude':lon,'barangay_code':code}
 def source(reports):
