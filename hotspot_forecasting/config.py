@@ -41,3 +41,6 @@ RISK_MEDIUM_THRESHOLD = int(os.environ.get("RISK_MEDIUM_THRESHOLD", "5"))
 # Bounding Box (Philippines default if none provided)
 # [min_lon, min_lat, max_lon, max_lat]
 DEFAULT_BBOX = [116.9, 4.6, 126.6, 21.4]
+
+# Shared server-only credential for aggregate historical analysis.
+SPATIAL_ANALYTICS_TOKEN = os.environ.get("SPATIAL_ANALYTICS_TOKEN", "")

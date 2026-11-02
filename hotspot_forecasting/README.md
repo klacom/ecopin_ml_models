@@ -32,3 +32,11 @@ index, not an estimated probability.
 Run deterministic model, HTTP, pagination, and 30-zone performance checks with
 `python -m unittest discover -p "test_*.py" -v` in this directory.
 `python smoke_test.py` additionally checks the configured migrated database.
+
+## PDT-19: protected historical analysis
+
+`POST /patterns/analyze` accepts `{}` and requires `Authorization: Bearer <SPATIAL_ANALYTICS_TOKEN>`. Configure the same server-only random secret on Node and Python. Missing credentials fail closed; do not expose the token in client environments. The service-role-only `read_hotspot_pattern_history(5000)` SQL RPC supplies one consistent snapshot after PDT-08 reconciliation and the PDT-19 migration.
+
+Past 7/30/90-day observations run the shared haversine DBSCAN engine. Ninety-day groups retain non-overlapping 30-day recurrence evidence; shorter-window groups link by member identities, and barangay links use actual reconciled assignments. Raw report identities and point lists are never returned. The same snapshot supplies 52 complete UTC weeks to existing forward barangay forecasts for +7/+30/+90 days. Historical labels are transparent heuristics, not learned future spatial predictions or p-values. A single-analysis semaphore and a 5,000-point cap prevent unbounded concurrent DBSCAN jobs; oversized histories fail rather than sample.
+
+Full rules, data exclusions, authentication, rollout dependencies and verification limits: [historical hotspot integration](../../ecopin-web/docs/historical-hotspot-patterns.md). The standalone `make_pattern_fixture.py OUTPUT_PATH` creates invented data only for workspace browser tests; it requires the adjacent backend roster and does not query Supabase. Run all tests from the ML repository root with `python -m unittest discover -s hotspot_forecasting -p "test_*.py"`.

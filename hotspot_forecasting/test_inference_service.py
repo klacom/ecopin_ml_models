@@ -22,14 +22,50 @@ class ForecastHttpTests(unittest.TestCase):
         cls.server.server_close()
         cls.thread.join()
 
-    def request(self, payload, path='/forecast/project', method='POST'):
+    def request(self, payload, path='/forecast/project', method='POST', headers=None):
         connection = http.client.HTTPConnection('127.0.0.1', self.server.server_port)
         connection.request(method, path, json.dumps(payload) if payload is not None else None,
-                           {'Content-Type': 'application/json'})
+                           {'Content-Type': 'application/json', **(headers or {})})
         response = connection.getresponse()
         result = (response.status, json.loads(response.read()))
         connection.close()
         return result
+
+    @patch('inference_service.SPATIAL_ANALYTICS_TOKEN', 'test-token')
+    @patch('inference_service.fetch_pattern_history')
+    def test_pattern_endpoint_requires_auth_and_exports_aggregates(self, fetch):
+        from test_historical_patterns import source, report
+        fetch.return_value = source([report(i,2) for i in range(3)])
+        self.assertEqual(self.request({}, '/patterns/analyze')[0], 403)
+        fetch.assert_not_called()
+        headers = {'Authorization':'Bearer test-token'}
+        self.assertEqual(self.request({'horizon':'30d'}, '/patterns/analyze', headers=headers)[0], 400)
+        status, result = self.request({}, '/patterns/analyze', headers=headers)
+        self.assertEqual(status, 200)
+        self.assertEqual(result['windows']['7d']['cluster_count'], 1)
+        self.assertNotIn('reports', result)
+        self.assertNotIn('members', json.dumps(result))
+
+    @patch('inference_service.SPATIAL_ANALYTICS_TOKEN', '')
+    def test_missing_token_fails_closed(self):
+        self.assertEqual(self.request({}, '/patterns/analyze')[0],503)
+
+    @patch('inference_service.SPATIAL_ANALYTICS_TOKEN', 'test-token')
+    @patch('inference_service.fetch_pattern_history', side_effect=RuntimeError('secret report details'))
+    def test_source_failure_is_safe_and_slot_is_released(self, fetch):
+        from inference_service import PATTERN_SLOT
+        headers = {'Authorization':'Bearer test-token'}
+        PATTERN_SLOT.acquire()
+        try:
+            self.assertEqual(self.request({}, '/patterns/analyze', headers=headers)[0],503)
+            fetch.assert_not_called()
+        finally:
+            PATTERN_SLOT.release()
+        for _ in range(2):
+            status, result = self.request({}, '/patterns/analyze', headers=headers)
+            self.assertEqual(status,503)
+            self.assertNotIn('secret', json.dumps(result))
+        self.assertEqual(fetch.call_count,2)
 
     @patch('inference_service.fetch_zone_history', return_value=([ZONE], []))
     def test_forward_contract_and_legacy_alias(self, fetch):

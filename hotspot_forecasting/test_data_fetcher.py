@@ -2,7 +2,7 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
-from data_fetcher import fetch_zone_history, get_supabase_client
+from data_fetcher import fetch_zone_history, get_supabase_client, fetch_pattern_history
 from test_zone_forecaster import NOW, ZONE
 
 
@@ -22,6 +22,13 @@ class Query:
 
 
 class ZoneHistoryTests(unittest.TestCase):
+    @patch('data_fetcher.get_supabase_client')
+    def test_pattern_history_uses_one_bounded_rpc_snapshot(self, get_client):
+        get_client.return_value.rpc.return_value.execute.return_value.data = {'as_of':'snapshot'}
+        self.assertEqual(fetch_pattern_history(), {'as_of':'snapshot'})
+        get_client.return_value.rpc.assert_called_once_with('read_hotspot_pattern_history', {'p_max_reports':5000})
+        get_client.return_value.table.assert_not_called()
+
     @patch('data_fetcher.SUPABASE_URL', 'https://example.supabase.co')
     @patch('data_fetcher.SUPABASE_SECRET_KEY', 'sb_secret_deployment_test_not_a_real_key')
     def test_client_accepts_modern_secret_key_without_a_network_request(self):

@@ -97,3 +97,11 @@ def fetch_zone_history(zone_type='h3', now=None):
                     .select('zone_id,week_start,report_count').gte('week_start', start.isoformat())
                     .lt('week_start', cutoff.isoformat()).order('zone_id').order('week_start'))
     return zones, history
+
+
+def fetch_pattern_history():
+    """One database snapshot; the RPC fails rather than sampling over 5,000 points."""
+    source = get_supabase_client().rpc('read_hotspot_pattern_history', {'p_max_reports': 5000}).execute().data
+    if not isinstance(source, dict):
+        raise ValueError('Historical analysis source is unavailable')
+    return source

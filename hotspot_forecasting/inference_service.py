@@ -1,10 +1,15 @@
 import json
 import logging
+import hmac
+from threading import BoundedSemaphore
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlsplit
 
-from config import HOST, PORT
-from data_fetcher import fetch_zone_history
+from config import HOST, PORT, SPATIAL_ANALYTICS_TOKEN
+from data_fetcher import fetch_zone_history, fetch_pattern_history
+from historical_patterns import build_pattern_analysis
+
+PATTERN_SLOT = BoundedSemaphore(1)
 from zone_forecaster import HORIZONS, MODEL_VERSION, build_projection, utc_datetime
 
 
@@ -19,6 +24,8 @@ class HotspotHandler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlsplit(self.path).path
+        if path == '/patterns/analyze':
+            return self.analyze_patterns()
         if path not in ('/forecast/project', '/forecast', '/feedback'):
             return self.send_json(404, {'error': 'Not found'})
         try:
@@ -56,6 +63,35 @@ class HotspotHandler(BaseHTTPRequestHandler):
         except Exception:
             logging.exception('Hotspot projection failed')
             return self.send_json(500, {'error': 'Unable to generate hotspot forecast'})
+
+    def analyze_patterns(self):
+        if not SPATIAL_ANALYTICS_TOKEN:
+            return self.send_json(503, {'error': 'Historical analysis requires server setup'})
+        authorization = self.headers.get('Authorization', '')
+        if not hmac.compare_digest(authorization.encode(), ('Bearer ' + SPATIAL_ANALYTICS_TOKEN).encode()):
+            return self.send_json(403, {'error': 'Forbidden'})
+        try:
+            length = int(self.headers.get('Content-Length', '0'))
+            if not 0 < length <= 1024:
+                raise ValueError()
+            if json.loads(self.rfile.read(length).decode('utf-8')) != {}:
+                raise ValueError()
+        except (ValueError, UnicodeDecodeError):
+            return self.send_json(400, {'error': 'Send an empty JSON object'})
+        if not PATTERN_SLOT.acquire(blocking=False):
+            return self.send_json(503, {'error': 'Historical analysis is busy; retry shortly'})
+        try:
+            result = build_pattern_analysis(fetch_pattern_history())
+            return self.send_json(200, result)
+        except Exception as error:
+            # Never include database details, report data or credentials in responses.
+            logging.error('Historical analysis failed (%s)', type(error).__name__)
+            message = ('History exceeds the processing limit; no points were sampled'
+                       if getattr(error, 'code', None) == '54000'
+                       else 'Historical analysis unavailable; verify database and service setup')
+            return self.send_json(503, {'error': message})
+        finally:
+            PATTERN_SLOT.release()
 
     def do_GET(self):
         if urlsplit(self.path).path != '/health':

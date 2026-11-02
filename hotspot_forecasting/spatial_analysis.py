@@ -21,6 +21,16 @@ def meters_to_radians(meters):
     return meters / EARTH_RADIUS_M
 
 
+def dbscan_labels(reports):
+    """Shared density engine. Coordinates are radians in [latitude, longitude] order."""
+    if not reports:
+        return np.array([], dtype=int)
+    coordinates = np.radians([[r['latitude'], r['longitude']] for r in reports])
+    return DBSCAN(eps=meters_to_radians(DBSCAN_EPS_METERS),
+                  min_samples=DBSCAN_MIN_SAMPLES, algorithm='ball_tree',
+                  metric='haversine').fit_predict(coordinates)
+
+
 def compute_convex_hull_polygon(lats, lons):
     """
     Given arrays of latitudes and longitudes, return a GeoJSON-style polygon
@@ -102,18 +112,7 @@ def run_dbscan_hotspots(reports, bbox=None):
     lats = np.array([r["latitude"] for r in reports])
     lons = np.array([r["longitude"] for r in reports])
 
-    # DBSCAN with haversine requires coordinates in radians [lat, lon]
-    coords_rad = np.column_stack([np.radians(lats), np.radians(lons)])
-    eps_rad = meters_to_radians(DBSCAN_EPS_METERS)
-
-    db = DBSCAN(
-        eps=eps_rad,
-        min_samples=DBSCAN_MIN_SAMPLES,
-        algorithm="ball_tree",
-        metric="haversine",
-    ).fit(coords_rad)
-
-    labels = db.labels_
+    labels = dbscan_labels(reports)
     unique_labels = set(labels)
     noise_count = int(np.sum(labels == -1))
     cluster_count = len(unique_labels - {-1})
