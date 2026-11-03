@@ -1,4 +1,4 @@
-"""Local, resumable reviewer app for the category-v2 severity pilot. No network access."""
+"""Local, resumable reviewer app for category-v2 and category-v3 severity sheets. No network access."""
 import argparse
 import csv
 from datetime import datetime
@@ -19,6 +19,55 @@ CHOICES = {
 }
 BASES = {'waste': 'waste accumulation', 'flooding': 'flooded footprint',
          'pollution': 'visible pollution footprint', 'uncertain': 'uncertain', '': ''}
+FIELDS_V3 = ['image_id', 'image_path', 'criteria_version', 'reviewer_id', 'validity',
+             'issue_category', 'pollution_subtype', 'setting', 'scale_basis', 'scale',
+             'extends_beyond_frame', 'depth_reference', 'obstruction_target', 'obstruction',
+             'visible_evidence', 'notes', 'review_status', 'reviewed_at']
+CHOICES_V3 = {
+    'validity': CHOICES['validity'],
+    'issue_category': CHOICES['issue_category'],
+    'pollution_subtype': [('Burning / smoke', 'burning_smoke'), ('Water contamination', 'water_contamination'),
+                          ('Land contamination', 'land_contamination'), ('Not sure', 'uncertain')],
+    'setting': [('Street', 'street'), ('Open land', 'open_land'), ('Waterway', 'waterway'),
+                ('Private yard', 'private_yard'), ('Other', 'other'), ('Not sure', 'uncertain')],
+    'scale': CHOICES['scale'],
+    'extends_beyond_frame': [('No', 'no'), ('Yes', 'yes')],
+    'depth_reference': [('No reference visible', 'none_visible'), ('Ankle', 'ankle'), ('Knee', 'knee'),
+                        ('Waist', 'waist'), ('Chest or deeper', 'chest_or_deeper')],
+    'obstruction_target': [('Road', 'road'), ('Pedestrian path', 'pedestrian_path'),
+                           ('Drain or waterway', 'drain_or_waterway'), ('Unknown / not visible', 'unknown')],
+    'obstruction': [('None: dry / visibly open', 'none'), ('Partial: passage remains', 'partial'),
+                    ('Complete: closed', 'complete'), ('Not sure', 'uncertain')],
+}
+# Questions that apply only to one issue category; cleared for any other category.
+ONLY_FOR = {'pollution_subtype': 'pollution', 'depth_reference': 'flooding'}
+SCHEMAS = {'category-v2-draft': (FIELDS, CHOICES), 'category-v3-draft': (FIELDS_V3, CHOICES_V3)}
+TITLES = {
+    'validity': 'Is an environmental problem visible?', 'issue_category': 'What is the main issue?',
+    'pollution_subtype': 'Which kind of pollution? (pollution only)', 'setting': 'Where is it?',
+    'scale': 'What is the visible amount or extent?', 'extends_beyond_frame': 'Does it continue past the photo edge?',
+    'depth_reference': 'Water depth against people/vehicles (flooding only)',
+    'obstruction_target': 'Which access are you assessing?', 'obstruction': 'How blocked is that access?',
+}
+
+
+def applies(field, row):
+    return field not in ONLY_FOR or row['issue_category'] == ONLY_FOR[field]
+
+
+def create_blank_sheet(root, reviewer, version='category-v3-draft'):
+    """Write a new blank answer sheet listing every photo in root/images. Never overwrites."""
+    root = Path(root).resolve()
+    fields, _ = SCHEMAS[version]
+    images = sorted(p for p in (root / 'images').iterdir()
+                    if p.suffix.lower() in ('.jpg', '.jpeg', '.png', '.tif', '.tiff', '.webp'))
+    if not images or len({p.stem for p in images}) != len(images):
+        raise ValueError('images/ is empty or has two photos with the same name.')
+    with (root / f'{reviewer}.csv').open('x', encoding='utf-8-sig', newline='') as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields)
+        writer.writeheader()
+        writer.writerows(dict.fromkeys(fields, '') | {'image_id': p.stem, 'image_path': f'images/{p.name}',
+                                                       'criteria_version': version} for p in images)
 
 
 class ReviewStore:
@@ -29,11 +78,15 @@ class ReviewStore:
         self.output = self.root / f'{reviewer}.csv'
         self.last_bytes = self.output.read_bytes()
         reader = csv.DictReader(io.StringIO(self.last_bytes.decode('utf-8-sig')))
-        if reader.fieldnames != FIELDS:
+        self.version = next((v for v, (fields, _) in SCHEMAS.items() if reader.fieldnames == fields), None)
+        if self.version is None:
             raise ValueError('This answer sheet has an unsupported format. Original answers were not changed.')
+        self.fields, self.choices = SCHEMAS[self.version]
         self.rows = list(reader)
         if not self.rows or len({row['image_id'] for row in self.rows}) != len(self.rows):
             raise ValueError('The answer sheet is empty or has duplicate image IDs.')
+        if any(row['criteria_version'] != self.version for row in self.rows):
+            raise ValueError(f'Every row in this sheet must use {self.version}.')
         for row in self.rows:
             path = (self.root / row['image_path']).resolve()
             if not path.is_relative_to(self.root / 'images') or not path.is_file():
@@ -41,24 +94,29 @@ class ReviewStore:
 
     def save(self, index, answers, complete=False):
         row = dict(self.rows[index])
-        for field, choices in CHOICES.items():
+        for field, choices in self.choices.items():
             value = answers.get(field, '')
             if value not in ('', *(value for _, value in choices)):
                 raise ValueError(f'Choose a supported answer for {field}.')
             row[field] = value
+        for field in ONLY_FOR:
+            if field in self.choices and not applies(field, row):
+                row[field] = ''
         for field in ('reviewer_id', 'visible_evidence', 'notes'):
             value = answers.get(field, '').strip()
             if len(value) > (100 if field == 'reviewer_id' else 3000):
                 raise ValueError(f'{field} is too long.')
             row[field] = value
         if complete:
-            required = ['reviewer_id', *CHOICES, 'visible_evidence']
+            required = ['reviewer_id', *(f for f in self.choices if applies(f, row)), 'visible_evidence']
             if any(not row[field] for field in required):
-                raise ValueError('Enter your name/initials, answer all five questions, and describe the visible evidence. “Not sure” is allowed.')
+                raise ValueError('Enter your name/initials, answer every question, and describe the visible evidence. “Not sure” is allowed.')
             if row['obstruction_target'] == 'unknown' and row['obstruction'] != 'uncertain':
                 raise ValueError('If the access target is unknown/not visible, choose “Not sure” for blockage.')
             if row['validity'] != 'valid' and (row['scale'] != 'uncertain' or row['obstruction'] != 'uncertain'):
                 raise ValueError('For an invalid or uncertain photo, choose “Not sure” for extent and blockage, and explain why.')
+            if self.version == 'category-v3-draft' and row['issue_category'] == 'uncertain' and row['scale'] != 'uncertain':
+                raise ValueError('If the main issue is “Not sure”, choose “Not sure” for extent too.')
         row['scale_basis'] = BASES[row['issue_category']]
         row['review_status'] = 'complete' if complete else 'draft'
         row['reviewed_at'] = datetime.now().astimezone().isoformat(timespec='seconds') if complete else ''
@@ -73,7 +131,7 @@ class ReviewStore:
             with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8-sig', newline='',
                                              dir=self.root, suffix='.tmp', delete=False) as stream:
                 temporary = Path(stream.name)
-                writer = csv.DictWriter(stream, fieldnames=FIELDS)
+                writer = csv.DictWriter(stream, fieldnames=self.fields)
                 writer.writeheader()
                 writer.writerows(row if i == index else saved for i, saved in enumerate(self.rows))
                 stream.flush(); os.fsync(stream.fileno())
@@ -126,14 +184,19 @@ def launch(store, reviewer):
     name = tk.StringVar(value=next((r['reviewer_id'] for r in store.rows if r['reviewer_id']), ''))
     ttk.Label(form, text='Your name or initials').pack(anchor='w')
     ttk.Entry(form, textvariable=name).pack(fill='x', pady=(3, 7))
-    variables = {field: tk.StringVar() for field in CHOICES}
-    titles = ['1. Is an environmental problem visible?', '2. What is the main issue?',
-              '3. What is the visible amount or extent?', '4. Which access are you assessing?',
-              '5. How blocked is that access?']
-    for (field, choices), title in zip(CHOICES.items(), titles):
-        group = ttk.LabelFrame(form, text=title, padding=(6, 3)); group.pack(fill='x', pady=3)
+    variables = {field: tk.StringVar() for field in store.choices}
+    radios = {field: [] for field in store.choices}
+    for number, (field, choices) in enumerate(store.choices.items(), 1):
+        group = ttk.LabelFrame(form, text=f'{number}. {TITLES[field]}', padding=(6, 3)); group.pack(fill='x', pady=3)
         for i, (label, value) in enumerate(choices):
-            ttk.Radiobutton(group, text=label, value=value, variable=variables[field]).grid(row=i//2, column=i%2, sticky='w', padx=(0, 9))
+            radio = ttk.Radiobutton(group, text=label, value=value, variable=variables[field])
+            radio.grid(row=i//2, column=i%2, sticky='w', padx=(0, 9)); radios[field].append(radio)
+
+    def category_changed(*_):
+        row = {'issue_category': variables['issue_category'].get()}
+        for field in ONLY_FOR:
+            if field in radios:
+                for radio in radios[field]: radio.state(['!disabled'] if applies(field, row) else ['disabled'])
     ttk.Label(form, text='What visible evidence supports your answers? (required)').pack(anchor='w', pady=(7, 2))
     evidence = tk.Text(form, height=3, width=52, wrap='word', font=('Segoe UI', 10)); evidence.pack(fill='x')
     ttk.Label(form, text='Extra notes (optional)').pack(anchor='w', pady=(6, 2))
@@ -201,8 +264,8 @@ def launch(store, reviewer):
         with Image.open(store.root / row['image_path']) as original:
             current_image = ImageOps.exif_transpose(original).convert('RGB')
             current_image.thumbnail((2200,2200))
-        loading = False; dirty = False; update_progress(); window.after(50, render)
-        status.set('Previously completed. Editing will save a draft.' if row['review_status']=='complete' else 'Choose all five answers and describe what you can see. “Not sure” is allowed.')
+        category_changed(); loading = False; dirty = False; update_progress(); window.after(50, render)
+        status.set('Previously completed. Editing will save a draft.' if row['review_status']=='complete' else 'Answer every question and describe what you can see. “Not sure” is allowed.')
 
     def move(delta):
         nonlocal index
@@ -226,6 +289,7 @@ def launch(store, reviewer):
         if flush() or messagebox.askyesno('Unsaved changes','Your latest changes could not be saved. Close anyway?',parent=window): window.destroy()
 
     for variable in [name,*variables.values()]: variable.trace_add('write',changed)
+    variables['issue_category'].trace_add('write',category_changed)
     for widget in (evidence,notes): widget.bind('<<Modified>>',text_changed)
     photo.bind('<Configure>',resized)
     ttk.Button(buttons,text='Criteria / help',command=help_window).pack(side='left')
@@ -241,7 +305,10 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parent)
     parser.add_argument('--reviewer',choices=['reviewer1','reviewer2'],required=True)
+    parser.add_argument('--new-sheet',choices=list(SCHEMAS),help='create a blank answer sheet from images/ and exit')
     args = parser.parse_args(argv)
+    if args.new_sheet:
+        create_blank_sheet(args.root,args.reviewer,args.new_sheet); return
     try:
         if os.name == 'nt':
             import msvcrt

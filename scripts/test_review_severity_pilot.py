@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from review_severity_pilot import FIELDS, ReviewStore
+from review_severity_pilot import CHOICES, FIELDS, FIELDS_V3, ReviewStore, create_blank_sheet
 from severity_reviewer_exe import run as run_executable
 
 
@@ -77,6 +77,77 @@ class ReviewStoreTests(unittest.TestCase):
     def test_image_paths_and_reviewer_selection_are_restricted(self):
         with self.assertRaises(ValueError): ReviewStore(self.root, '../reviewer1')
         self.write(self.output, dict(self.row, image_path='../outside.jpg'))
+        with self.assertRaises(ValueError): ReviewStore(self.root, 'reviewer1')
+
+
+class V3ReviewStoreTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        (self.root / 'images').mkdir()
+        (self.root / 'images/one.jpg').write_bytes(b'image')
+        self.output = self.root / 'reviewer1.csv'
+        self.row = dict.fromkeys(FIELDS_V3, '') | {
+            'image_id': 'CAL_001', 'image_path': 'images/one.jpg', 'criteria_version': 'category-v3-draft'}
+        self.write(self.row)
+        self.store = ReviewStore(self.root, 'reviewer1')
+        self.answers = dict(reviewer_id='Reviewer A', validity='valid', issue_category='waste',
+                            setting='street', scale='small', extends_beyond_frame='no',
+                            obstruction_target='road', obstruction='none',
+                            visible_evidence='A few items beside a visibly open road.', notes='')
+
+    def write(self, *rows):
+        with self.output.open('w', encoding='utf-8-sig', newline='') as stream:
+            writer = csv.DictWriter(stream, fieldnames=FIELDS_V3)
+            writer.writeheader(); writer.writerows(rows)
+
+    def test_v3_sheet_saves_new_fields_and_keeps_its_version(self):
+        self.store.save(0, self.answers, complete=True)
+        saved = ReviewStore(self.root, 'reviewer1').rows[0]
+        self.assertEqual(saved['criteria_version'], 'category-v3-draft')
+        self.assertEqual((saved['setting'], saved['extends_beyond_frame']), ('street', 'no'))
+        self.assertEqual(saved['scale_basis'], 'waste accumulation')
+
+    def test_category_specific_questions_are_required_only_for_their_category(self):
+        pollution = dict(self.answers, issue_category='pollution', depth_reference='knee')
+        with self.assertRaises(ValueError):
+            self.store.save(0, pollution, complete=True)
+        self.store.save(0, dict(pollution, pollution_subtype='burning_smoke'), complete=True)
+        self.assertEqual(self.store.rows[0]['depth_reference'], '')
+        flooding = dict(self.answers, issue_category='flooding', pollution_subtype='burning_smoke')
+        with self.assertRaises(ValueError):
+            self.store.save(0, flooding, complete=True)
+        self.store.save(0, dict(flooding, depth_reference='ankle'), complete=True)
+        self.assertEqual(self.store.rows[0]['pollution_subtype'], '')
+
+    def test_every_v3_question_is_required_for_completion(self):
+        for field in ['setting', 'extends_beyond_frame']:
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                self.store.save(0, dict(self.answers, **{field: ''}), complete=True)
+
+    def test_uncertain_category_requires_uncertain_extent(self):
+        with self.assertRaises(ValueError):
+            self.store.save(0, dict(self.answers, issue_category='uncertain'), complete=True)
+        self.store.save(0, dict(self.answers, issue_category='uncertain', scale='uncertain'), complete=True)
+
+    def test_v3_uses_drain_or_waterway_and_v2_keeps_drain(self):
+        with self.assertRaises(ValueError):
+            self.store.save(0, dict(self.answers, obstruction_target='drain'))
+        self.store.save(0, dict(self.answers, obstruction_target='drain_or_waterway'), complete=True)
+        self.assertEqual([v for _, v in CHOICES['obstruction_target']][2], 'drain')
+
+    def test_blank_v3_sheet_lists_photos_and_never_overwrites(self):
+        (self.root / 'images/two.png').write_bytes(b'image')
+        (self.root / 'images/readme.txt').write_text('not a photo')
+        create_blank_sheet(self.root, 'reviewer2')
+        rows = ReviewStore(self.root, 'reviewer2').rows
+        self.assertEqual([r['image_id'] for r in rows], ['one', 'two'])
+        self.assertEqual({r['criteria_version'] for r in rows}, {'category-v3-draft'})
+        with self.assertRaises(FileExistsError): create_blank_sheet(self.root, 'reviewer2')
+
+    def test_rows_must_match_the_sheet_version(self):
+        self.write(self.row, dict(self.row, image_id='CAL_002', criteria_version='category-v2-draft'))
         with self.assertRaises(ValueError): ReviewStore(self.root, 'reviewer1')
 
 

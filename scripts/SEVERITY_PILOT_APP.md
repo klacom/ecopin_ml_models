@@ -11,6 +11,24 @@ The packaged Windows launchers select the appropriate reviewer. Both reviewers s
 
 The original CSV is backed up before the first save. Updates use an atomic replace; external edits and locked files fail without discarding the previous data. Windows holds a separate per-reviewer lock for the life of the app. A changed completed row becomes a draft until explicitly completed again. GUI smoke testing uses separate copied fixtures, never production reviewer answers.
 
+## Category-v3 sheets
+
+The app chooses the rubric version from the sheet's columns. A 14-column sheet is `category-v2-draft`, and an 18-column sheet is `category-v3-draft`; every row must carry that version. v2 sheets behave exactly as before. v3 (see `severity_pilot_20261102_balanced/CRITERIA_v3.md`) adds the following:
+
+- `pollution_subtype`, required only for pollution.
+- `depth_reference`, required only for flooding.
+- `setting` and `extends_beyond_frame`, both required.
+- The `drain` target is renamed `drain_or_waterway`.
+- If the issue is `uncertain`, extent must also be `uncertain`.
+
+Questions that don't apply are greyed out in the window and saved blank. Create a blank v3 sheet from a pack's `images/` folder. The command refuses to overwrite an existing sheet:
+
+```powershell
+python scripts/review_severity_pilot.py --root <pack> --reviewer reviewer1 --new-sheet category-v3-draft
+```
+
+`joint_severity_review.py` still reads only v2 joint sheets; it needs v3 support before a v3 round is adjudicated.
+
 This collects qualitative judgments for rubric calibration. It does not score model accuracy, assign numeric incident severity, train models, or alter the source images.
 
 ## Standalone Windows reviewer 2
